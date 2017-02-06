@@ -1,0 +1,61 @@
+@import "../../../scss/dep/_common";
+
+.vi-switch {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    width: torem(52px);
+    height: torem(32px);
+    border: 1px solid #DFDFDF;
+    outline: 0;
+    border-radius: 16px;
+    box-sizing: border-box;
+    background: #DFDFDF
+}
+
+.vi-switch:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: torem(50px);
+    height: torem(30px);
+    border-radius: 15px;
+    background-color: #FDFDFD;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s
+}
+
+.vi-switch:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: torem(30px);
+    height: torem(30px);
+    border-radius: 15px;
+    background-color: $white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s
+}
+
+.vi-switch:checked {
+    border-color: $orange;
+    background-color: $orange;
+}
+
+.vi-switch:checked:before {
+    -webkit-transform: scale(0);
+    transform: scale(0)
+}
+
+.vi-switch:checked:after {
+    -webkit-transform: translateX(torem(20px));
+    transform: translateX(torem(20px))
+}

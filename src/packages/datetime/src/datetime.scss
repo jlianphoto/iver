@@ -1,0 +1,89 @@
+@import "../../../scss/dep/_common";
+
+
+.list .lis{ height:torem(50px); line-height:torem(50px); border-bottom: 1px solid #e0e0e0; position:relative;padding:0 torem(16px); font-size:torem(14px); @include flexbox();}
+.list .lis:last-child{border:0;}
+.list .lis .tip{ color:#A6A6A6; font-size:torem(14px)}
+.list .lis strong{ @include flex(1);}
+.list .lis a.tel{ color:#A6A6A6; font-size:torem(16px);}
+.list .lis span{ @include flex(3);height:torem(50px); line-height:torem(50px);}
+.list .lis label{ width:torem(60px);height:torem(50px); line-height:torem(50px);}
+.list .lis input{ border:none; @include flex(1);}
+
+.datetime .cover{
+  display: none;
+}
+.datetime.isShow .cover{
+  display: block;
+}
+.datetime.isShow .dt-container{
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.dt-container{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+  height: torem(320px);
+  background: #fff;
+  transform: translate3d(0, 100%, 0);
+  -webkit-transform: translate3d(0, 100%, 0);
+  transition: transform .3s ease;
+}
+.dt-container .dt-header{
+  @include flexbox();
+  height: torem(40px);
+  line-height: torem(40px);
+  border-bottom: 1px solid #e0e0e0;
+  color: #ff7f00;
+}
+.dt-container .dt-header span{
+  @include flex(1);
+  box-sizing: border-box;
+}
+.dt-container .dt-header span.dt-cancle{
+  padding-left:torem(30px);
+  text-align: left;
+}
+.dt-container .dt-header span.dt-confirm{
+  padding-right:torem(30px);
+  text-align:right;
+}
+.dt-container .dt-content{
+  @include flexbox();
+}
+.dt-container .dt-content .dt-scroller{
+  @include flex(1);
+  text-align:center;
+  position: relative;
+  height: torem(280px);
+  overflow: hidden;
+}
+.dt-container .dt-wraper .dt-mask-top{
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: torem(120px);
+  background:linear-gradient(to top, rgba(255,255,255,.5), rgba(255,255,255,.9));
+  border-bottom: 1px solid #e0e0e0;
+}
+.dt-container .dt-wraper .dt-mask-bottom{
+  position: absolute;
+  bottom:0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: torem(120px);
+  background: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(255,255,255,.9));
+  border-top: 1px solid #e0e0e0;  
+}
+.dt-container .dt-content .dt-scroller .dt-item{
+  line-height: torem(40px);
+}
+.dt-container .isTransition{
+  transition: all 0.3s cubic-bezier(0.2, 0.4, 0.58, 1);
+  -webkit-transition: all 0.3s cubic-bezier(0.2, 0.4, 0.58, 1);
+}

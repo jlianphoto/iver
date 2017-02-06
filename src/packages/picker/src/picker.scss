@@ -1,0 +1,93 @@
+@import "../../../scss/dep/_common";
+
+
+
+.picker{
+  width: 100%;
+}
+
+
+.picker-wraper .cover{
+  display: none;
+}
+.picker-wraper.isShow .cover{
+  display: block;
+}
+.picker-wraper.isShow .picker-container{
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.picker-container{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+  height: torem(320px);
+  background: #fff;
+  transform: translate3d(0, 100%, 0);
+  transition: transform .25s ease;
+}
+.picker-container.isShow .dt-container{
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.picker-container .picker-header{
+  @include flexbox();
+  height: torem(40px);
+  line-height: torem(40px);
+  border-bottom: 1px solid #e0e0e0;
+  color: #ff7f00;
+}
+.picker-container .picker-header span{
+  @include flex(1);
+  box-sizing: border-box;
+}
+.picker-container .picker-header span.picker-cancle{
+  padding-left:torem(30px);
+  text-align: left;
+}
+.picker-container .picker-header span.picker-confirm{
+  padding-right:torem(30px);
+  text-align:right;
+}
+.picker-container .picker-content{
+  @include flexbox();
+}
+
+.picker .picker-scroller{
+  text-align:center;
+  position: relative;
+  height: torem(280px);
+  overflow: hidden;
+  width: 100%;
+}
+.picker .picker-mask-top{
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: torem(120px);
+  background:linear-gradient(to top, rgba(255,255,255,.5), rgba(255,255,255,.9));
+  border-bottom: 1px solid #e0e0e0;
+}
+.picker .picker-mask-bottom{
+  position: absolute;
+  bottom:0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: torem(120px);
+  background: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(255,255,255,.9));
+  border-top: 1px solid #e0e0e0;  
+}
+.picker .picker-scroller .picker-item{
+  line-height: torem(40px);
+  @include ellipsis();
+
+}
+.picker .isTransition{
+  transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);
+  -webkit-transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);
+}
+

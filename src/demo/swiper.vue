@@ -18,8 +18,7 @@
       return {
           imgs : [
             {
-              imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' , 
-              href:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg'
+              imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' 
             },
             {
               imgUrl:'http://imglf1.nosdn.127.net/img/Q2VpNDBtcGpPQmxuSVRmN1U4OFoxZHhyUmVZOTBBdGdiaHlBNkVsdmtOSkRQdG5SVHdJcGFnPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg' , 
@@ -31,12 +30,6 @@
             }
           ]
         }
-    },
-    mounted(){
-      
-    },
-    methods:{
-      
     },
     components:{
       swiper : swiper

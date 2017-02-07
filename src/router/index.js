@@ -14,7 +14,7 @@ Vue.use(VueRouter)
 
 var routes=[
 	{ 
-      path: '/index',
+      path: '/',
       component: resolve => require(['../demo/swiper.vue'], resolve), 
       name: 'index',
       meta:{title:"index"}

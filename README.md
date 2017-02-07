@@ -1,6 +1,15 @@
-# app
+# VUI
 
-> myapp
+> ui component for V2.0
+
+## Included
+ - **Picker
+ - **addressPicker
+ - **datatime
+ - **dialog
+ - **selectPicker
+ - **switper
+ - **switch
 
 ## Build Setup
 

@@ -1,10 +1,13 @@
 <template>
   <div>
+    <div class="title">default</div>
     <swiper :imgs="imgs"></swiper>
 
-    <swiper class="n2" :imgs="imgs" :defaultIndex="1"></swiper>
+    <div class="title">defaultIndex : 2</div>
+    <swiper :imgs="imgs" :defaultIndex="1"></swiper>
 
-    <swiper class="n2" :auto="true" :imgs="imgs"></swiper>
+    <div class="title">auto play</div>
+    <swiper :auto="true" :imgs="imgs"></swiper>
   </div>
 </template>
 
@@ -18,14 +21,14 @@
       return {
           imgs : [
             {
-              imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' 
+              imgUrl:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3660092960,2510943983&fm=15&gp=0.jpg' 
             },
             {
-              imgUrl:'http://imglf1.nosdn.127.net/img/Q2VpNDBtcGpPQmxuSVRmN1U4OFoxZHhyUmVZOTBBdGdiaHlBNkVsdmtOSkRQdG5SVHdJcGFnPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg' , 
+              imgUrl:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=52317448,4275287853&fm=15&gp=0.jpg' , 
               href:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg'
             },
             {
-              imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' , 
+              imgUrl:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=524793706,3113878690&fm=23&gp=0.jpg' , 
               href:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg'
             }
           ]

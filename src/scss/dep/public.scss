@@ -85,7 +85,17 @@ button.btn{ border:none;}
 .text-left{text-align:left;}
 
 
-//背景黑色半透明遮罩层
+// title
+.title{
+    height: torem(40px);
+    line-height: torem(40px);
+    padding-left: torem(20px);
+    font-size: torem(14px);
+    background:$white;
+}
+
+
+//cover
 .cover{position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.7); }
 
 @include keyframes(fadeInOut) {

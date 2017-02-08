@@ -10,6 +10,7 @@
  - **selectPicker
  - **switper
  - **switch
+ - **countup
 
 ## Build Setup
 

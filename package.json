@@ -1,7 +1,7 @@
 {
-  "name": "app",
+  "name": "VUI",
   "version": "1.0.0",
-  "description": "myapp",
+  "description": "ui component for vue2.0",
   "author": "jlian",
   "private": true,
   "scripts": {
@@ -12,14 +12,12 @@
   },
   "dependencies": {
     "countup.js": "^1.8.1",
-    "md5": "^2.2.1",
     "node-sass": "^3.13.0",
     "sass-loader": "^4.0.2",
     "vue": "^2.0.1",
     "vue-lazyload": "^1.0.0-rc4",
     "vue-resource": "^1.0.3",
     "vue-router": "^2.0.3",
-    "vuex": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

@@ -117,9 +117,11 @@ export default {
   methods:{
     confirmEvent(){
       this.confirmCallback();
+      document.body.removeChild(this.$el);
     },
     cancleEvent(){
       this.cancleCallback();
+      document.body.removeChild(this.$el);
     }
   }
 }

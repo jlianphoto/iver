@@ -15,9 +15,9 @@ Vue.use(VueRouter)
 var routes=[
 	{ 
       path: '/',
-      component: resolve => require(['../demo/swiper.vue'], resolve), 
-      name: 'index',
-      meta:{title:"index"}
+      component: resolve => require(['../demo/demo.vue'], resolve), 
+      name: 'demo',
+      meta:{title:"demo"}
     },
     { 
       path: '/demo/swiper', 
@@ -26,10 +26,22 @@ var routes=[
       meta:{title:"swiper"}
     },
     { 
+      path: '/demo/dialog', 
+      component: resolve => require(['../demo/dialog.vue'], resolve), 
+      name: 'dialog',
+      meta:{title:"dialog"}
+    },
+    { 
       path: '/demo/addressPicker', 
       component: resolve => require(['../demo/addressPicker.vue'], resolve), 
       name: 'addressPicker',
       meta:{title:"addressPicker"}
+    },
+    { 
+      path: '/demo/datetime', 
+      component: resolve => require(['../demo/datetime.vue'], resolve), 
+      name: 'datetime',
+      meta:{title:"datetime"}
     },
     { 
       path: '/demo/countup', 

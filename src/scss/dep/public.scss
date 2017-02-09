@@ -73,7 +73,6 @@ button.btn{ border:none;}
 .list li a.tel { color:#A6A6A6; font-size:torem(16px);}
 .list li span { @include flex(3);height:torem(50px); line-height:torem(50px);}
 .list li label { width:torem(60px);height:torem(50px); line-height:torem(50px);}
-.list li input { border:none; @include flex(1);}
 .list .icon:before{content: ""; display: inline-block; width: torem(22px); height: torem(22px); margin:auto 0; margin-right: torem(10px); background-size: contain; background-repeat: no-repeat; } 
 .list .arrow:after{ @include arrow(45deg); margin:auto 0;}
 
@@ -91,7 +90,6 @@ button.btn{ border:none;}
     line-height: torem(40px);
     padding-left: torem(20px);
     font-size: torem(14px);
-    background:$white;
 }
 
 

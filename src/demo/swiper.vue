@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="title">default</div>
+    <div class="demo-address-title">default</div>
     <swiper :imgs="imgs"></swiper>
 
-    <div class="title">defaultIndex : 2</div>
+    <div class="demo-address-title">defaultIndex : 2</div>
     <swiper :imgs="imgs" :defaultIndex="1"></swiper>
 
-    <div class="title">auto play</div>
+    <div class="demo-address-title">auto play</div>
     <swiper :auto="true" :imgs="imgs"></swiper>
   </div>
 </template>
@@ -41,7 +41,7 @@
 </script>
 
 <style type="text/css">
-  .n2{
-    margin-top: 10px;
+  .demo-address-title{
+    background: #fff;
   }
 </style>

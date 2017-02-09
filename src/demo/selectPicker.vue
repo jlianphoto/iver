@@ -1,6 +1,10 @@
 <template>
   <div>
+    <div class="title">options : ["select","select1","select2","select3"...]</div>
     <select-picker :options="options" v-on:change="getValue">请选择</select-picker>
+
+    <div class="title">defaultVal : select5</div>
+    <select-picker :options="options" v-on:change="getValue" defaultVal="select5">请选择</select-picker>
   </div>
 </template>
 

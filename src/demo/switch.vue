@@ -1,7 +1,17 @@
 <template>
   <div>
-    <v-switch v-on:sChange="getValue" ref="s1"></v-switch>
-    <v-switch v-on:sChange="getValue" :value="true" :disabled="true"></v-switch>
+    <ul class="list">
+      <li>
+        <span>{{switchVal}}</span>
+        <v-switch class="demo-switch" v-on:sChange="getValue" ref="s1"></v-switch>
+      </li>
+      <li>
+        <span>disable :  {{disabled}}</span>
+        <v-switch class="demo-switch" v-on:sChange="getValue" :value="true" :disabled="true"></v-switch>
+      </li>
+    </ul>
+    
+    
   </div>
 </template>
 
@@ -13,7 +23,8 @@
   export default {
     data() {
       return {
-        
+        switchVal:"false",
+        disabled : "true"
       };
     },
     mounted(){
@@ -21,7 +32,7 @@
     },
     methods:{
       getValue(msg){
-        console.log(msg)
+        this.switchVal = msg
       }
     },
     components:{
@@ -31,5 +42,8 @@
 </script>
 
 <style type="text/css">
-
+  .demo-switch{
+    display: flex;
+    align-items:center;
+  }
 </style>

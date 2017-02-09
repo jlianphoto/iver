@@ -32,15 +32,21 @@ npm run build
 
 ```
 
-##Compontents
+## Compontents
 
-###Dialog
+### Dialog
+
+引入:
+```js
+
+import from '../packages/dialog';
+
+```
+
+- toast
 
 ```js
-numAnim.start(someMethodToCallOnComplete);
 
-// or an anonymous function
-numAnim.start(function() {
-    // do something
-})
+toast("message")
+
 ```

@@ -29,6 +29,7 @@
     position: relative ;
     text-align: center;
     padding:torem(10px);
+    margin-bottom:torem(10px);
     h1 img{
       width: 30%;
     }

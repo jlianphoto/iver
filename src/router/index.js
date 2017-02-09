@@ -17,7 +17,7 @@ var routes=[
       path: '/',
       component: resolve => require(['../demo/demo.vue'], resolve), 
       name: 'demo',
-      meta:{title:"demo"}
+      meta:{title:"VUI"}
     },
     { 
       path: '/demo/swiper', 

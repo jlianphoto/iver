@@ -1,5 +1,5 @@
 <template>
-  <div :class="['picker-wraper' , {isShow : isShow}]">
+  <div :class="['picker-wraper' , 'picker-address' , {isShow : isShow}]">
     
     <div class="list">
       <div class="arrow lis" @click="init">

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="demo-address-title">default</div>
+    <div class="demo-address-title title">default</div>
     <swiper :imgs="imgs"></swiper>
 
-    <div class="demo-address-title">defaultIndex : 2</div>
+    <div class="demo-address-title title">defaultIndex : 2</div>
     <swiper :imgs="imgs" :defaultIndex="1"></swiper>
 
-    <div class="demo-address-title">auto play</div>
+    <div class="demo-address-title title">auto play</div>
     <swiper :auto="true" :imgs="imgs"></swiper>
   </div>
 </template>

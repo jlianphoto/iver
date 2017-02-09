@@ -1,15 +1,15 @@
 
 @import "../../../scss/dep/_common";
 
-.list .lis{ height:torem(50px); line-height:torem(50px); border-bottom: 1px solid #e0e0e0; position:relative;padding:0 torem(16px); font-size:torem(14px); @include flexbox();}
-.list .lis:last-child{border:0;}
-.list .lis .tip{ color:#A6A6A6; font-size:torem(14px)}
-.list .lis strong{ @include flex(1);}
-.list .lis a.tel{ color:#A6A6A6; font-size:torem(16px);}
-.list .lis span{height:torem(50px); line-height:torem(50px);}
-.list .lis span:last-child{@include flex(1);padding-right:torem(8px);@include ellipsis()}
-.list .lis label{ width:torem(60px);height:torem(50px); line-height:torem(50px);}
-.list .lis input{ border:none; @include flex(1);}
+.picker-address .list .lis{ height:torem(50px); line-height:torem(50px); border-bottom: 1px solid #e0e0e0; position:relative;padding:0 torem(16px); font-size:torem(14px); @include flexbox();}
+.picker-address .list .lis:last-child{border:0;}
+.picker-address .list .lis .tip{ color:#A6A6A6; font-size:torem(14px)}
+.picker-address .list .lis strong{ @include flex(1);}
+.picker-address .list .lis a.tel{ color:#A6A6A6; font-size:torem(16px);}
+.picker-address .list .lis span{height:torem(50px); line-height:torem(50px); @include flex(0.4)}
+.picker-address .list .lis span:last-child{@include flex(1);padding-right:torem(8px);@include ellipsis()}
+.picker-address .list .lis label{ width:torem(60px);height:torem(50px); line-height:torem(50px);}
+.picker-address .list .lis input{ border:none; @include flex(1);}
 
 
 .placeholder{color:#c9c9c9}

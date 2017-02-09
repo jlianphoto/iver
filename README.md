@@ -3,14 +3,14 @@
 > ui component for V2.0
 
 ## Included
- - **Picker
- - **addressPicker
- - **datatime
- - **dialog
- - **selectPicker
- - **switper
- - **switch
- - **countup
+ - **Picker**
+ - **addressPicker**
+ - **datatime**
+ - **dialog**
+ - **selectPicker**
+ - **switper**
+ - **switch**
+ - **countup**
 
 ## Build Setup
 

@@ -55,11 +55,13 @@ toast("message")
 - alert
 参数接受两种类型:
 
-1.字符串
+1. 字符串
 
-title : 警告框标题
+参数
 
-message : 信息
+* {String} title : 警告框标题
+
+* {String} message : 信息
 
 ```js
 

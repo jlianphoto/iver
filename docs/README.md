@@ -54,17 +54,39 @@ toast("message")
 
 - alert
 参数接受两种类型:
+
 1.字符串
+
 title : 警告框标题
+
 message : 信息
+
 ```js
 
 alert("title" , "message")
 
 ```
 2.对象
+
 title : 警告框标题
+
 message : 信息
+
 confirmCallback : 回调函数
+
 confirmTxt : 确定按钮文字
+```js
+
+alert({
+	title:"title", // default "消息提示"
+	message:"message",
+	confirmTxt:"确认", //default"确认"
+	confirmCallback: fn
+})
+
+
+```
+
+
+- confirm
 

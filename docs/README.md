@@ -12,7 +12,8 @@
  - **switch**
  - **countup**
 
-## Build Setup
+
+## Start
 
 ``` bash
 # install dependencies
@@ -21,7 +22,25 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
+```
+
+## Build
+
+``` bash
 # build for production with minification
 npm run build
 
+```
+
+##Compontents
+
+###Dialog
+
+```js
+numAnim.start(someMethodToCallOnComplete);
+
+// or an anonymous function
+numAnim.start(function() {
+    // do something
+})
 ```

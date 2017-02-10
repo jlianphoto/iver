@@ -162,15 +162,19 @@ export default {
 
 参数
 
-- {String} format : 是否显示区域 , 默认 "YYYY-MM-DD"
-- {String} value : 是否显示区域 , 默认 今天
-- {Number} minYear : 是否显示区域 , 默认 new Date().getFullYear()-10;
-- {Number} maxYear : 是否显示区域 , 默认 new Date().getFullYear()+10;
+- {String} format : 日期格式 , 默认 "YYYY-MM-DD"
+
+可选 "YYYY-MM-DD" , "MM-DD" , "YYYY-MM"
+
+- {String} value : 初始值 , 默认 今天
+
+- {Number} minYear : 可选最小年 , 默认 new Date().getFullYear()-10;
+
+- {Number} maxYear : 可选最大年 , 默认 new Date().getFullYear()+10;
 
 Example
 ```html
 <datetime v-on:change="getValue"></datetime>
-
 ```
 
 ```js
@@ -296,15 +300,15 @@ export default {
     return {
         imgs : [
           {
-            imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' 
+            imgUrl:'url' 
           },
           {
-            imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' , 
-            href:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg'
+            imgUrl:'url'  , 
+            href:'href'
           },
           {
-            imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' , 
-            href:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg'
+            imgUrl:'url'  , 
+            href:'href'
           }
         ]
       }

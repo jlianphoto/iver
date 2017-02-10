@@ -3,7 +3,6 @@
 > ui component for V2.0
 
 ## Included
- - **Picker**
  - **AddressPicker**
  - **Datatime**
  - **Dialog**

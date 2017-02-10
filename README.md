@@ -14,7 +14,7 @@ document (https://jlianphoto.github.io/vui)
  - **datatime**
  - **dialog**
  - **selectPicker**
- - **switper**
+ - **swiper**
  - **switch**
  - **countup**
 

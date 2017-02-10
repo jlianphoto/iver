@@ -8,7 +8,7 @@
  - **Datatime**
  - **Dialog**
  - **SelectPicker**
- - **Switper**
+ - **Swiper**
  - **Switch**
  - **Countup**
 

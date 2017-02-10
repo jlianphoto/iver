@@ -4,6 +4,10 @@
 
 document (https://jlianphoto.github.io/vui)
 
+## demo
+
+(https://github.com/jlianphoto/vui/blob/master/src/img/demo_code.png)
+
 ## Included
  - **Picker**
  - **addressPicker**

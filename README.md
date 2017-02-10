@@ -2,6 +2,8 @@
 
 > ui component for V2.0
 
+document (https://jlianphoto.github.io/vui)
+
 ## Included
  - **Picker**
  - **addressPicker**

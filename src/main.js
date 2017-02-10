@@ -14,10 +14,6 @@ import VueLazyload from 'vue-lazyload'
 // 公用css
 import "./scss/dep/public.scss"
 
-// vuex
-import store from './vuex/store.js'
-
-
 Vue.use(resource)
 
       
@@ -26,7 +22,6 @@ const app = new Vue({
   template: '<App/>',
   components: { App },
   router,
-  store,
 })
 
 router.beforeEach((to, from, next) => {

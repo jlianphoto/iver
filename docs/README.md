@@ -39,7 +39,7 @@ npm run build
 引入:
 ```js
 
-import from '../packages/dialog';
+import dialog from '../packages/dialog';
 
 ```
 
@@ -48,7 +48,7 @@ import from '../packages/dialog';
 
 ```js
 
-toast("message")
+dialog.toast("message")
 
 ```
 
@@ -65,22 +65,22 @@ toast("message")
 
 ```js
 
-alert("title" , "message")
+dialog.alert("title" , "message")
 
 ```
 2.对象
 
-title : 警告框标题
+- {String} title : 警告框标题
 
-message : 信息
+- {String} message : 信息
 
-confirmCallback : 回调函数
+- {Function} confirmCallback : 回调函数
 
-confirmTxt : 确定按钮文字
+- {String} confirmTxt : 确定按钮文字
 
 ```js
 
-alert({
+dialog.alert({
 	title:"title", // default "消息提示"
 	message:"message",
 	confirmTxt:"确认", //default"确认"
@@ -90,6 +90,32 @@ alert({
 
 ```
 
+#### confirm
 
-- confirm
+参数
 
+- {String} title : 警告框标题
+
+- {String} message : 信息
+
+- {Function} confirmCallback : 回调函数
+
+- {Function} cancleCallback : 回调函数
+
+- {String} confirmTxt : 确定按钮文字
+
+- {String} cancleTxt : 取消按钮文字
+
+```js
+
+dialog.confirm({
+	title           :"title", // default "消息提示"
+	message         :"message",
+	confirmTxt      :"确认", //default"确认"
+	cancleTxt       :"确认", //default"取消"
+	confirmCallback : fn,
+	cancleCallback  : fn
+})
+
+
+```

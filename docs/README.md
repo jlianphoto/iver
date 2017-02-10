@@ -119,3 +119,229 @@ dialog.confirm({
 
 
 ```
+
+
+### addressPicker
+
+参数
+
+- {Boolean} hasCounty : 是否显示区域 , 默认 true
+
+- {Array} value : 初始值 , 默认 ["北京" , "北京市" , "东城区"]
+
+Example
+```html
+
+<address-picker v-on:change="getValue">区域:</address-picker>
+
+```
+
+```js
+import address from '../../packages/addressPicker';
+export default {
+   data() {
+     return {
+       value:["广东省","佛山市","南海区"]
+     };
+   },
+   methods:{
+   //get message from child component
+   getValue(msg){
+     console.log(msg);
+    }
+   },
+   components:{
+     addressPicker : address
+   }
+ };
+
+```
+
+
+### datetime (beta)
+
+参数
+
+- {String} format : 是否显示区域 , 默认 "YYYY-MM-DD"
+- {String} value : 是否显示区域 , 默认 今天
+- {Number} minYear : 是否显示区域 , 默认 new Date().getFullYear()-10;
+- {Number} maxYear : 是否显示区域 , 默认 new Date().getFullYear()+10;
+
+Example
+```html
+<datetime v-on:change="getValue"></datetime>
+
+```
+
+```js
+import datetime from '../../packages/datetime';
+export default {
+	methods:{
+	  //get message from child component
+      getValue(msg){
+        console.log(msg)
+      }
+    },
+    components:{
+      datetime : datetime
+    }
+}
+
+```
+
+
+### selectPicker
+
+参数
+
+- {Array} options : options , 默认 []
+- {String} defaultVal : 默认值 , 默认 ""
+
+
+Example
+```html
+<select-picker :options="options" v-on:change="getValue">请选择</select-picker>
+
+```
+
+```js
+import selectPicker from '../packages/selectPicker';
+export default {
+    data() {
+      return {
+        options : ["select","select1","select2","select3","select4"]
+      };
+    },
+    methods:{
+      getValue(msg){
+        console.log(msg)
+      }
+    },
+    components:{
+      selectPicker,
+    }
+  };
+
+```
+
+
+
+
+### countup
+
+依赖 countup.js
+
+参数 
+
+- {Number} startVal : 开始值 , 默认 0
+
+- {Number} endVal : 结束值 , 默认 0
+
+- {Number} decimals : 小数位置 , 默认 0
+
+- {Number} duration : 动画时长 , 默认 2
+
+- {object} options : 缓动 , 默认 {}
+
+```js
+var easeOutCubic = function(t, b, c, d) {
+    var ts = (t /= d) * t;
+    var tc = ts * t;
+    return b + c * (1.77635683940025e-15 * tc * ts + 0.999999999999998 * tc + -3 * ts + 3 * t);
+};
+var options = {
+    easingFn: easeOutCubic
+};
+```
+
+
+
+Example
+```html
+<count-up :startVal="0" :endVal="2000.98" :decimals="2" class="countUp"></count-up>
+
+```
+
+```js
+import datetime from '../../packages/datetime';
+export default {
+   components:{
+     countUp : countUp
+   }
+}
+```
+
+
+### swiper
+
+参数 
+
+- {Array} imgs : 开始值 , 默认 []
+
+- {Number} defaultIndex : 开始值 , 默认 0
+
+- {Boolean} auto : 是否自动轮播 , 默认 false
+
+
+Example
+```html
+<swiper :imgs="imgs" :defaultIndex="1" :auto="true"></swiper>
+
+```
+
+```js
+import swiper from '../packages/swiper';
+export default {
+  data() {
+    return {
+        imgs : [
+          {
+            imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' 
+          },
+          {
+            imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' , 
+            href:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg'
+          },
+          {
+            imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' , 
+            href:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg'
+          }
+        ]
+      }
+  },
+  components:{
+    swiper : swiper
+  }
+};
+
+```
+
+### switch
+
+参数 
+
+- {Boolean} value : 初始值 , 默认 false
+
+- {Boolean} disabled : 是否禁用 , 默认 false
+
+
+Example
+```html
+<v-switch v-on:sChange="getValue" :value="true" :disabled="true"></v-switch>
+
+```
+
+```js
+export default {
+    mounted(){
+		//get initial value	
+      console.log(this.$refs.s1.value)
+   },
+   methods:{
+	   // get value when the value is changed
+     getValue(msg){
+       console.log(msg)
+     }
+   }
+};
+```

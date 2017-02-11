@@ -1,7 +1,7 @@
 <template>
   <div class="vi-swiper" ref="swiper">
     <div @touchstart="touchstart" @touchmove="touchmove"  @touchend="touchend" :class="[{isTransition:isTransition} , 'vi-swiper-wrapper']">
-      <a :href="img.href?img.href:'javascript:;'" v-for="img in imgs">
+      <a href="javascript:;" @click="forward(img.href)" v-for="img in imgs">
         <img :src="img.imgUrl">
       </a>
     </div>
@@ -133,6 +133,9 @@
           }
           this.setNowImg();
         },2000)
+      },
+      forward(href){
+        (!href || href=="") || this.$router.push(href);
       }
     }
   };

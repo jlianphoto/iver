@@ -85,6 +85,8 @@ export default {
       // slow
       this.isTransition = true;
       var time = (new Date().getTime()-this.startTime);
+          time = time>200?10000:time;
+
       var distant =  e.pageY-this.startY;
 
       var offset = this.currentY + distant + 260*(distant/time);

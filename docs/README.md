@@ -356,22 +356,22 @@ export default {
 - {row} class="row"
 - {col} class="col-1" (支持1-12);
 ```html
-<div class="row">
-  <div class="col-4"></div>
-  <div class="col-4"></div>
-  <div class="col-4"></div>
-</div>
+  <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+    <div class="col-4"></div>
+  </div>
 ```
 
 行偏移
 - {col-offset} class="col-offset-4"
 ```html
-<div class="row">
-  <div class="col-4 col-offset-4"></div>
-  <div class="col-4"></div>
-</div>
+  <div class="row">
+      <div class="col-4 col-offset-4"></div>
+      <div class="col-4"></div>
+  </div>
 ```
 
 Example
-![demo](https://github.com/jlianphoto/vui/tree/master/docs/img/grid.png)
+![demo](https://github.com/jlianphoto/vui/blob/master/src/img/grid.png)
 

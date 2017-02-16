@@ -372,24 +372,6 @@ export default {
 </div>
 ```
 
-
 Example
-```html
-<v-switch v-on:sChange="getValue" :value="true" :disabled="true"></v-switch>
+![demo](https://github.com/jlianphoto/vui/tree/master/docs/img/grid.png)
 
-```
-
-```js
-export default {
-    mounted(){
-    //get initial value 
-      console.log(this.$refs.s1.value)
-   },
-   methods:{
-     // get value when the value is changed
-     getValue(msg){
-       console.log(msg)
-     }
-   }
-};
-```

@@ -373,5 +373,6 @@ export default {
 ```
 
 Example
+
 ![demo](https://github.com/jlianphoto/vui/blob/master/src/img/grid.png)
 

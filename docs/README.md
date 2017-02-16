@@ -348,3 +348,48 @@ export default {
    }
 };
 ```
+
+
+### Grid
+
+行和列
+- {row} class="row"
+- {col} class="col-1" (支持1-12);
+```html
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+```
+
+行偏移
+- {col-offset} class="col-offset-4"
+```html
+<div class="row">
+  <div class="col-4 col-offset-4"></div>
+  <div class="col-4"></div>
+</div>
+```
+
+
+Example
+```html
+<v-switch v-on:sChange="getValue" :value="true" :disabled="true"></v-switch>
+
+```
+
+```js
+export default {
+    mounted(){
+    //get initial value 
+      console.log(this.$refs.s1.value)
+   },
+   methods:{
+     // get value when the value is changed
+     getValue(msg){
+       console.log(msg)
+     }
+   }
+};
+```

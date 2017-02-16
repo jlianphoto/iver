@@ -1,5 +1,5 @@
 
-@import "../../../scss/dep/_common";
+@import "../../../scss/_common";
 
 .list .lis{ height:torem(50px); line-height:torem(50px); @include borderBottom(); position:relative;padding:0 torem(16px); font-size:torem(14px); @include flexbox();}
 .list .lis:last-child{border:0;}

@@ -12,7 +12,7 @@ import VueLazyload from 'vue-lazyload'
 
 
 // 公用css
-import "./scss/dep/public.scss"
+import "./scss/public.scss"
 
 Vue.use(resource)
 

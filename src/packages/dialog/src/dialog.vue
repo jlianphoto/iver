@@ -16,7 +16,7 @@
 </template>
 
 <style lang="scss">
-@import "../../../scss/dep/_common";
+@import "../../../scss/_common";
 .toast{
   padding:torem(12px);
   font-size: torem(14px);

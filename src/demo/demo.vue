@@ -24,7 +24,7 @@
 </script>
 
 <style lang="scss">
-@import "../scss/dep/_common";
+@import "../scss/_common";
   .wrapper{
     position: relative ;
     text-align: center;

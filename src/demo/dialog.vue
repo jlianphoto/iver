@@ -49,7 +49,7 @@
 </script>
 
 <style lang="scss">
-  @import "../scss/dep/_common";
+  @import "../scss/_common";
   .padding-content{
     padding:torem(20px);
   }

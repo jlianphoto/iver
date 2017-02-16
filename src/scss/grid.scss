@@ -1,0 +1,28 @@
+@import "_common";
+
+// grid
+@mixin cols(){
+    @for $index from 1 through 12{
+        .row .col-#{$index}{
+           width: $index/12*100%;
+           
+        }
+    }
+}
+
+// offset
+@mixin offset(){
+    @for $index from 1 through 12{
+        .row .col-offset-#{$index}{
+           margin-left : $index/12*100%;
+        }
+    }
+}
+
+
+.row{
+	@include flexbox();
+}
+
+@include cols();
+@include offset();

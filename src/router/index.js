@@ -60,6 +60,12 @@ var routes=[
       component: resolve => require(['../demo/switch.vue'], resolve), 
       name: 'switch',
       meta:{title:"switch"}
+    },
+    { 
+      path: '/demo/grid', 
+      component: resolve => require(['../demo/grid.vue'], resolve), 
+      name: 'gird',
+      meta:{title:"gird"}
     }
 ];
 

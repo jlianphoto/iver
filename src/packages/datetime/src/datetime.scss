@@ -29,7 +29,7 @@
   background: #fff;
   transform: translate3d(0, 100%, 0);
   -webkit-transform: translate3d(0, 100%, 0);
-  transition: transform .3s ease;
+  transition: transform .25s ease;
 }
 .dt-container .dt-header{
   @include flexbox();
@@ -84,6 +84,6 @@
   line-height: torem(40px);
 }
 .dt-container .isTransition{
-  transition: all 0.3s cubic-bezier(0.2, 0.4, 0.58, 1);
-  -webkit-transition: all 0.3s cubic-bezier(0.2, 0.4, 0.58, 1);
+  transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);
+  -webkit-transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);
 }

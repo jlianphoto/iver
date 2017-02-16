@@ -33,10 +33,10 @@
 }
 .picker-container .picker-header{
   @include flexbox();
+  @include borderBottom();
   height: torem(40px);
   line-height: torem(40px);
-  border-bottom: 1px solid #e0e0e0;
-  color: #ff7f00;
+  color: $orange;
 }
 .picker-container .picker-header span{
   @include flex(1);
@@ -69,7 +69,7 @@
   width: 100%;
   height: torem(120px);
   background:linear-gradient(to top, rgba(255,255,255,.5), rgba(255,255,255,.9));
-  border-bottom: 1px solid #e0e0e0;
+  @include borderBottom();
 }
 .picker .picker-mask-bottom{
   position: absolute;

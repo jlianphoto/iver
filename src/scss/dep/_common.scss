@@ -86,6 +86,10 @@ $remBase:$phone/2/320*20px;
 	-o-box-align:center;
 	box-align:center;
 }
+// border-bottom
+@mixin borderBottom(){
+	border-bottom: 1px solid $lineGray;
+}
 //keyframes
 @mixin keyframes($animateName){
 	@-webkit-keyframes #{$animateName}

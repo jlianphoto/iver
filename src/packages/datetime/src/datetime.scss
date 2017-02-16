@@ -1,7 +1,7 @@
 @import "../../../scss/dep/_common";
 
 
-.list .lis{ height:torem(50px); line-height:torem(50px); border-bottom: 1px solid #e0e0e0; position:relative;padding:0 torem(16px); font-size:torem(14px); @include flexbox();}
+.list .lis{ height:torem(50px); line-height:torem(50px); @include borderBottom(); position:relative;padding:0 torem(16px); font-size:torem(14px); @include flexbox();}
 .list .lis:last-child{border:0;}
 .list .lis .tip{ color:#A6A6A6; font-size:torem(14px)}
 .list .lis strong{ @include flex(1);}
@@ -35,8 +35,8 @@
   @include flexbox();
   height: torem(40px);
   line-height: torem(40px);
-  border-bottom: 1px solid #e0e0e0;
-  color: #ff7f00;
+  @include borderBottom();
+  color: $orange;
 }
 .dt-container .dt-header span{
   @include flex(1);
@@ -68,7 +68,7 @@
   width: 100%;
   height: torem(120px);
   background:linear-gradient(to top, rgba(255,255,255,.5), rgba(255,255,255,.9));
-  border-bottom: 1px solid #e0e0e0;
+  @include borderBottom();
 }
 .dt-container .dt-wraper .dt-mask-bottom{
   position: absolute;

@@ -1,7 +1,7 @@
 
 @import "../../../scss/dep/_common";
 
-.list .lis{ height:torem(50px); line-height:torem(50px); border-bottom: 1px solid #e0e0e0; position:relative;padding:0 torem(16px); font-size:torem(14px); @include flexbox();}
+.list .lis{ height:torem(50px); line-height:torem(50px); @include borderBottom(); position:relative;padding:0 torem(16px); font-size:torem(14px); @include flexbox();}
 .list .lis:last-child{border:0;}
 .list .lis .tip{ color:#A6A6A6; font-size:torem(14px)}
 .list .lis strong{ @include flex(1);}

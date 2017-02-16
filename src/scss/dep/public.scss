@@ -4,16 +4,6 @@
 
 //------------------------------------------------app reset------------------------------------------------
 
-* {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-user-select: none;
-	/*-webkit-user-select: text;*/
-	outline: 0;
-	-webkit-tap-highlight-color: transparent;
-	-webkit-tap-highlight-color: transparent;
-}
-
 body {
 	background:#F4F4F4;
 	font-family: 'Helvetica Neue',Helvetica,sans-serif;//mui接近原生字体
@@ -24,41 +14,14 @@ body {
 }
 body.gray{ background:#F4F4F4;}
 a{ text-decoration:none;color:#6f6f6f}
-input,textarea,select,button{ -webkit-appearance: none;}
-.mt10{ margin-top:torem(10px);}
-.mt15{ margin-top:torem(15px);}
-.mt20{ margin-top:torem(20px);}
-.mt30{ margin-top:torem(30px);}
 
-.mr10{ margin-right:torem(10px);}
-.mr15{ margin-right:torem(15px);}
-.mr20{ margin-right:torem(20px);}
-
-.mb10{ margin-bottom:torem(10px);}
-.mb15{ margin-bottom:torem(15px);}
-.mb20{ margin-bottom:torem(20px);}
-
-.ml10{ margin-left:torem(10px);}
-.ml15{ margin-left:torem(15px);}
-.ml20{ margin-left:torem(20px);}
-
-.pt10{ padding-top:torem(10px);}
-.pt15{ padding-top:torem(15px);}
-.pt20{ padding-top:torem(20px);}
-
-.pb10{ padding-bottom:torem(10px);}
-.pb15{ padding-bottom:torem(15px);}
-.pb20{ padding-bottom:torem(20px);}
 
 // font-color
 .text-default{color:#333;}
 .text-orange{color:#ff6632;}
 //-----------------------------------------------btn-------------------------------------------------------
 
-.btnWrap{ text-align:center;padding: 0 torem(20px);}
 .btn {display: block; width: 100%; height: torem(50px); line-height: torem(50px); text-align: center; border-radius: 4px; font-size: torem(18px); background: #fe7547; color: #fff;}
-.btn.btn-default {background: #fff; color:#fe7547; border:1px solid #e5e5e5;}
-.disabled{ background:#ccc;}
 button.btn{ border:none;}
 
 //-----------------------------------------------list------------------------------------------------------

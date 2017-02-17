@@ -14,6 +14,7 @@
   display: block;
 }
 .picker-wraper.isShow .picker-container{
+  transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
 }
 
@@ -26,9 +27,12 @@
   height: torem(320px);
   background: #fff;
   transform: translate3d(0, 100%, 0);
+  -webkit-transform: translate3d(0, 100%, 0);
   transition: transform .25s ease;
+  -webkit-transition: -webkit-transform .25s ease;
 }
 .picker-container.isShow .dt-container{
+  transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
 }
 .picker-container .picker-header{
@@ -57,6 +61,7 @@
 .picker .picker-scroller{
   text-align:center;
   position: relative;
+  z-index: 4;
   height: torem(280px);
   overflow: hidden;
   width: 100%;

@@ -15,6 +15,7 @@
     display: block;
     width: 100%;
     flex-shrink: 0;
+    -webkit-flex-shrink: 0;
 }
 .vi-swiper-wrapper a img{
     width: 100%;

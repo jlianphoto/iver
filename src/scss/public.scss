@@ -1,6 +1,7 @@
 @import "_common";
 @import "reset";
 @import "grid";
+@import "button";
 @include media();
 //------------------------------------------------app reset------------------------------------------------
 body {
@@ -12,40 +13,12 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-body.gray {
-    background: #F4F4F4;
-}
-
 a {
     text-decoration: none;
     color: #6f6f6f
 }
 
-// font-color
-.text-default {
-    color: #333;
-}
 
-.text-orange {
-    color: #ff6632;
-}
-
-//-----------------------------------------------btn-------------------------------------------------------
-.btn {
-    display: block;
-    width: 100%;
-    height: torem(50px);
-    line-height: torem(50px);
-    text-align: center;
-    border-radius: 4px;
-    font-size: torem(18px);
-    background: #fe7547;
-    color: #fff;
-}
-
-button.btn {
-    border: none;
-}
 
 //-----------------------------------------------list------------------------------------------------------
 

@@ -14,6 +14,7 @@
     <router-link to="/demo/dialog" tag="li" class="arrow"><span>dialog</span></router-link>
     <router-link to="/demo/switch" tag="li" class="arrow"><span>switch</span></router-link>
     <router-link to="/demo/grid" tag="li" class="arrow"><span>grid</span></router-link>
+    <router-link to="/demo/button" tag="li" class="arrow"><span>button</span></router-link>
   </ul>
   <footer class="demo-index">by J.Lian</footer>
 </div>

@@ -1,0 +1,35 @@
+@import "_common";
+
+.btn {
+    display: block;
+    width: 100%;
+    height: torem(50px);
+    line-height: torem(50px);
+    text-align: center;
+    border-radius: 4px;
+    font-size: torem(18px);
+    background: $orange;
+    color: #fff;
+    &:active{
+        color: rgba(255, 255, 255, 0.4);
+        background-color: $orangeLight; 
+    }
+}
+
+.btn-inline{
+        display: inline-block;
+        height: torem(20px);
+        line-height: torem(20px);
+        padding: 0 torem(20px);
+        border:1px solid $orange;
+        background: none;
+        color: $orange;
+        border-radius: 4px;
+    &:focus{
+       border:1px solid $orange; 
+    }
+    &:active{
+        background:$orange;
+        color: $white;
+    }
+}

@@ -66,6 +66,12 @@ var routes=[
       component: resolve => require(['../demo/grid.vue'], resolve), 
       name: 'gird',
       meta:{title:"gird"}
+    },
+    { 
+      path: '/demo/button', 
+      component: resolve => require(['../demo/button.vue'], resolve), 
+      name: 'gird',
+      meta:{title:"gird"}
     }
 ];
 

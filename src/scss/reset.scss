@@ -53,7 +53,7 @@ input,textarea,select {
 	font-size: inherit;
 	font-weight: inherit;
 }
-button{border:none}
+button , button:focus{border:none;outline: none;}
 
 input,textarea,select {
 	*font-size: 100%
@@ -63,4 +63,4 @@ legend {
 	color: #000
 }
 i,b{font-weight:normal;font-style:normal;}
-input,textarea,select,button{ -webkit-appearance: none;}
+input,textarea,select,button{ -webkit-appearance: none; }

@@ -1,6 +1,6 @@
 @import "_common";
 
-.btn {
+btn{
     display: block;
     width: 100%;
     height: torem(50px);
@@ -8,28 +8,103 @@
     text-align: center;
     border-radius: 4px;
     font-size: torem(18px);
+}
+btnInline{
+    display: inline-block;
+    height: torem(34px);
+    line-height: torem(34px);
+    padding: 0 torem(20px);
+    background: none;
+    border-radius: 4px;
+}
+
+
+/*btn*/
+.btn {
+    @extend btn;
     background: $orange;
-    color: #fff;
+    color: $white;
     &:active{
-        color: rgba(255, 255, 255, 0.4);
-        background-color: $orangeLight; 
+        background: $orangeLight; 
+    }
+    &.disable{
+        background: $gray;
+    }
+}
+.btn-blue{
+    @extend btn;
+    background: $blue;
+    color: $white;
+    &:active{
+        background : $blueLight;
+    }
+    &.disable{
+        background: $gray;
     }
 }
 
-.btn-inline{
-        display: inline-block;
-        height: torem(20px);
-        line-height: torem(20px);
-        padding: 0 torem(20px);
-        border:1px solid $orange;
-        background: none;
-        color: $orange;
-        border-radius: 4px;
+/*btn-outline*/
+.btn-outline{
+    @extend btn;
+    background: none;
+    border:1px solid $orange;
+    color: $orange;
     &:focus{
        border:1px solid $orange; 
     }
     &:active{
         background:$orange;
+        color: $white;
+    }
+    &.disable{
+        border:1px solid $gray;
+        background: none;
+        color: $gray;
+    }
+}
+.btn-outline-blue{
+    @extend btn;
+    background: none;
+    border:1px solid $blue;
+    color: $blue;
+    &:focus{
+       border:1px solid $blue; 
+    }
+    &:active{
+        background:$blue;
+        color: $white;
+    }
+}
+
+
+/*btn-inline*/
+.btn-inline{
+   @extend btnInline;
+   color: $orange;
+   border:1px solid $orange;
+    &:focus{
+       border:1px solid $orange; 
+    }
+    &:active{
+        background:$orange;
+        color: $white;
+    }
+    &.disable{
+        border:1px solid $gray;
+        background: $gray;
+        color: $white;
+    }
+}
+
+.btn-inline-blue{
+   @extend btnInline;
+   color: $blue;
+   border:1px solid $blue;
+    &:focus{
+       border:1px solid $blue; 
+    }
+    &:active{
+        background:$blue;
         color: $white;
     }
 }

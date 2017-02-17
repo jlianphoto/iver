@@ -16,7 +16,7 @@
     <router-link to="/demo/grid" tag="li" class="arrow"><span>grid</span></router-link>
     <router-link to="/demo/button" tag="li" class="arrow"><span>button</span></router-link>
   </ul>
-  <footer class="demo-index">by J.Lian</footer>
+  <footer class="demo-index">© by J.Lian</footer>
 </div>
 </template>
 
@@ -45,9 +45,9 @@
     color:#bbb;
   }
   footer.demo-index{
-    position: fixed;
     width: 100%;
-    bottom : torem(20px);
+    height:torem(40px);
+    line-height:torem(40px);
     text-align:center;
     font-size:torem(14px);
   }

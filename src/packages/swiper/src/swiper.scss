@@ -29,10 +29,10 @@
 }
 .vi-swiper-dot li{
     @include flex(1);
-    margin-right: 10%;
-    border-radius: 50% 50%;
+    margin-right: torem(8px);
+    border-radius: 50%;
     width: torem(10px);
-    height: torem(8px);
+    height: torem(10px);
     background: $white;
     opacity: .5;
 }

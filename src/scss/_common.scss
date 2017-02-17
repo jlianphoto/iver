@@ -87,7 +87,7 @@ $remBase:$phone/2/320*20px;
 }
 // border-bottom
 @mixin borderBottom(){
-	border-bottom: 1px solid $lineGray;
+	border-bottom: 0.5px solid $lineGray;
 }
 //keyframes
 @mixin keyframes($animateName){

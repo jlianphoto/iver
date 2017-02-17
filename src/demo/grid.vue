@@ -6,7 +6,7 @@
         <div class="col-4"></div>
         <div class="col-4"></div>
       </div>
-      <div class="title">偏移 : col-offset-4</div>
+      <div class="title">offset : col-offset-4</div>
       <div class="row">
         <div class="col-4 col-offset-4"></div>
         <div class="col-4"></div>

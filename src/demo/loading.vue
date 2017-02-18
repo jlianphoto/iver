@@ -18,7 +18,7 @@
 
   export default {
     mounted(){
-      this.$vui.dialog.alert("laji")
+
     },
     methods:{
         show(){

@@ -1,6 +1,6 @@
 <template>
   <div class="vi-swiper" ref="swiper">
-    <div @touchstart="touchstart" @touchmove="touchmove"  @touchend="touchend" :class="[{isTransition:isTransition} , 'vi-swiper-wrapper']">
+    <div @touchstart="touchstart" @touchmove.stop.prevent="touchmove"  @touchend="touchend" :class="[{isTransition:isTransition} , 'vi-swiper-wrapper']">
       <a href="javascript:;" @click="forward(img.href)" v-for="img in imgs">
         <img :src="img.imgUrl">
       </a>
@@ -14,7 +14,6 @@
 
 
 <script type="text/javascript">
-  import './swiper.scss';
 
   export default {
     data(){
@@ -140,3 +139,8 @@
     }
   };
 </script>
+
+
+<style lang="scss">
+  @import "swiper.scss";
+</style>

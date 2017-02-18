@@ -5,7 +5,8 @@
     @for $index from 1 through 12{
         .row .col-#{$index}{
            width: $index/12*100%;
-           
+           float: left;
+           box-sizing:border-box; 
         }
     }
 }
@@ -21,7 +22,14 @@
 
 
 .row{
-	@include flexbox();
+	display:block;
+    &:after{
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        clear: both;
+    }
 }
 
 @include cols();

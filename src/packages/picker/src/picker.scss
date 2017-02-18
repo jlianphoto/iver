@@ -7,10 +7,10 @@
 }
 
 
-.picker-wraper .cover{
+.picker-wraper .v-cover{
   display: none;
 }
-.picker-wraper.isShow .cover{
+.picker-wraper.isShow .v-cover{
   display: block;
 }
 .picker-wraper.isShow .picker-container{
@@ -66,30 +66,34 @@
   overflow: hidden;
   width: 100%;
 }
-.picker .picker-mask-top{
+maskTop{
   position: absolute;
-  top:0;
   left: 0;
   z-index: 3;
   width: 100%;
   height: torem(120px);
-  background:linear-gradient(to top, rgba(255,255,255,.5), rgba(255,255,255,.9));
-  @include borderBottom();
+  display: none;
+}
+.picker .picker-mask-top{
+  @extend maskTop;
+  top:0;
+  background-image:linear-gradient(to top, rgba(255,255,255,.5), rgba(255,255,255,.9));
+  background-image:-webkit-linear-gradient(bottom, rgba(255,255,255,.5), rgba(255,255,255,.9)); 
+  border-bottom: 1px solid $lineGray;
 }
 .picker .picker-mask-bottom{
-  position: absolute;
+  @extend maskTop;
   bottom:0;
-  left: 0;
-  z-index: 3;
-  width: 100%;
-  height: torem(120px);
-  background: linear-gradient(to bottom, rgba(255,255,255,.5), rgba(255,255,255,.9));
-  border-top: 1px solid #e0e0e0;  
+  background-image:linear-gradient(to bottom, rgba(255,255,255,.5), rgba(255,255,255,.9));
+  background-image:-webkit-linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,.9)); 
+  border-top: 1px solid $lineGray;  
+}
+.picker-container .showMask .picker-mask-top , .picker-container .showMask .picker-mask-bottom{
+  display: block;
 }
 .picker .picker-scroller .picker-item{
   line-height: torem(40px);
   @include ellipsis();
-
 }
 .picker .isTransition{
   transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);

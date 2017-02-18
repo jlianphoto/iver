@@ -72,6 +72,12 @@ var routes=[
       component: resolve => require(['../demo/button.vue'], resolve), 
       name: 'button',
       meta:{title:"button"}
+    },
+    { 
+      path: '/demo/loading', 
+      component: resolve => require(['../demo/loading.vue'], resolve), 
+      name: 'loading',
+      meta:{title:"loading"}
     }
 ];
 

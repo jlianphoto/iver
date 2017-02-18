@@ -7,7 +7,6 @@
 
 
 <script type="text/javascript">
-  import './switch.scss';
 
   export default {
     data(){
@@ -35,3 +34,7 @@
     }
   };
 </script>
+
+<style lang="scss">
+  @import "switch.scss";
+</style>

@@ -14,8 +14,6 @@
 
 <script type="text/javascript">
 
-import './picker.scss'
-
 export default {
   name: 'picker',
   data(){
@@ -71,7 +69,7 @@ export default {
       var e = e.changedTouches[0];
 
       var offset = this.currentY + e.pageY - this.startY;
-      el.style.webkitTransform = +`translate3d(0, ${offset}px, 0)`;
+      el.style.webkitTransform = `translate3d(0, ${offset}px, 0)`;
     },
     touchend(e){
       //获取元素
@@ -123,3 +121,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  @import "picker.scss";
+</style>

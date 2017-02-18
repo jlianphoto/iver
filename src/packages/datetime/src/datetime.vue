@@ -8,8 +8,7 @@
       </div>
     </div>
 
-
-    <div class="dt-container" ref="container">
+    <div :class="['dt-container', {showMask:showMask}]" ref="container">
       <div class="dt-header">
         <span class="dt-cancle" @click="cancleHandler">取消</span>
         <span class="dt-confirm" @click="confirmHandler">确认</span>
@@ -43,7 +42,7 @@
       </div>
     </div>
 
-    <div class="cover" @click="cancleHandler"></div>
+    <div class="v-cover" @click="cancleHandler"></div>
   </div>
 </template>
 
@@ -51,13 +50,12 @@
 
 <script type="text/javascript">
 
-import './datetime.scss'
-
 export default {
   name: 'datetime',
   data(){
     return {
       isShow : false,
+      showMask   : false,
       isTransition:true,
       startY:null,
       startTime:null,
@@ -370,6 +368,10 @@ export default {
         this[type].style.webkitTransform = `translate3d(0, ${offset}px, 0)`;
       }
       this.isShow = true;
+      // be compatible with ISO10
+      setTimeout(()=>{
+        this.showMask = true;
+      },150)
     },
 
     /*
@@ -393,9 +395,14 @@ export default {
     */ 
     cancleHandler(){
       this.isShow = false;
+      this.showMask = false;
     }
 
 
   }
 }
 </script>
+
+<style lang="scss">
+  @import "datetime.scss";
+</style>

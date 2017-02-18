@@ -11,9 +11,40 @@
         <button class="cancle" v-show="isShow" @click="cancleEvent">{{cancleTxt}}</button>
       </div>
     </div>
-    <div class="cover" v-if='type=="dialogBox"'></div>
+    <div class="v-cover" v-if='type=="dialogBox"'></div>
   </div>
 </template>
+
+
+
+<script type="text/javascript">
+
+export default {
+  name: 'dialog',
+  props:{
+    message:String,
+    confirmTxt:String,
+    cancleTxt:String,
+    type:String,
+    title:String,
+    isShow:Boolean,
+    callback:null,
+    cancleCallback:null
+  },
+  methods:{
+    confirmEvent(){
+      this.confirmCallback();
+      document.body.removeChild(this.$el);
+    },
+    cancleEvent(){
+      this.cancleCallback();
+      document.body.removeChild(this.$el);
+    }
+  }
+}
+</script>
+
+
 
 <style lang="scss">
 @import "../../../scss/_common";
@@ -99,30 +130,3 @@
   border-left: 1px solid #f0f0f0;
 }
 </style>
-
-<script type="text/javascript">
-
-export default {
-  name: 'dialog',
-  props:{
-    message:String,
-    confirmTxt:String,
-    cancleTxt:String,
-    type:String,
-    title:String,
-    isShow:Boolean,
-    callback:null,
-    cancleCallback:null
-  },
-  methods:{
-    confirmEvent(){
-      this.confirmCallback();
-      document.body.removeChild(this.$el);
-    },
-    cancleEvent(){
-      this.cancleCallback();
-      document.body.removeChild(this.$el);
-    }
-  }
-}
-</script>

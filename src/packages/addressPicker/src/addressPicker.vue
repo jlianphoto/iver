@@ -13,20 +13,19 @@
         <span class="picker-cancle" @click="cancleHandler">取消</span>
         <span class="picker-confirm" @click="confirmHandler">确认</span>
       </div>
-      <div class="wrapper picker-content" >
+      <div :class="['wrapper','picker-content' , {showMask:showMask}]" >
         <picker :nowIndex="provinceIndex.nowIndex" :dataArr="provinceData" v-on:change="changeProvince" :isShow="isShow"></picker>
         <picker :nowIndex="cityIndex.nowIndex" :dataArr="cityData" v-on:change="changeCity"></picker>
         <picker :nowIndex="countyIndex.nowIndex" :dataArr="countyData" v-on:change="changeCounty" v-if="hasCounty"></picker>
       </div>
     </div>
-    <div class="cover" @click="cancleHandler"></div>
+    <div class="v-cover" @click="cancleHandler"></div>
   </div>
 </template>
 
 
 
 <script type="text/javascript">
-  import './addresPicker.scss';
 
   import AreaData from './AreaData.json';
   import picker from '../../picker';
@@ -37,6 +36,7 @@
     data() {
       return {
         isShow:false,
+        showMask:false,
         placeholder:true,
         showText:"",
         addressCash:{},
@@ -189,6 +189,7 @@
       // cancle handler
       cancleHandler(){
         this.isShow = false;
+        this.showMask = false;
         this.setCity(this.provinceIndex.nowIndex);
 
         if (this.hasCounty) {
@@ -200,6 +201,12 @@
         this.$children.forEach( function(item) {
           item.init()
         });
+
+        // be compatible with ISO10
+        setTimeout(()=>{
+          this.showMask = true;
+        },120);
+
       },
     },
     components:{
@@ -207,3 +214,7 @@
     }
   };
 </script>
+
+<style lang="scss">
+  @import "addresPicker.scss"
+</style>

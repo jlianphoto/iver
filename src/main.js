@@ -12,7 +12,7 @@ import VueLazyload from 'vue-lazyload'
 
 
 // 公用css
-import "./scss/public.scss"
+import "./scss/index.scss"
 
 // 兼容ios active 效果
 document.body.addEventListener('touchstart', function () {});  

@@ -30,7 +30,9 @@
   background: #fff;
   transform: translate3d(0, 100%, 0);
   -webkit-transform: translate3d(0, 100%, 0);
-  transition: transform .25s ease};
+  transition: transform .25s ease;
+  -webkit-transition: -webkit-transform .25s ease;
+  };
 
 .dt-container .dt-header{
   @include flexbox();

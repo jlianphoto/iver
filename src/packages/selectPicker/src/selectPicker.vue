@@ -24,7 +24,7 @@
 
 
 <script type="text/javascript">
-
+  import './selectPicker.scss';
   import picker from '../../picker';
 
   export default {
@@ -105,7 +105,3 @@
     }
   };
 </script>
-
-<style lang="scss">
-  @import "selectPicker.scss";
-</style>

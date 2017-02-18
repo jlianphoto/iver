@@ -17,7 +17,7 @@
 
 
 <script type="text/javascript">
-
+  import './loading.scss';
   export default {
     data(){
       return {
@@ -32,8 +32,3 @@
     }
   };
 </script>
-
-<style lang="scss">
-  @import "loading.scss";
-  
-</style>

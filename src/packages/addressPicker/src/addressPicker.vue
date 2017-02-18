@@ -27,9 +27,11 @@
 
 <script type="text/javascript">
 
+  import './addresPicker.scss';
+  
   import AreaData from './AreaData.json';
   import picker from '../../picker';
-
+  
 
 
   export default {
@@ -215,6 +217,3 @@
   };
 </script>
 
-<style lang="scss">
-  @import "addresPicker.scss"
-</style>

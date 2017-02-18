@@ -14,7 +14,7 @@
 
 
 <script type="text/javascript">
-
+  import './swiper.scss';
   export default {
     data(){
       return {
@@ -139,8 +139,3 @@
     }
   };
 </script>
-
-
-<style lang="scss">
-  @import "swiper.scss";
-</style>

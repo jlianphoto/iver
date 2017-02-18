@@ -50,6 +50,8 @@
 
 <script type="text/javascript">
 
+import './datetime.scss';
+
 export default {
   name: 'datetime',
   data(){
@@ -402,7 +404,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  @import "datetime.scss";
-</style>

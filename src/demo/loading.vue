@@ -17,6 +17,9 @@
   import loading from '../packages/loading';
 
   export default {
+    mounted(){
+      this.$vui.dialog.alert("laji")
+    },
     methods:{
         show(){
           loading.show();

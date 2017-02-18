@@ -10,6 +10,8 @@ import resource from 'vue-resource'
 //图片懒加载
 import VueLazyload from 'vue-lazyload'
 
+import Vui from './plugin/all/'
+
 
 // 公用css
 import "./scss/index.scss"
@@ -19,6 +21,7 @@ document.body.addEventListener('touchstart', function () {});
 
 
 Vue.use(resource)
+Vue.use(Vui)
 
       
 const app = new Vue({

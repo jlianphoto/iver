@@ -20,7 +20,12 @@ let loading = {
         document.body.appendChild(component.$el);
     },
     hide : (msg)=>{
-        document.body.removeChild(component.$el)
+        try {
+            document.body.removeChild(component.$el)
+        } catch(e) {
+            
+        }
+        
         lock = true;
     }
 }

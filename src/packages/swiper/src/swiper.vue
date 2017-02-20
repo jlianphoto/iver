@@ -81,7 +81,7 @@
         this.el.style.webkitTransform = `translate3d(${offset}px, 0, 0)`;
       },
       touchend(e){
-
+        this.isTransition = true;
         e = e.changedTouches[0];
 
         var distant = e.pageX - this.startX,
@@ -97,12 +97,11 @@
             this.index = (this.index < 0)?0:this.index;
           }
         }
-        this.setNowImg();
+        setTimeout(()=>{this.setNowImg()},0)
+        
 
         //init
-        this.isTransition = true;
         this.startX = 0;
-
         this.auto && this.autoSwiper();
 
       },

@@ -80,7 +80,6 @@ export default {
       this.startTime = new Date().getTime();
     },
     touchmove(e){
-      var el = e.currentTarget.querySelector('ul');
       var e = e.changedTouches[0];
 
       var offset = this.currentY + e.pageY - this.startY;
@@ -89,11 +88,9 @@ export default {
       
     },
     touchend(e){
-      //获取元素
-      var el = e.currentTarget.querySelector('ul');
 
       //获取li的个数
-      var length = el.querySelectorAll('li').length;
+      var length = this.picker.querySelectorAll('li').length;
       
       var e = e.changedTouches[0];
     
@@ -118,7 +115,7 @@ export default {
 
       this.currentY=offset;
 
-      el.style.webkitTransform = `translate3d(0, ${offset}px ,0)`;
+      this.picker.style.webkitTransform = `translate3d(0, ${offset}px ,0)`;
 
       // change index after rolling
       var index = offset/this.itemH-3;

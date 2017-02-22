@@ -259,7 +259,7 @@ export default {
       var e = e.changedTouches[0];
 
       var offset = this.currentY[type] + e.pageY - this.startY;
-      el.style.webkitTransform = `translate3d(0, ${offset}px, 0)`;
+      setTimeout(()=>{el.style.webkitTransform = `translate3d(0, ${offset}px, 0)`;},0);
     },
     touchend(e){
 

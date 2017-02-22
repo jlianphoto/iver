@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="wrapper">
+    <div class="demo-wrapper">
       <h1><img src="../img/logo.png" alt="vui"></h1>
-      <p class="demo-index-title">VUI</p>
-      <p class="demo-index-des">Light ui component for v2.0</p>
+      <p class="demo-index-title">I V E R</p>
+      <p class="demo-index-des">Light ui component for vue2.0</p>
     </div>
     <ul class="list">
       <router-link to="/demo/swiper" tag="li" class="arrow"><span>Swiper</span></router-link>
@@ -28,18 +28,21 @@
 
 <style lang="scss">
 @import "../scss/_common";
-  .wrapper{
+  .demo-wrapper{
     position: relative ;
     text-align: center;
     padding:torem(10);
     margin-bottom:torem(10);
     h1 img{
       width: 30%;
+      position: relative;
+      right:torem(2);
     }
   }
   .demo-index-title{
       font-weight:bold;
       color: #41b883;
+      margin:torem(10) 0;
       font-size : torem(20);
     }
   .demo-index-des{

@@ -2,7 +2,7 @@
 
 > ui component for V2.0
 
-document (https://jlianphoto.github.io/vui)
+document (https://jlianphoto.github.io/iver)
 
 ## demo
 

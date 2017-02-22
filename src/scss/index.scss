@@ -10,7 +10,7 @@
 body {
     background: #F4F4F4;
     font-family: 'Helvetica Neue', Helvetica, sans-serif; //mui接近原生字体
-    font-size: torem(16px);
+    font-size: torem(16);
     color: $textDefault;
     -webkit-overflow-scrolling: touch;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -43,10 +43,10 @@ a {
 
 // title
 .title {
-    height: torem(40px);
-    line-height: torem(40px);
-    padding-left: torem(20px);
-    font-size: torem(14px);
+    height: torem(40);
+    line-height: torem(40);
+    padding-left: torem(20);
+    font-size: torem(14);
 }
 
 //v-cover

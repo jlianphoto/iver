@@ -37,9 +37,9 @@
   background:$white;
 }
 .demo-loading  ul{
-  padding:torem(10px);
+  padding:torem(10);
 }
 .demo-loading li{
-  margin-top:torem(10px);
+  margin-top:torem(10);
 }
 </style>

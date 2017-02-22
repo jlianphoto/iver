@@ -3,17 +3,17 @@
 btn{
     display: block;
     width: 100%;
-    height: torem(50px);
-    line-height: torem(50px);
+    height: torem(50);
+    line-height: torem(50);
     text-align: center;
     border-radius: 4px;
-    font-size: torem(18px);
+    font-size: torem(18);
 }
 btnInline{
     display: inline-block;
-    height: torem(34px);
-    line-height: torem(34px);
-    padding: 0 torem(20px);
+    height: torem(34);
+    line-height: torem(34);
+    padding: 0 torem(20);
     background: none;
     border-radius: 4px;
 }

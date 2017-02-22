@@ -2,7 +2,7 @@
 
 .vi-swiper{
     width: 100%;
-    min-height: torem(140px);
+    min-height: torem(140);
     background:$white;
     overflow: hidden;
     position: relative;
@@ -23,17 +23,17 @@
 
 .vi-swiper-dot {
     position: absolute;
-    bottom: torem(10px);
+    bottom: torem(10);
     left: 50%;
     transform: translate(-50%);
     @include flexbox();
 }
 .vi-swiper-dot li{
     @include flex(1);
-    margin-right: torem(8px);
+    margin-right: torem(8);
     border-radius: 50%;
-    width: torem(10px);
-    height: torem(10px);
+    width: torem(10);
+    height: torem(10);
     background: $white;
     opacity: .5;
 }

@@ -18,8 +18,8 @@
     position: absolute; 
     top: 50%;
     left: 64%;
-    width: torem(50px);
-    height: torem(50px);
+    width: torem(50);
+    height: torem(50);
     transform: translate(-50%,-50%) scale(0.87);
     -webkit-transform: translate(-50%,-50%) scale(0.87);
 }
@@ -99,18 +99,18 @@
         background: rgba(0,0,0,.5);
         top: 50%;
         left: 50%;
-        width: torem(150px);
-        height: torem(150px);
+        width: torem(150);
+        height: torem(150);
         transform: translate(-50%,-50%);
         -webkit-transform: translate(-50%,-50%);
-        border-radius: torem(6px);
+        border-radius: torem(6);
     }
 
 .v-loading-msg {
-    font-size:torem(16px);
+    font-size:torem(16);
     color: $white;
     position: absolute;
-    bottom:torem(20px);
+    bottom:torem(20);
     width: 100%;
     text-align: center;
   }

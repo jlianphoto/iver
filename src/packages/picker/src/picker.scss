@@ -24,7 +24,7 @@
   bottom: 0;
   z-index: 1000;
   width: 100%;
-  height: torem(320px);
+  height: torem(320);
   background: #fff;
   transform: translate3d(0, 100%, 0);
   -webkit-transform: translate3d(0, 100%, 0);
@@ -38,8 +38,8 @@
 .picker-container .picker-header{
   @include flexbox();
   @include borderBottom();
-  height: torem(40px);
-  line-height: torem(40px);
+  height: torem(40);
+  line-height: torem(40);
   color: $orange;
 }
 .picker-container .picker-header span{
@@ -47,11 +47,11 @@
   box-sizing: border-box;
 }
 .picker-container .picker-header span.picker-cancle{
-  padding-left:torem(30px);
+  padding-left:torem(30);
   text-align: left;
 }
 .picker-container .picker-header span.picker-confirm{
-  padding-right:torem(30px);
+  padding-right:torem(30);
   text-align:right;
 }
 .picker-container .picker-content{
@@ -62,7 +62,7 @@
   text-align:center;
   position: relative;
   z-index: 4;
-  height: torem(280px);
+  height: torem(280);
   overflow: hidden;
   width: 100%;
 }
@@ -71,7 +71,7 @@ maskTop{
   left: 0;
   z-index: 3;
   width: 100%;
-  height: torem(120px);
+  height: torem(120);
   display: none;
 }
 .picker .picker-mask-top{
@@ -92,7 +92,7 @@ maskTop{
   display: block;
 }
 .picker .picker-scroller .picker-item{
-  line-height: torem(40px);
+  line-height: torem(40);
   @include ellipsis();
 }
 .picker .isTransition{

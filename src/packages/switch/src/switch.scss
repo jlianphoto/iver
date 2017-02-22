@@ -5,8 +5,8 @@
     -moz-appearance: none;
     appearance: none;
     position: relative;
-    width: torem(52px);
-    height: torem(32px);
+    width: torem(52);
+    height: torem(32);
     border: 1px solid #DFDFDF;
     outline: 0;
     border-radius: 16px;
@@ -19,9 +19,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: torem(50px);
-    height: torem(30px);
+    width: torem(50);
+    height: torem(30);
     border-radius: 15px;
+    -webkit-border-radius: 15px;
     background-color: #FDFDFD;
     -webkit-transition: -webkit-transform .3s;
     transition: -webkit-transform .3s;
@@ -34,15 +35,15 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: torem(30px);
-    height: torem(30px);
+    width: torem(30);
+    height: torem(30);
     border-radius: 15px;
     background-color: $white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     -webkit-transition: -webkit-transform .3s;
     transition: -webkit-transform .3s;
     transition: transform .3s;
-    transition: transform .3s, -webkit-transform .3s
+    transition: transform .3s, -webkit-transform .3s;
 }
 
 .vi-switch:checked {
@@ -56,6 +57,6 @@
 }
 
 .vi-switch:checked:after {
-    -webkit-transform: translateX(torem(20px));
-    transform: translateX(torem(20px))
+    -webkit-transform: translateX(torem(20));
+    transform: translateX(torem(20))
 }

@@ -4,7 +4,7 @@
 //base
 $phone:750;
 $url:'../../img/';
-$remBase:$phone/2/320*20px;
+$remBase:$phone/2/320*20;
 //font-size
 @function torem($size) {
   $remSize: $size / $remBase;
@@ -60,9 +60,9 @@ $remBase:$phone/2/320*20px;
 @mixin arrow($deg){
 	content: '';
 	display:inline-block;
-	margin-top:torem(-5px);
-	width:torem(10px);
-	height:torem(10px);
+	margin-top:torem(-5);
+	width:torem(10);
+	height:torem(10);
 	border-right:1px solid #C7C7C7;
 	border-top:1px solid #C7C7C7;
 	@include transform(rotate($deg));

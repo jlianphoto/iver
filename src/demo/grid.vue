@@ -50,7 +50,7 @@ export default {
     background: yellowgreen;
   }
   .demo-grid .row.example div{
-    padding:torem(10px);
+    padding:torem(10);
     background : $white;
     height:auto;
   }

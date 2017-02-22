@@ -53,10 +53,6 @@ export default {
       this.picker.style.webkitTransform = `translate3d(0, ${offset}px ,0)`;
     }
   },
-  created(){
-    
-    
-  },
   mounted(){
     this.picker = this.$refs.picker;
     this.itemH = this.$refs.picker.querySelector("li").offsetHeight;
@@ -64,8 +60,8 @@ export default {
     //  be compatible with ios8 ， there is still no solution which i can find
     let ver = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
         ver = ver?parseInt(ver[1], 10):null;
-    if(ver<=8 && ver) { 
-      this.setTransform = offset=>{this.picker.style.webkitTransform = `translate(0, ${offset}px)`;}
+    if(ver && ver<=8) { 
+      this.setTransform = offset=>{this.picker.style.webkitTransform = `translate(0, ${offset})`;}
     }else{
       this.setTransform = offset=>{this.picker.style.webkitTransform = `translate3d(0, ${offset}px ,0)`;}
     }
@@ -115,7 +111,8 @@ export default {
 
       this.currentY=offset;
 
-      this.picker.style.webkitTransform = `translate3d(0, ${offset}px ,0)`;
+      //be compatible with the low vision android
+      setTimeout(()=>{this.setTransform(offset)},0)
 
       // change index after rolling
       var index = offset/this.itemH-3;
@@ -129,7 +126,7 @@ export default {
       this.index = this.nowIndex;
       this.currentY = -(this.nowIndex-3)*this.itemH;
       var offset = -(this.nowIndex-3)*this.itemH;
-      this.picker.style.webkitTransform = `translate3d(0, ${offset}px ,0)`;
+     this.setTransform(offset);
 
     },
 

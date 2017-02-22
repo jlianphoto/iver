@@ -1,7 +1,7 @@
 @import "../../../scss/_common";
 .toast{
-  padding:torem(12px);
-  font-size: torem(14px);
+  padding:torem(12);
+  font-size: torem(14);
   color: #fff;
   background: rgba(0,0,0,.5);
   border-radius: 4px;
@@ -50,26 +50,26 @@
   overflow: hidden;
 }
 .dialog-header{
-  padding: torem(10px);
-  font-size: torem(20px);
+  padding: torem(10);
+  font-size: torem(20);
 }
 .dialog-content{
-  font-size: torem(16px);
+  font-size: torem(16);
   color: #666;
   text-align: center;
-  padding: torem(5px) torem(10px) torem(10px) torem(10px);
+  padding: torem(5) torem(10) torem(10) torem(10);
 }
 .dialog-footer{
     position: relative;
-    line-height: torem(40px);
-    margin-top: torem(10px);
+    line-height: torem(40);
+    margin-top: torem(10);
     border-top: 1px solid #f0f0f0;
     @include flexbox();
 }
 .dialog-footer button{
   width: 100%;
-  height: torem(40px);
-  font-size: torem(16px);
+  height: torem(40);
+  font-size: torem(16);
   background: #fff;
   @include flex(1);
 }

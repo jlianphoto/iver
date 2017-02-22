@@ -31,8 +31,8 @@
   .wrapper{
     position: relative ;
     text-align: center;
-    padding:torem(10px);
-    margin-bottom:torem(10px);
+    padding:torem(10);
+    margin-bottom:torem(10);
     h1 img{
       width: 30%;
     }
@@ -40,17 +40,17 @@
   .demo-index-title{
       font-weight:bold;
       color: #41b883;
-      font-size : torem(20px);
+      font-size : torem(20);
     }
   .demo-index-des{
     color:#bbb;
   }
   footer.demo-index{
     width: 100%;
-    height:torem(40px);
-    line-height:torem(40px);
+    height:torem(40);
+    line-height:torem(40);
     text-align:center;
-    font-size:torem(14px);
+    font-size:torem(14);
   }
 
 </style>

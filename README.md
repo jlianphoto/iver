@@ -9,13 +9,16 @@ document (https://jlianphoto.github.io/iver)
 ![demo](https://github.com/jlianphoto/vui/blob/master/src/img/demo_code.png)
 
 ## Included
- - **addressPicker**
- - **datatime**
- - **dialog**
- - **selectPicker**
+ - **Grid**
+ - **Button**
+ - **Swiper**
+ - **CountUp**
+ - **Datetime**
+ - **AddressPicker**
  - **swiper**
- - **switch**
- - **countup**
+ - **Dialog**
+ - **Switch**
+ - **Loading**
 
 ## Build Setup
 

@@ -16,6 +16,7 @@
 <script type="text/javascript">
   import './swiper.scss';
   export default {
+    name:"swiper",
     data(){
       return {
         isTransition:false,

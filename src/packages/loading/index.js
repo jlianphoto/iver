@@ -16,6 +16,6 @@
 
 
 import loading from './src/loading.js';
-module.exports = loading;
+export default loading;
 
 

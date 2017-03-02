@@ -10,18 +10,16 @@ import resource from 'vue-resource'
 //图片懒加载
 import VueLazyload from 'vue-lazyload'
 
-import Vui from './plugin/all/'
+import iver from './plugin/all/'
 
-
-// 公用css
-import "./scss/index.scss"
+import './scss/index.scss'
 
 // 兼容ios active 效果
 document.body.addEventListener('touchstart', function () {});  
 
 
 Vue.use(resource)
-Vue.use(Vui)
+Vue.use(iver)
 
       
 const app = new Vue({

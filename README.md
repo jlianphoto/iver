@@ -1,4 +1,4 @@
-# VUI
+# IVER
 
 > ui component for V2.0
 
@@ -24,12 +24,13 @@ document (https://jlianphoto.github.io/iver)
 
 ``` bash
 # install dependencies
-npm install
+npm install -S iver
 
-# serve with hot reload at localhost:8080
-npm run dev
+# use all components
+import {iver} from 'iver';
+Vue.use(iver);
 
-# build for production with minification
-npm run build
-
+# on demand
+import  {component's name} from 'vvxui'
+Vue.component(component.name, component);
 ```

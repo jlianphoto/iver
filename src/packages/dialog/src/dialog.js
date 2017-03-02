@@ -23,7 +23,7 @@ const dialogConstructor = Vue.extend(require('./dialog.vue'));
 let lock = true;
 
 // 创建组件
-let createComponent = ()=>{
+let createComponent = function(){
 	return new dialogConstructor({
 		el : document.createElement('div')
 	})

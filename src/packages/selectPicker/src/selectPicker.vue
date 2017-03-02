@@ -28,6 +28,7 @@
   import picker from '../../picker';
 
   export default {
+    name:"selectPicker",
     data() {
       return {
         isShow:false,

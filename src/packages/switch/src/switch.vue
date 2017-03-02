@@ -10,6 +10,7 @@
   import './switch.scss';
   
   export default {
+    name:"vswitch",
     data(){
       return {
         currentValue : this.value

@@ -259,7 +259,7 @@ export default {
       var e = e.changedTouches[0];
 
       var offset = this.currentY[type] + e.pageY - this.startY;
-      setTimeout(()=>{el.style.webkitTransform = `translate3d(0, ${offset}px, 0)`;},0);
+      el.style.webkitTransform = `translate3d(0, ${offset}px, 0)`;
     },
     touchend(e){
 
@@ -279,7 +279,7 @@ export default {
           
       var distant =  e.pageY-this.startY;
 
-      var offset = this.currentY[type] + distant + 260*(distant/time);
+      var offset = this.currentY[type] + distant + 290*(distant/time);
 
       offset = Math.round(offset/this.itemH)*this.itemH;
 

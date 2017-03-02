@@ -5,7 +5,7 @@ let defaultMsg = "加载中..."
 const loadConstructor = Vue.extend(require('./loading.vue'));
 let lock = true;
 // 创建组件
-let createComponent = ()=>{
+let createComponent = function(){
     return new loadConstructor({
         el : document.createElement('div')
     })

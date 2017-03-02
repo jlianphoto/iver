@@ -35,6 +35,7 @@
 
 
   export default {
+    name : "addressPicker",
     data() {
       return {
         isShow:false,

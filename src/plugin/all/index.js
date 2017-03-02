@@ -2,21 +2,21 @@ import loading from '../../packages/loading';
 import dialog from '../../packages/dialog';
 
 
-var Vui = {};
+var iver = {};
 
-Vui.install = function (Vue, options) {
+iver.install = function (Vue, options) {
 
-	Vue.$vui = {
+	Vue.$iver = {
 		loading : loading,
 		dialog : dialog
 	};
   	//注入组件
   	Vue.mixin({
     	created: function () {
-      		this.$vui = Vue.$vui
+      		this.$iver = Vue.$iver
     	}
   	})
 
 }
 
-export default Vui;
+export default iver;

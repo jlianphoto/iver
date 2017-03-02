@@ -352,6 +352,7 @@ export default {
 
 ### Css
 
+#### Grid
 行和列
 - {row} class="row"
 - {col} class="col-1" (支持1-12);
@@ -372,7 +373,8 @@ export default {
   </div>
 ```
 
-Example
-
-![demo](https://github.com/jlianphoto/vui/blob/master/src/img/grid.png)
-
+#### Button
+- {default} class="btn"
+- {outline} class="btn-outline"
+- {inline}  class="btn-inline"
+- {color}   default(orange) optional(blue)

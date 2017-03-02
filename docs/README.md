@@ -374,7 +374,9 @@ export default {
 ```
 
 #### Button
-- {default} class="btn"
-- {outline} class="btn-outline"
-- {inline}  class="btn-inline"
-- {color}   default(orange) optional(blue)
+```js
+{default} class="btn"
+{outline} class="btn-outline"
+{inline}  class="btn-inline"
+{color}   default(orange) btn  ,  optional(blue) btn-blue
+```

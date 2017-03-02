@@ -16,17 +16,17 @@
 
 ## Start
 
-``` bash
-# install dependencies
+
+### install dependencies
 npm install -S iver
 
-# use all components
+### use all components
 ```js
 import {iver} from 'iver';
 Vue.use(iver);
 ```js
 
-# on demand
+### on demand
 ```js
 import  {component's name} from 'vvxui'
 Vue.component(component.name, component);

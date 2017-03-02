@@ -385,6 +385,7 @@ export default {
 };
 ```
 
+
 ##Plugin
 inject dialog and loading into Vue
 

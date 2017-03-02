@@ -3,7 +3,6 @@
 > ui component for V2.0
 
 ## Included
- - **AddressPicker**
  - **Grid**
  - **Button**
  - **Swiper**
@@ -15,25 +14,21 @@
  - **Switch**
  - **Loading**
 
-
 ## Start
 
 ``` bash
 # install dependencies
-npm install
+npm install -S iver
 
-# serve with hot reload at localhost:8080
-npm run dev
+# use all components
+import {iver} from 'iver';
+Vue.use(iver);
 
+# on demand
+import  {component's name} from 'vvxui'
+Vue.component(component.name, component);
 ```
 
-## Build
-
-``` bash
-# build for production with minification
-npm run build
-
-```
 
 ## Compontents
 
@@ -42,7 +37,7 @@ npm run build
 引入:
 ```js
 
-import dialog from '../packages/dialog';
+import {dialog} from 'iver';
 
 ```
 
@@ -140,7 +135,7 @@ Example
 ```
 
 ```js
-import address from '../../packages/addressPicker';
+import {addressPicker} from 'iver';
 export default {
    data() {
      return {
@@ -181,7 +176,7 @@ Example
 ```
 
 ```js
-import datetime from '../../packages/datetime';
+import {datetime} from 'iver';
 export default {
 	methods:{
 	  //get message from child component
@@ -212,7 +207,7 @@ Example
 ```
 
 ```js
-import selectPicker from '../packages/selectPicker';
+import {selectPicker} from 'iver';
 export default {
     data() {
       return {
@@ -270,7 +265,7 @@ Example
 ```
 
 ```js
-import datetime from '../../packages/datetime';
+import {datetime} from 'iver';
 export default {
    components:{
      countUp : countUp
@@ -297,7 +292,7 @@ Example
 ```
 
 ```js
-import swiper from '../packages/swiper';
+import {swiper} from 'iver';
 export default {
   data() {
     return {
@@ -339,6 +334,7 @@ Example
 ```
 
 ```js
+import {vswitch} from 'iver';
 export default {
     mounted(){
 		//get initial value	
@@ -354,7 +350,7 @@ export default {
 ```
 
 
-### Grid
+### Css
 
 行和列
 - {row} class="row"

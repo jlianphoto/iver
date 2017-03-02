@@ -18,7 +18,9 @@
 
 
 ### install
+```js
 npm install -S iver
+```
 
 ### use all components
 ```js

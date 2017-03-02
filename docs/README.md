@@ -390,7 +390,8 @@ inject dialog and loading into Vue
 
 ```js
   import {iverPlugin} from 'iver'
-
+  Vue.use(iverPlugin)
+  
   this.$iver.dialog
   this.$iver.loading
 ```

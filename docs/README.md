@@ -30,7 +30,7 @@ Vue.use(iver);
 
 ### on demand
 ```js
-import  {component's name} from 'iver'
+import  {component} from 'iver'
 Vue.component(component.name, component);
 ```
 

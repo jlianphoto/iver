@@ -21,13 +21,49 @@
 npm install -S iver
 
 # use all components
+```js
 import {iver} from 'iver';
 Vue.use(iver);
+```js
 
 # on demand
+```js
 import  {component's name} from 'vvxui'
 Vue.component(component.name, component);
 ```
+
+
+## Css
+
+### Grid
+行和列
+- {row} class="row"
+- {col} class="col-1" (支持1-12);
+```html
+  <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+  </div>
+```
+
+行偏移
+- {col-offset} class="col-offset-4"
+```html
+  <div class="row">
+      <div class="col-4 col-offset-4"></div>
+      <div class="col-4"></div>
+  </div>
+```
+
+### Button
+```js
+{default} class="btn"
+{outline} class="btn-outline"
+{inline}  class="btn-inline"
+{color}   default(orange) btn  ,  optional(blue) btn-blue
+```
+
 
 
 ## Compontents
@@ -349,34 +385,12 @@ export default {
 };
 ```
 
+##Plugin
+inject dialog and loading into Vue
 
-### Css
-
-#### Grid
-行和列
-- {row} class="row"
-- {col} class="col-1" (支持1-12);
-```html
-  <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4"></div>
-      <div class="col-4"></div>
-  </div>
-```
-
-行偏移
-- {col-offset} class="col-offset-4"
-```html
-  <div class="row">
-      <div class="col-4 col-offset-4"></div>
-      <div class="col-4"></div>
-  </div>
-```
-
-#### Button
 ```js
-{default} class="btn"
-{outline} class="btn-outline"
-{inline}  class="btn-inline"
-{color}   default(orange) btn  ,  optional(blue) btn-blue
+  import {iverPlugin} from 'iver'
+
+  this.$iver.dialog
+  this.$iver.loading
 ```

@@ -1,14 +1,15 @@
 <template>
   <div class="desktop">
     <canvas ref="canvas"></canvas>
+
     <div class="wrapper">
-      <img src="../img/logo-desktop.png">
-      <h1>LIVER</h1>
+      <img :class="['animated' , {fadeInDown:show}]" src="../img/logo-desktop.png" ref="imgs">
+      <h1>IVER</h1>
       <p>ui components for VUE2.0</p>
       <nav>
-        <a href="#/demo/demo">demo</a>
-        <a href="https://jlianphoto.github.io/iver/#/">docs</a>
-        <a href="https://github.com/jlianphoto/iver">github</a>
+        <a :class="['animated' , {fadeInUp:nav[0].show}]" href="#/demo/demo">demo</a>
+        <a :class="['animated' , {fadeInUp:nav[1].show}]" href="https://jlianphoto.github.io/iver/#/">docs</a>
+        <a :class="['animated' , {fadeInUp:nav[2].show}]" href="https://github.com/jlianphoto/iver">github</a>
       </nav>
     </div>
   </div>
@@ -18,9 +19,37 @@
 <script type="text/javascript">
 
 export default {
+  data(){
+    return {
+        show : false,
+        nav  : [
+            {show : false},
+            {show : false},
+            {show : false}
+        ]
+    }
+  },
   mounted(){
 
-    var canvas = this.$refs.canvas;
+    var canvas = this.$refs.canvas,
+        imgs   = this.$refs.imgs;
+        imgs.onload = ()=>{
+            this.show = true;
+
+            setTimeout(()=> {
+                this.nav.forEach(function(item,index){
+                    var time = (index+1)*200;
+                    setTimeout(()=>{
+                        item.show = true;
+                    },time)
+                })
+            }, 50);
+
+        }
+
+
+
+    // canvas
     let w = window.innerWidth,
         h = window.innerHeight;
 
@@ -110,6 +139,7 @@ export default {
 
 <style lang="scss" scope>
 @import '../scss/_common';
+@import '../scss/animate';
 .desktop {
     canvas{
         position: fixed;
@@ -124,7 +154,10 @@ export default {
         margin:0 auto;
         text-align:center;
         img{
+            opacity: 0;
             width: 50%;
+            min-width:torem(140);
+            min-height:torem(140);
             margin-bottom:torem(50);
         }
         h1{
@@ -151,6 +184,7 @@ export default {
             @include flexbox();
             margin-top:torem(40);
             a{
+                opacity: 0;
                 @include flex(1);
                 color:#90cdff;
                 font-size:torem(20);

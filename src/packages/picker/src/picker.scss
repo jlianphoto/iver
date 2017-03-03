@@ -37,7 +37,7 @@
 }
 .picker-container .picker-header{
   @include flexbox();
-  @include borderBottom();
+  border-bottom:1px solid $lineGray;
   height: torem(40);
   line-height: torem(40);
   color: $orange;

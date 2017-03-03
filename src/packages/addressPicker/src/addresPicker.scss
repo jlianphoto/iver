@@ -2,7 +2,7 @@
 .picker-address .list .lis {
     height: torem(50);
     line-height: torem(50);
-    @include borderBottom();
+    border-bottom:1px solid $lineGray;
     position: relative;
     padding: 0 torem(16);
     font-size: torem(14);
@@ -32,7 +32,9 @@
     line-height: torem(50);
     @include flex(0.4)
 }
-
+.picker-address .list .lis span:first-child{
+    text-align: left;
+}
 .picker-address .list .lis span:last-child {
     @include flex(1);
     padding-right: torem(8);

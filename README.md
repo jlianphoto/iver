@@ -31,6 +31,6 @@ import {iver} from 'iver';
 Vue.use(iver);
 
 # on demand
-import  {component's name} from 'vvxui'
+import  {component} from 'vvxui'
 Vue.component(component.name, component);
 ```

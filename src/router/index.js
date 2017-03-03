@@ -13,11 +13,17 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 var routes=[
-	{ 
+	  { 
       path: '/',
+      component: resolve => require(['../demo/index.vue'], resolve), 
+      name: 'index',
+      meta:{title:"IVER"}
+    },
+    { 
+      path: '/demo/demo',
       component: resolve => require(['../demo/demo.vue'], resolve), 
       name: 'demo',
-      meta:{title:"VUI"}
+      meta:{title:"IVER"}
     },
     { 
       path: '/demo/swiper', 

@@ -93,6 +93,7 @@ maskTop{
 }
 .picker .picker-scroller .picker-item{
   line-height: torem(40);
+  display: block;
   @include ellipsis();
 }
 .picker .isTransition{

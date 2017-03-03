@@ -37,6 +37,19 @@ Vue.component(component.name, component);
 
 ## Css
 
+### Response
+sass
+
+```js
+$phone: 750;  //设计图尺寸
+$remBase:$phone/3200; //基准值
+@function torem($size) {
+  $remSize: $size / $remBase;
+  @return $remSize * 1rem;
+}
+```
+
+
 ### Grid
 行和列
 - {row} class="row"
@@ -267,7 +280,7 @@ export default {
 
 
 
-### countup
+### countUp
 
 依赖 countup.js
 

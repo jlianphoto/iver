@@ -40,12 +40,12 @@ export default {
             //随机大小
             this.r = rand(8, 14);
             //随机位置
-            var x = rand(0,canvas.width - this.r);//仿制超出右边界
+            var x = rand(0,canvas.width - this.r);//防止超出右边界
             this.x = x<this.r ? this.r:x;
             var y = rand(0,canvas.height - this.r);
             this.y = y<this.r ? this.r:y;
             //随机速度
-            var speed = rand(6, 8);
+            var speed = rand(8, 12);
             this.speedX = rand(0, 4) > 2 ? speed : -speed;
             this.speedY = rand(0, 4) > 2 ? speed : -speed;
 
@@ -72,11 +72,11 @@ export default {
         }
         Round.prototype.move = function() {
                 this.x += this.speedX/10;
-                if (this.x > canvas.width  || this.x < 0) {
+                if (this.x > canvas.width-this.r  || this.x-this.r < 0) {
                     this.speedX *= -1;
                 }
                 this.y += this.speedY/10;
-                if (this.y > canvas.height  || this.y < 0) {
+                if (this.y > canvas.height-this.r  || this.y-this.r < 0) {
                     this.speedY *= -1;
                 }
             }
@@ -124,8 +124,8 @@ export default {
         margin:0 auto;
         text-align:center;
         img{
-            width: 60%;
-            margin-bottom:torem(30);
+            width: 50%;
+            margin-bottom:torem(50);
         }
         h1{
             padding:torem(20) 0;

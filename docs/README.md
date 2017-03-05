@@ -1,6 +1,6 @@
 # IVER
 
-> ui component for V2.0
+> ui component for VUE2.0
 
 ## Included
  - **Grid**

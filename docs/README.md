@@ -414,11 +414,11 @@ export default {
 
 - {Number} cycle : 转动圈数 , 默认 20
 
-- {Object} beforeLottery : 抽奖前处理函数 , 可用于发送请求获取结果 , 必须定义
+- {Function} beforeLottery : 抽奖前处理函数 , 可用于发送请求获取结果 , 必须定义
 
 `beforeLottery` 需要引入两个参数 `resolve` 成功之后调用 , reject失败之后调用,可在`reject`里面写回调函数
 
-- {Object} afterLottery : 抽奖结束回调函数 , 用于处理结果
+- {Function} afterLottery : 抽奖结束回调函数 , 用于处理结果
 
 
 Example

@@ -56,9 +56,9 @@
         default(){throw new Error("you must define beforeLottery before draw a lottery ")}
      },
 
-     resultHandler:{
+     afterLottery:{
       type : Function,
-      default(){console.warn("you can use resultHandler after rolling")}
+      default(){console.warn("you can use afterLottery after rolling")}
      },
 
      prize:{
@@ -166,7 +166,7 @@
           return false;
       },
       _showResult(){
-        this.resultHandler();
+        this.afterLottery();
       }
     }
   };

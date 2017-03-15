@@ -418,12 +418,12 @@ export default {
 
 `beforeLottery` 需要引入两个参数 `resolve` 成功之后调用 , reject失败之后调用,可在`reject`里面写回调函数
 
-- {Object} resultHandler : 抽奖结束回调函数 , 用于处理结果
+- {Object} afterLottery : 抽奖结束回调函数 , 用于处理结果
 
 
 Example
 ```html
-<lottery :beforeLottery="beforeLottery" :lotteryBtn="lotteryBtn" :prizesList="prizesList" :prize="prize" :resultHandler="resultHandler"></lottery>
+<lottery :beforeLottery="beforeLottery" :lotteryBtn="lotteryBtn" :prizesList="prizesList" :prize="prize" :afterLottery="afterLottery"></lottery>
 
 ```
 
@@ -464,7 +464,7 @@ Example
           },10)
 
       },
-      resultHandler(){
+      afterLottery(){
         alert("draw"+ this.prize)
       }
     },

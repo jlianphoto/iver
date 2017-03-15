@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lottery :beforeLottery="beforeLottery" :lotteryBtn="lotteryBtn" :prizesList="prizesList" :prize="prize" :resultHandler="resultHandler"></lottery>
+    <lottery :beforeLottery="beforeLottery" :lotteryBtn="lotteryBtn" :prizesList="prizesList" :prize="prize" :afterLottery="afterLottery"></lottery>
   </div>
 </template>
 
@@ -42,7 +42,7 @@
           },10)
 
       },
-      resultHandler(){
+      afterLottery(){
         alert("draw"+ this.prize)
       }
     },

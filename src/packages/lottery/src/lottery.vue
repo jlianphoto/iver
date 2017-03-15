@@ -30,7 +30,8 @@
         timer:null,    
         times:0,
         speedData:100,
-        lock :false
+        lock :false,
+        afterLotteryHandler:null
       }
     },
     props:{
@@ -84,6 +85,10 @@
     },
     created(){
       this.speedData = this.speed;
+      this.afterLotteryHandler = this.afterLottery;
+    },
+    beforeDestroy(){
+      this.afterLotteryHandler = ()=>{};
     },
     methods:{
       startLottery(){
@@ -166,7 +171,7 @@
           return false;
       },
       _showResult(){
-        this.afterLottery();
+        this.afterLotteryHandler();
       }
     }
   };

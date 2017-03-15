@@ -2,6 +2,8 @@
 
 > ui component for VUE2.0
 
+> docs by J.Lian
+
 ## Included
  - **Grid**
  - **Button**
@@ -10,6 +12,7 @@
  - **Datetime**
  - **AddressPicker**
  - **swiper**
+ - **lottery**
  - **Dialog**
  - **Switch**
  - **Loading**

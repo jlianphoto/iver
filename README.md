@@ -16,6 +16,7 @@ document (https://jlianphoto.github.io/iver)
  - **Datetime**
  - **AddressPicker**
  - **swiper**
+ - **lottery**
  - **Dialog**
  - **Switch**
  - **Loading**

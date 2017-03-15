@@ -410,3 +410,90 @@ inject dialog and loading into Vue
   this.$iver.dialog
   this.$iver.loading
 ```
+
+
+
+### lottery
+
+参数 
+
+- {Array} prizesList  : 抽奖图片数组 , 默认 []
+
+- {Object} lotteryBtn : 抽奖按钮图片 , 默认 {img : ""}
+
+- {Number} prize : 中奖位置 , 默认 0
+
+- {Number} speed : 抽奖按钮图片 , 默认 100
+
+- {Number} cycle : 转动圈数 , 默认 20
+
+- {Object} beforeLottery : 抽奖前处理函数 , 可用于发送请求获取结果 , 必须定义
+
+`beforeLottery` 需要引入两个参数 `resolve` 成功之后调用 , reject失败之后调用,可在`reject`里面写回调函数
+
+- {Object} resultHandler : 抽奖结束回调函数 , 用于处理结果
+
+
+Example
+```html
+<lottery :beforeLottery="beforeLottery" :lotteryBtn="lotteryBtn" :prizesList="prizesList" :prize="prize" :resultHandler="resultHandler"></lottery>
+
+```
+
+```js
+
+  import lottery from '../packages/lottery';
+
+  export default {
+    data() {
+      return {
+        prize:0,
+        prizesList:[
+          require("../img/lottery/icon-lottery-prize4.png"),
+          require("../img/lottery/icon-lottery-prize2.png"),
+          require("../img/lottery/icon-lottery-prize1.png"),
+          require("../img/lottery/icon-lottery-prize3.png"),
+          require("../img/lottery/icon-lottery-prize5.png"),
+          require("../img/lottery/icon-lottery-prize6.png"),
+          require("../img/lottery/icon-lottery-prize7.png"),
+          require("../img/lottery/icon-lottery-prize8.png"),
+        ],
+        lotteryBtn:{
+          img : require("../img/lottery/icon-lottery-btn.png")
+        }
+      }
+    },
+    methods:{
+      beforeLottery(resolve,reject){
+
+          /*
+          * send ajax to get result and pass to child component
+          **/ 
+          
+          // get result : this.prize
+          setTimeout(()=>{
+            this.prize = 1;
+            resolve();
+          },10)
+
+      },
+      resultHandler(){
+        alert("draw"+ this.prize)
+      }
+    },
+    components:{
+      lottery:lottery
+    }
+  };
+```
+
+## Plugin
+inject dialog and loading into Vue
+
+```js
+  import {iverPlugin} from 'iver'
+  Vue.use(iverPlugin)
+  
+  this.$iver.dialog
+  this.$iver.loading
+```

@@ -1,38 +1,70 @@
 /*
-* plugin swiper
+* plugin lottery
 *
-* @param imgs  Array : img url and href in object;
+* @param prizesList  Array : prize img in the lottery;
 *		 default : []
-* @param defaultIndex Number: default of img;
+* @param lotteryBtn Object : button of lottery;
+*	     default : {img : ""}
+*
+* @param prize Number: Winning position;
 *	     default : 0
 *
-* @param auto Boolean: if auto play;
-*	     default : false
+* @param speed Number: rolling speed;
+*	     default : 100
+*
+* @param cycle Number: rotation number ;
+*	     default : 20
+*
+* @param lotteryHandler Function: the Function before the start of lottery;
+*	     default : Necessary
+*
+* @param resultHandler Function: the Function after rolling;
+*	     default : null
 *
 *
 * Example
-* <swiper :imgs="imgs" :defaultIndex="1" :auto="true"></swiper>
-* import swiper from '../packages/swiper';
+  import lottery from '../packages/lottery';
+*
 *  export default {
 *    data() {
 *      return {
-*          imgs : [
-*            {
-*              imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' 
-*            },
-*            {
-*              imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' , 
-*              href:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg'
-*            },
-*            {
-*              imgUrl:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg' , 
-*              href:'http://img2.imgtn.bdimg.com/it/u=3205972290,1389369162&fm=23&gp=0.jpg'
-*            }
-*          ]
+*        prize:0,
+*        prizesList:[
+*          require("../img/lottery/icon-lottery-prize4.png"),
+*          require("../img/lottery/icon-lottery-prize2.png"),
+*          require("../img/lottery/icon-lottery-prize1.png"),
+*          require("../img/lottery/icon-lottery-prize3.png"),
+*          require("../img/lottery/icon-lottery-prize5.png"),
+*          require("../img/lottery/icon-lottery-prize6.png"),
+*          require("../img/lottery/icon-lottery-prize7.png"),
+*          require("../img/lottery/icon-lottery-prize8.png"),
+*        ],
+*        lotteryBtn:{
+*          img : require("../img/lottery/icon-lottery-btn.png")
 *        }
+*      }
+*    },
+*    methods:{
+*      lotteryHandler(){
+*	
+*          //send ajax to get result and pass to child component
+*          // get result : this.prize
+*          setTimeout(()=>{
+*            this.prize = 1;
+*            // start rolling
+*            if (!this.$refs.lottery.lock) {
+*              this.$refs.lottery.lock = true;
+*              this.$refs.lottery.roll();
+*            }
+*          },10)
+*      
+*      },
+*      resultHandler(){
+*        alert("draw"+ this.prize)
+*      }
 *    },
 *    components:{
-*      swiper : swiper
+*      lottery:lottery
 *    }
 *  };
 *

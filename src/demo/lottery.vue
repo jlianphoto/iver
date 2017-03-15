@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lottery ref="lottery" :lotteryHandler="lotteryHandler" :lotteryBtn="lotteryBtn" :prizesList="prizesList" :prize="prize" :resultHandler="resultHandler"></lottery>
+    <lottery :beforeLottery="beforeLottery" :lotteryBtn="lotteryBtn" :prizesList="prizesList" :prize="prize" :resultHandler="resultHandler"></lottery>
   </div>
 </template>
 
@@ -29,7 +29,7 @@
       }
     },
     methods:{
-      lotteryHandler(){
+      beforeLottery(resolve,reject){
 
           /*
           * send ajax to get result and pass to child component
@@ -38,13 +38,8 @@
           // get result : this.prize
           setTimeout(()=>{
             this.prize = 1;
-            // start rolling
-            if (!this.$refs.lottery.lock) {
-              this.$refs.lottery.lock = true;
-              this.$refs.lottery.roll();
-            }
+            resolve();
           },10)
-          
 
       },
       resultHandler(){

@@ -6,7 +6,7 @@
         </li>
         <li class="row">
           <div :class="['col-4' , {active : activeClass[7]}]"><img :src="prizesList[7]"></div>
-          <div class="col-4" @click="lotteryHandler"><img :src="lotteryBtn.img"></div>
+          <div class="col-4" @click="startLottery"><img :src="lotteryBtn.img"></div>
           <div :class="['col-4' , {active : activeClass[3]}]"><img :src="prizesList[3]"></div>
         </li>
         <li class="row">
@@ -29,7 +29,7 @@
         count:8,
         timer:null,    
         times:0,
-        speed :100,
+        speedData:100,
         lock :false
       }
     },
@@ -51,9 +51,9 @@
       }
      },
 
-     lotteryHandler:{
+     beforeLottery:{
         type : Function,
-        default(){throw new Error("you must define lotteryHandler before draw a lottery ")}
+        default(){throw new Error("you must define beforeLottery before draw a lottery ")}
      },
 
      resultHandler:{
@@ -82,7 +82,34 @@
         return this.prizesList.slice(4,7).reverse();
       }
     },
+    created(){
+      this.speedData = this.speed;
+    },
     methods:{
+      startLottery(){
+        if (!this.lock) {
+          let promise = ()=>{
+            return new Promise((resolve , reject)=>{
+                this.lock = true;
+                this.beforeLottery(resolve,reject);
+            })
+          }
+
+          let start = async ()=> {
+            try {
+              await promise();
+
+              this.roll();
+            } catch(e) {
+                e()    
+            }
+              
+          };
+
+          start();
+        }
+
+      },
       _rollHandler(){
           var index = this.index;
           var count = this.count;
@@ -116,25 +143,25 @@
               this.index=-1;
               this.count=8;
               this.timer=null;    
-              this.speed=100;
+              this.speedData=this.speed;
               this.times=0;
 
           }else{
               if (this.times<this.cycle) {
-                  this.speed -= 2; //调整加速度
+                  this.speedData -= 2; //调整加速度
               }else{
                 if (this.times > this.cycle+10 && ((this.prize==0 && this.index==7) || this.prize==this.index+1)) {
-                    this.speed += 110;
+                    this.speedData += 110;
                 }else{
-                    this.speed += 20;
+                    this.speedData += 20;
                 }
               }
-              if (this.speed<40) {
-                  this.speed=40;
+              if (this.speedData<40) {
+                  this.speedData=40;
               };
               this.timer = setTimeout(
                   ()=>{this.roll();}
-              ,this.speed);
+              ,this.speedData);
           }
           return false;
       },

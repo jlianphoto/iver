@@ -153,7 +153,7 @@
 
           }else{
               if (this.times<this.cycle) {
-                  this.speedData -= 2; //调整加速度
+                  this.speedData -= 2;
               }else{
                 if (this.times > this.cycle+10 && ((this.prize==0 && this.index==7) || this.prize==this.index+1)) {
                     this.speedData += 110;

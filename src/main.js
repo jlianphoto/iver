@@ -11,6 +11,7 @@ import resource from 'vue-resource'
 import VueLazyload from 'vue-lazyload'
 
 import iver from './plugin/all/'
+import loading from './packages/loading'
 
 import './scss/index.scss'
 
@@ -30,9 +31,13 @@ const app = new Vue({
 })
 
 router.beforeEach((to, from, next) => {
-  
+  loading.show()
   document.title = to.meta.title;
   next();
+})
+
+router.afterEach((to)=>{
+	loading.hide()
 })
 
 

@@ -426,13 +426,13 @@ export default {
 
 Example
 ```html
-<lottery :beforeLottery="beforeLottery" :lotteryBtn="lotteryBtn" :prizesList="prizesList" :prize="prize" :afterLottery="afterLottery"></lottery>
+<lottery :beforeLottery="beforeLottery" :afterLottery="afterLottery" :lotteryBtn="lotteryBtn" :prizesList="prizesList" :prize="prize"></lottery>
 
 ```
 
 ```js
 
-  import lottery from '../packages/lottery';
+  import {lottery} from 'iver';
 
   export default {
     data() {

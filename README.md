@@ -2,6 +2,8 @@
 
 > ui component for V2.0
 
+[![npm](https://img.shields.io/npm/v/iver.svg?style=flat-square)](https://www.npmjs.com/package/iver)
+
 document (https://jlianphoto.github.io/iver)
 
 ## demo

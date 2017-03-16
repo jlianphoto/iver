@@ -1,5 +1,7 @@
 # IVER
 
+[![npm](https://img.shields.io/npm/v/iver.svg?style=flat-square)](https://www.npmjs.com/package/iver)
+
 > ui component for VUE2.0
 
 > docs by J.Lian

@@ -415,13 +415,13 @@ export default {
 
 - {Number} prize : 中奖位置 , 默认 0
 
-- {Number} speed : 抽奖按钮图片 , 默认 100
+- {Number} speed : 速度 , 默认 100
 
-- {Number} cycle : 转动圈数 , 默认 20
+- {Number} cycle : 转动次数 , 默认 20
 
 - {Function} beforeLottery : 抽奖前处理函数 , 可用于发送请求获取结果 , 必须定义
 
-`beforeLottery` 需要引入两个参数 `resolve` 成功之后调用 , reject失败之后调用,可在`reject`里面写回调函数
+`beforeLottery` 需要引入两个参数 `resolve` 成功之后调用 , `reject`失败之后调用,可在`reject`里面写回调函数
 
 - {Function} afterLottery : 抽奖结束回调函数 , 用于处理结果
 

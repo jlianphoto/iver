@@ -321,7 +321,7 @@ Example
 ```
 
 ```js
-import {datetime} from 'iver';
+import {countUp} from 'iver';
 export default {
    components:{
      countUp : countUp

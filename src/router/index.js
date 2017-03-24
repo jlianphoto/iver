@@ -90,6 +90,12 @@ var routes=[
       component: resolve => require(['../demo/lottery.vue'], resolve), 
       name: 'lottery',
       meta:{title:"lottery"}
+    },
+    { 
+      path: '/demo/dropDown', 
+      component: resolve => require(['../demo/dropDown.vue'], resolve), 
+      name: 'dropDown',
+      meta:{title:"dropDown"}
     }
 ];
 

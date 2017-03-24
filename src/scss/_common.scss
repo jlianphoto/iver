@@ -23,7 +23,12 @@ $remBase:$phone/2/320*20;
 }
 
 
-
+//ellipsis
+@mixin ellipsis(){
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
 //flexbox
 @mixin flexbox(){
@@ -36,12 +41,6 @@ $remBase:$phone/2/320*20;
   	//NEW - Chrome
   	display: -webkit-flex;
   	display: flex;
-}
-//ellipsis
-@mixin ellipsis(){
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 //flex
 @mixin flex($per){

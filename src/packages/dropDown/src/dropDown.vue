@@ -45,7 +45,15 @@
       }
     },
     props:{
-    
+      dropDownData:{
+        type    : Array,
+        default(){
+          return []
+        }
+      }
+    },
+    created(){
+      console.log(this.dropDownData)
     },
     methods:{
       

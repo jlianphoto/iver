@@ -1,32 +1,25 @@
 <template>
   <div class="vi-dropDown">
       <ul class="vi-dropDown-nav">
-        <li>深圳</li>
-        <li>薪酬</li>
-        <li>排序</li>
+        <li v-for="(title , index) in titleText" @click="changeTab(index)">{{title}}</li>
       </ul>
       <div class="vi-dropDown-wrapper">
-        <div class="vi-dropDown-list active">
-            <ul>
-              <li>asdfasdf</li>
-            </ul>
-            <ul>
-              <li>asdfasdf</li>
-            </ul>
-            <ul>
-              <li>asdfasdf</li>
-            </ul>
-        </div>
         <div class="vi-dropDown-list">
+          <ul>
+              <li  v-for="item in firstArr">{{item}}</li>
+          </ul>
+          <template v-if="secondArr.length>0">
             <ul>
-              <li>asdfasdf</li>
-            </ul>
-        </div>
-        <div class="vi-dropDown-list">
+              <li  v-for="item in secondArr">{{item}}</li>
+            </ul>             
+          </template>
+          <template v-if="thirdArr.length>0">
             <ul>
-              <li>asdfasdf</li>
-            </ul>
+              <li  v-for="item in thirdArr">{{item}}</li>
+            </ul>             
+          </template>
         </div>
+
       </div>
       <div class="vi-dropDown-cover"></div>
   </div>
@@ -41,7 +34,27 @@
     name:"dropDown",
     data(){
       return {
-        
+        titleText:[],
+        firstArr:[],
+        secondArr:[],
+        thirdArr:[],
+        dropDownList:[
+          {
+            firstArr:[],
+            secondArr:[],
+            thirdArr:[],
+          },
+          {
+            firstArr:[],
+            secondArr:[],
+            thirdArr:[],
+          },
+          {
+            firstArr:[],
+            secondArr:[],
+            thirdArr:[],
+          }
+        ]
       }
     },
     props:{
@@ -53,10 +66,56 @@
       }
     },
     created(){
-      console.log(this.dropDownData)
+      this.dropDownData.forEach((item , i)=>{
+          this.titleText.push(item.name);
+
+          item.children.forEach(firstItem=>{
+            this.dropDownList[i].firstArr.push(firstItem.name);
+
+            if (firstItem.children) {
+              firstItem.children.forEach(secondItem=>{
+                this.dropDownList[i].secondArr.push(secondItem.name)
+              })
+            }
+          })
+        })
+
+
+
+
+      console.log(this.dropDownList)
+
+
+
+
+
+
+
+
+      
+      this.dropDownData[0].children.forEach(item=>{
+        this.firstArr.push(item.name);
+      })
+
+      if (this.dropDownData[0].children[0].children[0]) {
+        this.dropDownData[0].children[0].children.forEach(item=>{
+          this.secondArr.push(item.name)
+        })
+      }
+
+      if (this.dropDownData[0].children[0].children[0].children) {
+        this.dropDownData[0].children[0].children[0].children.forEach(item=>{
+          this.thirdArr.push(item.name);
+        })
+      }
+
+
+
     },
     methods:{
-      
+      changeTab(index){
+        console.log(index)
+      }
     }
   };
 </script>

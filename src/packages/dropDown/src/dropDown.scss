@@ -47,17 +47,14 @@
 
 
 .vi-dropDown-list{
-    display: none;
 
-    &:first-child{
-        display: block;
-    }
-    &.active{
-        @include flexbox();
-    }
+    @include flexbox();
 
     ul{
+        height: torem(400);
+        -webkit-overflow-scrolling: touch;
         @include flex(1);
+        overflow-y: auto;
         li{
             height: torem(40);
             line-height: torem(40);

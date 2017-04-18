@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dropDown :dropDownData="dropDownData"></dropDown>
+    <dropDown :dropDownData="dropDownData" :firstSelectCallback="firstSelectCallback"></dropDown>
   </div>
 </template>
 
@@ -20,10 +20,6 @@
                 name:"广东省",
                 children:[
                   {
-                    name:"佛山市",
-                    children:[{name:"南海区"},{name:"顺德区"}]
-                  },
-                  {
                     name:"广州市",
                     children:[{name:"越秀区"},{name:"天河区"}]
                   },
@@ -31,6 +27,22 @@
                     name:"深圳市",
                     children:[{name:"南山区"},{name:"福田区"}]
                   },
+                  {
+                    name:"佛山市",
+                    children:[{name:"南海区"},{name:"顺德区"}]
+                  },
+                  {
+                    name:"佛山市",
+                    children:[{name:"南海区"},{name:"顺德区"}]
+                  },
+                  {
+                    name:"佛山市",
+                    children:[{name:"南海区"},{name:"顺德区"}]
+                  },
+                  {
+                    name:"佛山市",
+                    children:[{name:"南海区"},{name:"顺德区"}]
+                  }
                 ]
               },
               { 
@@ -78,7 +90,9 @@
 
     },
     methods:{
-
+      firstSelectCallback(){
+        console.log("firstSelectCallback");
+      }
     },
     components:{
       dropDown : dropDown

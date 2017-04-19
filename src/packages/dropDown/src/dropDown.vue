@@ -1,22 +1,22 @@
 <template>
   <div class="vi-dropDown">
       <ul class="vi-dropDown-nav">
-        <li v-for="(title , index) in titleText" @click="changeTab(index)">{{title}}</li>
+        <li v-for="(title , index) in titleText" @click="changeTab(index , $event)">{{title}}</li>
       </ul>
       <div class="vi-dropDown-wrapper" ref="dropDownWrapper">
         <div class="vi-dropDown-list" v-for="(list , index) in dropDownList">
           <ul>
-            <li v-for="(item , index) in list[0]" @click="selectFirstItem(index)">{{item}}</li>
+            <li v-for="(item , index) in list[0]" @click="selectFirstItem(index , $event)">{{item}}</li>
           </ul>
 
           <template v-if="list[1].length>0">
-            <ul>
-              <li v-for="item in list[1]">{{item}}</li>
+            <ul ref="secondUl">
+              <li v-for="(item , index) in list[1]" @click="selectSecondItem(index , $event)">{{item}}</li>
             </ul>
           </template>
           <template v-if="list[2].length>0">
-            <ul>
-              <li v-for="item in list[2]">{{item}}</li>
+            <ul ref="thirdUl">
+              <li v-for="(item , index) in list[2]" @click="thirdSecondItem(index , $event)">{{item}}</li>
             </ul>
           </template>
         </div>
@@ -30,7 +30,26 @@
 
 <script type="text/javascript">
   import './dropDown.scss';
-  
+
+  import aaa from '';
+  SystemJS.import('http://static.dayhr.com/static/common/plugins/jqGrid/mmButton.js?v=_VERSION_');
+  console.log(SystemJS)
+
+  // console.log(aaa)
+
+
+
+  Array.prototype.arrClear = function(){
+    this.splice(0,this.length);
+  }
+
+  var firstIndex=0,
+      secondIndex=0,
+      thirdIndex=0;
+
+  var selectedText = []
+
+
   export default {
     name:"dropDown",
     data(){
@@ -67,6 +86,14 @@
       firstSelectCallback : {
         type : Function,
         default(){}
+      },
+      secondSelectCallback : {
+        type : Function,
+        default(){}
+      },
+      thirdSelectCallback : {
+        type : Function,
+        default(){}
       }
     },
     created(){
@@ -88,7 +115,7 @@
               })
             }
           })
-        })
+        });
 
     },
     mounted(){
@@ -96,48 +123,131 @@
       this.$options.listEl[0].classList.add('active');
     },
     methods:{
-      changeTab(index){
+      changeTab(index , e){
+        console.log(e.target.classList.contains("cur"))
 
         this.$options.listEl.forEach(item=>{
           item.classList.remove('active');
         })
         this.$options.listEl[index].classList.add('active');
         this.$options.tabIndex = index;
+
+        this.classHandler(e);
+
+        //open and close
+        if (e.target.classList.contains("cur")) {
+
+        }
+
       }, 
-      selectFirstItem(index){
+      selectFirstItem(index , e){
         let i = this.$options.tabIndex; //第几个tab
-        let secondArrCash = [];
-        let thirdArrCash = [];
+            firstIndex = index;
 
+        let child = this.dropDownData[i].children[firstIndex];
+
+
+        this.classHandler(e);
+
+        selectedText.splice(1,selectedText.length);
+        selectedText[0] = child.name;
         //change secondArr
-        if (!this.dropDownData[i].children[index].children) {
-          this.dropDownList[i][1].splice(0,this.dropDownList[i][1].length);
-          this.dropDownList[i][2].splice(0,this.dropDownList[i][2].length);
-          return
+        if (!child.children) {
+          this.dropDownList[i][1].arrClear();
+          this.dropDownList[i][2].arrClear();
+        }else{
+
+          // set init state
+          this.classInit()
+
+          this.dropDownList[i][1].arrClear();
+          child.children.forEach(item=>{
+            this.dropDownList[i][1].push(item.name);
+          })
+
+          //change thirdArr
+          // if (!child.children[0].children) {
+          //   selectedText.splice(2,selectedText.length);
+          //   this.dropDownList[i][2].arrClear();
+          // }else{
+          //   selectedText[2] = child.children[0].children[0].name;
+          //   this.dropDownList[i][2].arrClear();
+          //   child.children[0].children.forEach(item=>{
+          //     this.dropDownList[i][2].push(item.name);
+          //   })
+          // }
         }
-        this.dropDownData[i].children[index].children.forEach(item=>{
-          secondArrCash.push(item.name);
-        })
-        this.dropDownList[i][1].splice(0,this.dropDownList[i][1].length);
-        secondArrCash.forEach(item=>{
-          this.dropDownList[i][1].push(item);
-        })
+        
+        this.titleText[i] = selectedText[0];
+        this.firstSelectCallback(selectedText);
+      },
+      selectSecondItem(index , e){
+        let i = this.$options.tabIndex; //第几个tab
+            secondIndex = index;
+
+        let child = this.dropDownData[i].children[firstIndex];
 
 
-        //change thirdArr
-        if (!this.dropDownData[i].children[index].children[0].children) {
-          this.dropDownList[i][2].splice(0,this.dropDownList[i][1].length);
-          return
+        this.classHandler(e);
+
+        selectedText.splice(2,selectedText.length);
+        selectedText[0] = selectedText[0]? selectedText[0] : child.name;
+        selectedText[1] = child.children[secondIndex].name;
+
+        if (!child.children[secondIndex].children) {
+          this.dropDownList[i][2].arrClear();
+        }else{
+
+          // set init state
+          this.classInit(true)
+
+          this.dropDownList[i][2].arrClear();
+          child.children[secondIndex].children.forEach(item=>{
+            this.dropDownList[i][2].push(item.name);
+          })
+
         }
-        this.dropDownData[i].children[index].children[0].children.forEach(item=>{
-          thirdArrCash.push(item.name);
-        })
-        this.dropDownList[i][2].splice(0,this.dropDownList[i][2].length);
-        thirdArrCash.forEach(item=>{
-          this.dropDownList[i][2].push(item);
-        })
+        
+        this.titleText[i] = selectedText[1];
+        this.secondSelectCallback(selectedText);
+      },
+      thirdSecondItem(index , e){
+        let i = this.$options.tabIndex; //第几个tab
+            thirdIndex = index;
 
-        this.firstSelectCallback();
+        let child = this.dropDownData[i].children[firstIndex];
+
+        this.classHandler(e);
+
+        selectedText[0] = selectedText[0]? selectedText[0] : child.name;
+        selectedText[1] = selectedText[1]? selectedText[1] : child.children[0].name;
+        selectedText[2] = child.children[secondIndex].children[thirdIndex].name;
+
+        this.titleText.splice(i,1,selectedText[2])
+        this.thirdSelectCallback(selectedText)
+
+      },
+      classHandler(e){
+        e.target.parentNode.childNodes.forEach(item=>{
+          item.classList.remove("cur");
+        })
+        e.target.classList.add("cur")
+      },
+      // init other ul's class when user click
+      classInit(boolean){
+
+        if (this.$refs.secondUl &&  this.$refs.secondUl.length>0 && !boolean) {
+          this.$refs.secondUl[0].childNodes.forEach(item=>{
+            item.classList.remove("cur");
+          })
+        }
+
+        if (this.$refs.thirdUl && this.$refs.thirdUl.length>0) {
+          this.$refs.thirdUl[0].childNodes.forEach(item=>{
+            item.classList.remove("cur");
+          })
+        }
+
       }
     }
   };

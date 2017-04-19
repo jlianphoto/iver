@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dropDown :dropDownData="dropDownData" :firstSelectCallback="firstSelectCallback"></dropDown>
+    <dropDown :dropDownData="dropDownData" :firstSelectCallback="firstSelectCallback" :secondSelectCallback="secondSelectCallback" :thirdSelectCallback="thirdSelectCallback"></dropDown>
   </div>
 </template>
 
@@ -14,8 +14,9 @@
       return {
         dropDownData:[
           {
-            name:"全国",
+            name:"地区",
             children:[
+              {name:"全国"},
               {
                 name:"广东省",
                 children:[
@@ -57,12 +58,10 @@
                     children:[{name:"城中区"},{name:"鱼峰区"}]
                   },
                   {
-                    name:"桂林市",
-                    children:[{name:"傻B区"},{name:"傻B2区"}]
+                    name:"桂林市"
                   },
                 ]
               },
-              {name:"全国"}
             ]
           },
           {
@@ -90,8 +89,14 @@
 
     },
     methods:{
-      firstSelectCallback(){
-        console.log("firstSelectCallback");
+      firstSelectCallback(msg){
+        console.log(msg,"firstSelectCallback");
+      },
+      secondSelectCallback(msg){
+        console.log(msg,"secondSelectCallback");
+      },
+      thirdSelectCallback(msg){
+        console.log(msg,"thirdSelectCallback");
       }
     },
     components:{

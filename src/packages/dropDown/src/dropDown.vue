@@ -31,13 +31,6 @@
 <script type="text/javascript">
   import './dropDown.scss';
 
-  import aaa from '';
-  SystemJS.import('http://static.dayhr.com/static/common/plugins/jqGrid/mmButton.js?v=_VERSION_');
-  console.log(SystemJS)
-
-  // console.log(aaa)
-
-
 
   Array.prototype.arrClear = function(){
     this.splice(0,this.length);

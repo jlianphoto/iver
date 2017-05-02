@@ -1,0 +1,63 @@
+.list {
+    position: relative;
+    font-size: torem(16);
+    background: $white;
+}
+
+.list p.title {
+    height: torem(50);
+    line-height: torem(50);
+    text-indent: torem(16);
+}
+
+.list li {
+    height: torem(50);
+    line-height: torem(50);
+    @include borderBottom();
+    position: relative;
+    padding: 0 torem(16);
+    font-size: torem(14);
+    @include flexbox();
+}
+
+.list li:last-child {
+    border: 0;
+}
+
+.list li .tip {
+    color: #A6A6A6;
+    font-size: torem(14)
+}
+
+.list li strong {
+    @include flex(1);
+}
+
+
+.list li span {
+    @include flex(3);
+    height: torem(50);
+    line-height: torem(50);
+}
+
+.list li label {
+    width: torem(60);
+    height: torem(50);
+    line-height: torem(50);
+}
+
+.list .icon:before {
+    content: "";
+    display: inline-block;
+    width: torem(22);
+    height: torem(22);
+    margin: auto 0;
+    margin-right: torem(10);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.list .arrow:after {
+    @include arrow(45deg);
+    margin: auto 0;
+}

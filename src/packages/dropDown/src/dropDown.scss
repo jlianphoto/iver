@@ -1,0 +1,115 @@
+@import "../../../scss/_common";
+
+.vi-dropDown-cover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background :rgba(0,0,0,.7);
+    z-index: 100;
+}
+.vi-dropDown-nav{
+    width: 100%;
+    height: torem(40);
+    line-height: torem(40);
+    text-align: center;
+    background: $white;
+    position: relative;
+    z-index: 1000;
+    border-bottom:1px solid $gray;
+    @include flexbox();
+
+    li{
+        @include flex(1);
+        @include ellipsis();
+
+        position: relative;
+        padding: 0 12px;  
+        &.cur{
+            color : $orange;
+            &:after{
+                border-color:transparent transparent transparent $orange;
+            }
+        }
+
+        &:after{
+            position: absolute;
+            bottom: 2px;
+            right: 4px;
+            content: '';
+            display: block;
+            width: 0;
+            border-width: 6px;
+            border-style:solid;
+            border-color:transparent transparent transparent $gray;
+            @include transform(rotate(45deg));
+        }
+        &:before{
+            content: '';
+            display: block;
+            height: torem(20);
+            width: 1px;
+            background: $gray;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            @include transform(scaleX(0.5) translateY(-50%));
+        }
+        &:last-child:before{
+            display: none;
+        }
+    }
+}
+
+.vi-dropDown-wrapper{
+    width: 100%;
+    height: torem(400);
+    position: relative;
+    z-index: 100;
+    background: $white;
+    display: none;
+}
+
+
+.vi-dropDown-list{
+    background:$white;
+    height: torem(400);
+    display: none;
+    position: relative;
+    z-index: 1000;
+    &.active{
+        @include flexbox();
+    }
+
+    ul{
+        position: relative;
+        height: torem(400);
+        -webkit-overflow-scrolling: touch;
+        @include flex(1);
+        @include transition(all 0.5s);
+        border-right:1px solid $gray;
+        overflow-y: auto;
+        &:last-child{
+            border-right:none;
+        }
+
+        &:after{
+            border-right:1px solid $gray;
+            position: absolute;
+            right: 0;
+        }
+        li{
+            height: torem(40);
+            line-height: torem(40);
+            text-align: center;
+            position: relative;
+            @include borderBottom();
+
+            &.cur{
+                color: $orange;
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+@import "../../../scss/_common";
+
+
+.vi-lottery {
+  width: 100%;
+  background-size: cover;
+  }
+
+.invitation-wrapper {
+  position: absolute;
+  top: 11.09333rem;
+  width: 100%; }
+
+.vi-lottery ul {
+  margin: 0 auto;
+  width: 14.7456rem;
+  box-sizing: border-box;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0.831rem 0.768rem 0.768rem 0.768rem;
+  position: relative;
+  z-index: 1; }
+
+.vi-lottery ul li {
+   overflow:hidden;
+   position: relative;
+}
+
+.vi-lottery ul li div {
+    padding: torem(1.2);
+    position: relative;
+ }
+
+.vi-lottery ul li div img{
+    width: 100%;
+    vertical-align: middle;
+   }
+
+
+.vi-lottery ul li div.active:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: rgba(255, 135, 46, 0.62); }

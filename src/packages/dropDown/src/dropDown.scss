@@ -9,11 +9,12 @@
 
     background :rgba(0,0,0,.7);
     z-index: 100;
+
 }
 .vi-dropDown-nav{
     width: 100%;
-    height: torem(40);
-    line-height: torem(40);
+    height: torem(44);
+    line-height: torem(44);
     text-align: center;
     background: $white;
     position: relative;
@@ -70,6 +71,10 @@
     z-index: 100;
     background: $white;
     display: none;
+
+    &.show {
+        display: block;
+    }
 }
 
 
@@ -101,8 +106,8 @@
             right: 0;
         }
         li{
-            height: torem(40);
-            line-height: torem(40);
+            height: torem(44);
+            line-height: torem(44);
             text-align: center;
             position: relative;
             @include borderBottom();

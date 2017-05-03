@@ -22,6 +22,7 @@ document (https://jlianphoto.github.io/iver)
  - **Dialog**
  - **Switch**
  - **Loading**
+ - **dropDown**
 
 ## Build Setup
 

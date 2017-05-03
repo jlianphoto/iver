@@ -1,6 +1,6 @@
 <template>
   <div>
-    <dropDown :dropDownData="dropDownData" :firstSelectCallback="firstSelectCallback" :secondSelectCallback="secondSelectCallback" :thirdSelectCallback="thirdSelectCallback"></dropDown>
+    <dropDown :dropDownData="dropDownData" :selectCallback="selectCallback"></dropDown>
   </div>
 </template>
 
@@ -82,6 +82,57 @@
               {name:"人气"},
             ]
           },
+          {
+            name:"地区",
+            children:[
+              {name:"全国"},
+              {
+                name:"广东省",
+                children:[
+                  {
+                    name:"广州市",
+                    children:[{name:"越秀区"},{name:"天河区"}]
+                  },
+                  {
+                    name:"深圳市",
+                    children:[{name:"南山区"},{name:"福田区"}]
+                  },
+                  {
+                    name:"佛山市",
+                    children:[{name:"南海区"},{name:"顺德区"}]
+                  },
+                  {
+                    name:"佛山市",
+                    children:[{name:"南海区"},{name:"顺德区"}]
+                  },
+                  {
+                    name:"佛山市",
+                    children:[{name:"南海区"},{name:"顺德区"}]
+                  },
+                  {
+                    name:"佛山市",
+                    children:[{name:"南海区"},{name:"顺德区"}]
+                  }
+                ]
+              },
+              { 
+                name:"广西壮族自治区",
+                children:[
+                  {
+                    name:"南宁市",
+                    children:[{name:"兴宁区"},{name:"青秀区"}]
+                  },
+                  {
+                    name:"柳州市",
+                    children:[{name:"城中区"},{name:"鱼峰区"}]
+                  },
+                  {
+                    name:"桂林市"
+                  },
+                ]
+              },
+            ]
+          },
         ]
       };
     },
@@ -89,15 +140,9 @@
 
     },
     methods:{
-      firstSelectCallback(msg){
-        console.log(msg,"firstSelectCallback");
+      selectCallback(msg){
+        console.log(msg,"selectCallback");
       },
-      secondSelectCallback(msg){
-        console.log(msg,"secondSelectCallback");
-      },
-      thirdSelectCallback(msg){
-        console.log(msg,"thirdSelectCallback");
-      }
     },
     components:{
       dropDown : dropDown

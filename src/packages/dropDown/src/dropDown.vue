@@ -1,9 +1,9 @@
 <template>
   <div class="vi-dropDown">
-      <ul class="vi-dropDown-nav">
+      <ul class="vi-dropDown-nav" ref="titleList">
         <li v-for="(title , index) in titleText" @click="changeTab(index , $event)">{{title}}</li>
       </ul>
-      <div class="vi-dropDown-wrapper" ref="dropDownWrapper">
+      <div :class="[{show:show}, 'vi-dropDown-wrapper']" ref="dropDownWrapper">
         <div class="vi-dropDown-list" v-for="(list , index) in dropDownList">
           <ul>
             <li v-for="(item , index) in list[0]" @click="selectFirstItem(index , $event)">{{item}}</li>
@@ -20,7 +20,7 @@
             </ul>
           </template>
         </div>
-        <div class="vi-dropDown-cover"></div>
+        <div class="vi-dropDown-cover" @click="hideWrapper"></div>
 
       </div>
   </div>
@@ -47,23 +47,10 @@
     name:"dropDown",
     data(){
       return {
+        show : false,
         titleText:[],
         dropDownList:[
-          [
-            [],
-            [],
-            [],
-          ],
-          [
-            [],
-            [],
-            [],
-          ],
-          [
-            [],
-            [],
-            [],
-          ],
+
         ]
       }
     },
@@ -76,21 +63,18 @@
           return []
         }
       },
-      firstSelectCallback : {
-        type : Function,
-        default(){}
-      },
-      secondSelectCallback : {
-        type : Function,
-        default(){}
-      },
-      thirdSelectCallback : {
+      selectCallback : {
         type : Function,
         default(){}
       }
     },
     created(){
+
       this.dropDownData.forEach((item , i)=>{
+
+          var arr = [[],[],[]];
+          this.dropDownList.push(arr)
+
           this.titleText.push(item.name);
 
           item.children.forEach((firstItem , j)=>{
@@ -112,12 +96,12 @@
 
     },
     mounted(){
-      this.$options.listEl = this.$refs.dropDownWrapper.querySelectorAll('.vi-dropDown-list');
+      this.$options.titleList = this.$refs.titleList;
+      this.$options.listEl = this.$refs.dropDownWrapper.querySelectorAll('.vi-dropDown-list'); //
       this.$options.listEl[0].classList.add('active');
     },
     methods:{
       changeTab(index , e){
-        console.log(e.target.classList.contains("cur"))
 
         this.$options.listEl.forEach(item=>{
           item.classList.remove('active');
@@ -125,12 +109,24 @@
         this.$options.listEl[index].classList.add('active');
         this.$options.tabIndex = index;
 
-        this.classHandler(e);
-
-        //open and close
-        if (e.target.classList.contains("cur")) {
-
+        if (e.target.classList.contains("cur")){
+          this.show = false;
+          e.target.classList.remove("cur");
+        }else{
+          this.classHandler(e);
+          this.show = true;
         }
+
+
+
+        //init firstIndex
+        let firstLis = this.$options.listEl[0].childNodes[0].querySelectorAll("li");
+        firstLis.forEach((item , index)=>{
+            if (item.classList.contains("cur")) {
+              firstIndex = index;
+            }
+        })   
+  
 
       }, 
       selectFirstItem(index , e){
@@ -158,21 +154,16 @@
             this.dropDownList[i][1].push(item.name);
           })
 
-          //change thirdArr
-          // if (!child.children[0].children) {
-          //   selectedText.splice(2,selectedText.length);
-          //   this.dropDownList[i][2].arrClear();
-          // }else{
-          //   selectedText[2] = child.children[0].children[0].name;
-          //   this.dropDownList[i][2].arrClear();
-          //   child.children[0].children.forEach(item=>{
-          //     this.dropDownList[i][2].push(item.name);
-          //   })
-          // }
         }
         
         this.titleText[i] = selectedText[0];
-        this.firstSelectCallback(selectedText);
+        this.selectCallback(selectedText);
+      },
+      hideWrapper(){
+        this.show = false;
+        this.$options.titleList.querySelectorAll("li").forEach(item=>{
+          item.classList.remove("cur");
+        })
       },
       selectSecondItem(index , e){
         let i = this.$options.tabIndex; //第几个tab
@@ -186,7 +177,6 @@
         selectedText.splice(2,selectedText.length);
         selectedText[0] = selectedText[0]? selectedText[0] : child.name;
         selectedText[1] = child.children[secondIndex].name;
-
         if (!child.children[secondIndex].children) {
           this.dropDownList[i][2].arrClear();
         }else{
@@ -202,7 +192,7 @@
         }
         
         this.titleText[i] = selectedText[1];
-        this.secondSelectCallback(selectedText);
+        this.selectCallback(selectedText);
       },
       thirdSecondItem(index , e){
         let i = this.$options.tabIndex; //第几个tab
@@ -216,8 +206,8 @@
         selectedText[1] = selectedText[1]? selectedText[1] : child.children[0].name;
         selectedText[2] = child.children[secondIndex].children[thirdIndex].name;
 
-        this.titleText.splice(i,1,selectedText[2])
-        this.thirdSelectCallback(selectedText)
+        this.titleText.splice(i,1,selectedText[2]);
+        this.selectCallback(selectedText);
 
       },
       classHandler(e){

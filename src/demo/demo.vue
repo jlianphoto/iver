@@ -12,6 +12,7 @@
       <router-link to="/demo/datetime" tag="li" class="arrow"><span>Datetime</span></router-link>
       <router-link to="/demo/addressPicker" tag="li" class="arrow"><span>AddressPicker</span></router-link>
       <router-link to="/demo/selectPicker" tag="li" class="arrow"><span>SelectPicker</span></router-link>
+      <router-link to="/demo/dropDown" tag="li" class="arrow"><span>DropDown</span></router-link>
       <router-link to="/demo/dialog" tag="li" class="arrow"><span>Dialog</span></router-link>
       <router-link to="/demo/switch" tag="li" class="arrow"><span>Switch</span></router-link>
       <router-link to="/demo/grid" tag="li" class="arrow"><span>Grid</span></router-link>

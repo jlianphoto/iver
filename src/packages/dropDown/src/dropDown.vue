@@ -31,12 +31,11 @@
 <script type="text/javascript">
   import './dropDown.scss';
 
-
   Array.prototype.arrClear = function(){
     this.splice(0,this.length);
   }
 
-  var firstIndex=0,
+  var firstIndex=[],
       secondIndex=0,
       thirdIndex=0;
 
@@ -73,7 +72,8 @@
       this.dropDownData.forEach((item , i)=>{
 
           var arr = [[],[],[]];
-          this.dropDownList.push(arr)
+          this.dropDownList.push(arr);
+          firstIndex.push(0);
 
           this.titleText.push(item.name);
 
@@ -115,25 +115,15 @@
         }else{
           this.classHandler(e);
           this.show = true;
-        }
-
-
-
-        //init firstIndex
-        let firstLis = this.$options.listEl[0].childNodes[0].querySelectorAll("li");
-        firstLis.forEach((item , index)=>{
-            if (item.classList.contains("cur")) {
-              firstIndex = index;
-            }
-        })   
+        } 
   
 
       }, 
       selectFirstItem(index , e){
         let i = this.$options.tabIndex; //第几个tab
-            firstIndex = index;
+            firstIndex[i] = index;
 
-        let child = this.dropDownData[i].children[firstIndex];
+        let child = this.dropDownData[i].children[firstIndex[i]];
 
 
         this.classHandler(e);
@@ -153,6 +143,7 @@
           child.children.forEach(item=>{
             this.dropDownList[i][1].push(item.name);
           })
+          this.dropDownList[i][2].arrClear();
 
         }
         
@@ -166,13 +157,13 @@
         })
       },
       selectSecondItem(index , e){
-        let i = this.$options.tabIndex; //第几个tab
-            secondIndex = index;
+        let i = this.$options.tabIndex;
 
-        let child = this.dropDownData[i].children[firstIndex];
+        this.classHandler(e); //第几个tab
+        secondIndex = index;
 
+        let child = this.dropDownData[i].children[firstIndex[i]];
 
-        this.classHandler(e);
 
         selectedText.splice(2,selectedText.length);
         selectedText[0] = selectedText[0]? selectedText[0] : child.name;
@@ -198,7 +189,7 @@
         let i = this.$options.tabIndex; //第几个tab
             thirdIndex = index;
 
-        let child = this.dropDownData[i].children[firstIndex];
+        let child = this.dropDownData[i].children[firstIndex[i]];
 
         this.classHandler(e);
 

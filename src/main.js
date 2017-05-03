@@ -5,10 +5,6 @@ import App from './App'
 // 路由
 import router from './router/'
 
-import resource from 'vue-resource'
-
-//图片懒加载
-import VueLazyload from 'vue-lazyload'
 
 import iver from './plugin/all/'
 import loading from './packages/loading'
@@ -18,8 +14,6 @@ import './scss/index.scss'
 // 兼容ios active 效果
 document.body.addEventListener('touchstart', function () {});  
 
-
-Vue.use(resource)
 Vue.use(iver)
 
       

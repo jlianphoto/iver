@@ -1,21 +1,39 @@
-# iver
+# IVER
 
-> ui components for vue2.0
+> ui component for V2.0
+
+[![npm](https://img.shields.io/npm/v/iver.svg?style=flat-square)](https://www.npmjs.com/package/iver)
+
+document (https://jlianphoto.github.io/iver)
+
+## demo
+
+![demo](https://github.com/jlianphoto/vui/blob/master/src/img/demo_code.png)
+
+## Included
+ - **Grid**
+ - **Button**
+ - **Swiper**
+ - **CountUp**
+ - **Datetime**
+ - **AddressPicker**
+ - **swiper**
+ - **lottery**
+ - **Dialog**
+ - **Switch**
+ - **Loading**
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+npm install -S iver
 
-# serve with hot reload at localhost:8080
-npm run dev
+# use all components
+import {iver} from 'iver';
+Vue.use(iver);
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+# on demand
+import  {component} from 'iver'
+Vue.component(component.name, component);
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

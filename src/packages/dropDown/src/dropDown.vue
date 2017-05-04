@@ -134,6 +134,7 @@
         if (!child.children) {
           this.dropDownList[i][1].arrClear();
           this.dropDownList[i][2].arrClear();
+          this.hideWrapper();
         }else{
 
           // set init state
@@ -170,6 +171,7 @@
         selectedText[1] = child.children[secondIndex].name;
         if (!child.children[secondIndex].children) {
           this.dropDownList[i][2].arrClear();
+          this.hideWrapper();
         }else{
 
           // set init state
@@ -199,6 +201,8 @@
 
         this.titleText.splice(i,1,selectedText[2]);
         this.selectCallback(selectedText);
+
+        this.hideWrapper();
 
       },
       classHandler(e){

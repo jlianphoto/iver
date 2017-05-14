@@ -9,13 +9,13 @@
             <li v-for="(item , index) in list[0]" @click="selectFirstItem(index , $event)">{{item}}</li>
           </ul>
 
-          <template v-if="list[1].length>0">
-            <ul ref="secondUl">
+          <template v-if="list[1].length>0 && isInit[index]">
+            <ul>
               <li v-for="(item , index) in list[1]" @click="selectSecondItem(index , $event)">{{item}}</li>
             </ul>
           </template>
           <template v-if="list[2].length>0">
-            <ul ref="thirdUl">
+            <ul>
               <li v-for="(item , index) in list[2]" @click="thirdSecondItem(index , $event)">{{item}}</li>
             </ul>
           </template>
@@ -48,6 +48,7 @@
       return {
         show : false,
         titleText:[],
+        isInit : [],
         dropDownList:[
 
         ]
@@ -70,8 +71,8 @@
     created(){
 
       this.dropDownData.forEach((item , i)=>{
-
           var arr = [[],[],[]];
+          this.isInit.push(false);
           this.dropDownList.push(arr);
           firstIndex.push(0);
 
@@ -125,7 +126,7 @@
 
         let child = this.dropDownData[i].children[firstIndex[i]];
 
-
+        this.isInit[i] = true;
         this.classHandler(e);
 
         selectedText.splice(1,selectedText.length);
@@ -138,7 +139,7 @@
         }else{
 
           // set init state
-          this.classInit()
+          this.classInit(e , "first")
 
           this.dropDownList[i][1].arrClear();
           child.children.forEach(item=>{
@@ -150,12 +151,6 @@
         
         this.titleText[i] = selectedText[0];
         this.selectCallback(selectedText);
-      },
-      hideWrapper(){
-        this.show = false;
-        this.$options.titleList.querySelectorAll("li").forEach(item=>{
-          item.classList.remove("cur");
-        })
       },
       selectSecondItem(index , e){
         let i = this.$options.tabIndex;
@@ -175,7 +170,7 @@
         }else{
 
           // set init state
-          this.classInit(true)
+          this.classInit(e , "second")
 
           this.dropDownList[i][2].arrClear();
           child.children[secondIndex].children.forEach(item=>{
@@ -205,6 +200,12 @@
         this.hideWrapper();
 
       },
+      hideWrapper(){
+        this.show = false;
+        this.$options.titleList.querySelectorAll("li").forEach(item=>{
+          item.classList.remove("cur");
+        })
+      },
       classHandler(e){
         e.target.parentNode.childNodes.forEach(item=>{
           item.classList.remove("cur");
@@ -212,19 +213,19 @@
         e.target.classList.add("cur")
       },
       // init other ul's class when user click
-      classInit(boolean){
+      classInit(e , sequence){
+        var parent = e.target.parentNode.parentNode;
+        var childs = parent.querySelectorAll("ul");
+        
+        var index = sequence==="first"?1:2;
 
-        if (this.$refs.secondUl &&  this.$refs.secondUl.length>0 && !boolean) {
-          this.$refs.secondUl[0].childNodes.forEach(item=>{
-            item.classList.remove("cur");
+        if (childs[index]) {
+          var lis = childs[index].querySelectorAll("li");
+          lis.forEach(item=>{
+            item.classList.remove('cur');
           })
         }
 
-        if (this.$refs.thirdUl && this.$refs.thirdUl.length>0) {
-          this.$refs.thirdUl[0].childNodes.forEach(item=>{
-            item.classList.remove("cur");
-          })
-        }
 
       }
     }

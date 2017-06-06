@@ -1,22 +1,27 @@
 var webpack = require('webpack');
 var path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CleanWebpackPlugin = require("clean-webpack-plugin");
 var glob = require('glob')
 
+
+//
 var extractSass = new ExtractTextPlugin({
-  filename: "[name].css"
+  filename: "[name]/index.css"
 });
 
 var entries = function() {
   var entryFiles = glob.sync('./src/packages/**/index.js');
-  var map = {};
   console.log(entryFiles)
+  var map = {};
   for (var i = 0; i < entryFiles.length; i++) {
     var filePath = entryFiles[i];
     var filename = filePath.split("/")[3];
-    map[filename+"/index"] = filePath;
+    map[filename] = filePath;
   }
-  map['iver.min'] = './src/packages/index.js';
+
+  console.log(map)
+
   return map;
 }
 var entryJson = entries();
@@ -27,7 +32,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist/',
-    filename: '[name].js',
+    filename: '[name]/index.js',
+    library:'[name]',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -79,6 +85,10 @@ module.exports = {
       compress: {
         warnings: false
       }
+    }),
+    new CleanWebpackPlugin(['dist'],{
+      root : path.resolve(__dirname, '../'),
+      verbose: true
     }),
     extractSass
   ]

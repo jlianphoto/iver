@@ -1,8 +1,6 @@
 # IVER
 
-[![npm](https://img.shields.io/npm/v/iver.svg?style=flat-square)](https://www.npmjs.com/package/iver)
-
-[github](https://github.com/jlianphoto/iver);
+[![npm](https://img.shields.io/npm/v/iver.svg?style=flat-square)](https://www.npmjs.com/package/iver) ![npm](https://img.shields.io/github/stars/jlianphoto/iver.svg?style=social&label=Star)
 
 > ui component for VUE2.0
 
@@ -656,4 +654,89 @@ inject dialog and loading into Vue
   
   this.$iver.dialog
   this.$iver.loading
+```
+
+
+## umd
+
+### build components
+
+```bash
+git clone https://github.com/jlianphoto/iver.git
+npm install
+npm build-components
+
+```
+
+目录结构
+
+```
+│  iver.min.css //common css
+│  
+├─addressPicker
+│      index.css
+│      index.js
+│      
+├─countUp
+│      index.css
+│      index.js
+│      
+│      
+└─switch
+        index.css
+        index.js
+....
+        
+```
+
+
+### use
+
+import common css
+
+```html
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>scripts</title>
+    <link rel="stylesheet" href="../dist/iver/index.css">
+
+  </head>
+
+</html>
+```
+
+
+### use amd or cmd
+
+if your project use `requirejs` or `seajs`
+
+```js
+//require
+Vue.component('datetime', function (resolve, reject) {
+  require(["dist/datatime/index.css","dist/datetime/index.js"] , function(css,datetime){
+      resolve(datetime.default)
+  })
+})
+
+
+//seajs
+Vue.component('datetime' , function(resolve , reject){
+  seajs.use(["dist/datetime/index.css","dist/datetime/index.js"] , function(css, datetime){
+    resolve(datime.default)
+  })
+})
+```
+
+use fetchJS for IVER
+
+github: [fetchJS](https://github.com/jlianphoto/fetchJS)
+
+```js
+ Vue.component('datetime' , function(resolve , reject){
+    fetchJS.import(['dist/datetime/index.css', 'dist/datetime/index.js']).then(function(datatime){
+      resolve(datetime)
+    })
+ })
 ```

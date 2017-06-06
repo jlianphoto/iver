@@ -664,14 +664,16 @@ inject dialog and loading into Vue
 ```bash
 git clone https://github.com/jlianphoto/iver.git
 npm install
-npm build-components
+npm run build-components
 
 ```
 
 目录结构
 
 ```
-│  iver.min.css //common css
+├─iver
+│      index.css  //common css
+│
 │  
 ├─addressPicker
 │      index.css

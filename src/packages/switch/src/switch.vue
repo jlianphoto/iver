@@ -29,6 +29,7 @@
     watch:{
       currentValue(){
         this.$emit('sChange', this.currentValue);
+        this.$emit('input' , this.currentValue);
       }
     },
     methods:{

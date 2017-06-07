@@ -386,22 +386,23 @@ export default {
 
 Example
 ```html
-<v-switch v-on:sChange="getValue" :value="true" :disabled="true"></v-switch>
+<v-switch v-on:sChange="getValue" v-model="value" :disabled="true"></v-switch>
 
 ```
 
 ```js
 import {vswitch} from 'iver';
 export default {
-    mounted(){
-		//get initial value	
-      console.log(this.$refs.s1.value)
-   },
    methods:{
 	   // get value when the value is changed
      getValue(msg){
        console.log(msg)
      }
+   },
+   watch:{
+      value(val){
+          console.log(val)
+      }
    }
 };
 ```

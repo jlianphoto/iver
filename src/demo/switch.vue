@@ -3,7 +3,7 @@
     <ul class="list">
       <li>
         <span>{{switchVal}}</span>
-        <v-switch class="demo-switch" v-on:sChange="getValue" ref="s1"></v-switch>
+        <v-switch class="demo-switch" v-on:sChange="getValue" v-model="value"></v-switch>
       </li>
       <li>
         <span>disable :  {{disabled}}</span>
@@ -24,11 +24,9 @@
     data() {
       return {
         switchVal:"false",
-        disabled : "true"
+        disabled : "true",
+        value : true
       };
-    },
-    mounted(){
-      // console.log(this.$refs.s1.value)
     },
     methods:{
       getValue(msg){
@@ -37,6 +35,11 @@
     },
     components:{
       vSwitch : vSwitch
+    },
+    watch:{
+      value(val){
+        console.log(val)
+      }
     }
   };
 </script>

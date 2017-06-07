@@ -393,6 +393,11 @@ Example
 ```js
 import {vswitch} from 'iver';
 export default {
+   data(){
+    return {
+      value : ''
+    }
+   },
    methods:{
 	   // get value when the value is changed
      getValue(msg){
@@ -401,7 +406,7 @@ export default {
    },
    watch:{
       value(val){
-          console.log(val)
+          console.log(val)   
       }
    }
 };

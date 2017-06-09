@@ -6,6 +6,10 @@
   animation-fill-mode: both;
 }
 
+.iv-transition{
+  @include transition(all 0.4s ease);
+}
+
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;

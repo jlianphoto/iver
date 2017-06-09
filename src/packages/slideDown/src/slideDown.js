@@ -1,27 +1,47 @@
-class Transition {
+var Transition ={
   beforeEnter(el){
-    console.log(el)
-  }
+    el.classList.add("iv-transition");
+    el.style.height = '0px';
+    el.style.opacity = 0;
+    el.style.overflow = "hidden";
+  },
 
   enter(el){
-    console.log(1)
-  }
+    var height = calcHeight(el);
+    el.style.opacity = 1;
+    el.style.height = height + "px";
+  },
 
   afterEnter(el){
-    console.log(2)
-  }
+    el.style.overflow = "visitiable";
+  },
 
   beforeLeave(el){
-    console.log(3)
-  }
+    el.style.overflow = "hidden";
+  },
 
   leave(el){
-    console.log()
-  }
+    el.style.opacity = 0;
+    el.style.height = "0px";
+  },
+}
 
-  afterLeave(el){
 
-  }
+function css(el,attr){ 
+  if(el.currentStyle){ 
+    return parseFloat(el.currentStyle[attr]); 
+  } 
+  else{ 
+    return parseFloat(document.defaultView.getComputedStyle(el,null)[attr]); 
+  } 
+}
+
+function calcHeight(el){
+  var margin = css(el,"marginTop") + css(el,"marginBottom"),
+      padding = css(el,"paddingTop") + css(el,"paddingBottom");
+
+  var height = el.scrollHeight - margin - padding;
+  return height;
 }
 
 
@@ -30,7 +50,7 @@ export default {
   functional: true,
   render(h, { children }) {
     const data = {
-      on: new Transition()
+      on: Transition
     };
     return h('transition', data, children);
   }

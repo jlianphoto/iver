@@ -1,17 +1,42 @@
 <template>
 <div>
-  <button @click="show = !show">laji</button>
+  <button class="btn-blue" @click="show = !show">click slideDown</button>
   <slide-down>
-    <div v-show="show">士大夫</div>
+    <div v-show="show">
+      <ul class = "demo-slideDown">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
   </slide-down>
 </div>
 </template>
 
-
+<style>
+  .demo-slideDown{
+    margin: 20px;
+    padding: 30px;
+    background: #2e9fe5;
+  }
+  .demo-slideDown li{
+    height: 20px;
+  }
+</style>
 <script type="text/javascript">
 
   import slideDown from '../packages/slideDown';
-  console.log(slideDown)
 
   export default {
     data() {

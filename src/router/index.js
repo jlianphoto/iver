@@ -102,6 +102,12 @@ var routes=[
       component: resolve => require(['../demo/slideDown.vue'], resolve), 
       name: 'slideDown',
       meta:{title:"slideDown"}
+    },
+    { 
+      path: '/demo/transition', 
+      component: resolve => require(['../demo/transition.vue'], resolve), 
+      name: 'transition',
+      meta:{title:"transition"}
     }
 ];
 

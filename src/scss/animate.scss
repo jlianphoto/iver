@@ -1,13 +1,94 @@
+// transition
+.iv-transition{
+  @include transition(all 0.4s ease);
+}
+.iv-fade-enter-active,
+.iv-fade-leave-active,
+.iv-fade-scale-out-enter-active,
+.iv-fade-scale-out-leave-active,
+.iv-fade-scale-in-enter-active,
+.iv-fade-scale-in-leave-active{
+  @include transition(all 0.3s ease);
+}
+
+.iv-fade-enter, .iv-fade-leave-to{
+  opacity: 0;
+}
+.iv-fade-scale-out-enter, .iv-fade-scale-out-leave-to{
+  opacity: 0;
+  transform: scale(1.5);
+}
+.iv-fade-scale-in-enter, .iv-fade-scale-in-leave-to{
+  opacity: 0;
+  transform: scale(0);
+}
+
+
+
+
+$direction : top , bottom , left , right;
+%slideTransition{transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.1s, opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;}
+@each $dir in $direction{
+  .iv-fade-slide-#{$dir}-enter-active{
+    @extend %slideTransition;
+  }
+  .iv-fade-slide-#{$dir}-leave-active{
+    @extend %slideTransition;
+  }
+}
+
+.iv-fade-slide-top-enter-active,
+.iv-fade-slide-top-leave-active{
+  transform-origin: center top;
+}
+
+.iv-fade-slide-bottom-enter-active,
+.iv-fade-slide-bottom-leave-active{
+  transform-origin: center bottom;
+}
+
+.iv-fade-slide-left-enter-active,
+.iv-fade-slide-left-leave-active{
+  transform-origin: center left;
+}
+
+.iv-fade-slide-right-enter-active,
+.iv-fade-slide-right-leave-active{
+  transform-origin: center right;
+}
+
+.iv-fade-slide-top-enter,
+.iv-fade-slide-top-leave-to,
+.iv-fade-slide-bottom-enter,
+.iv-fade-slide-bottom-leave-to{
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+.iv-fade-slide-left-enter,
+.iv-fade-slide-left-leave-to,
+.iv-fade-slide-right-enter,
+.iv-fade-slide-right-leave-to{
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
 // animate
 .animated {
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-}
-
-.iv-transition{
-  @include transition(all 0.4s ease);
 }
 
 @-webkit-keyframes fadeInDown {

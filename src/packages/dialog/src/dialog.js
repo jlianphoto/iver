@@ -7,6 +7,7 @@ let defaultOption = {
 	message:"",
 	confirmTxt:"确定",
 	cancleTxt:"取消",
+	animate:false,
 	confirmCallback:()=>{
 		
 	},
@@ -50,6 +51,9 @@ let dialog = {
 
 	},
 	alert : (...options)=>{
+		if (!lock) {return};
+		lock = false;
+
 		component.type = "dialogBox";
 		component.isShow = false;
 
@@ -66,8 +70,13 @@ let dialog = {
 		}
 
 		document.body.appendChild(component.$el);
+		component["showDialog"] = true;
+		lock = true;
 	},
 	confirm : (options)=>{
+		if (!lock) {return};
+		lock = false;
+
 		component.type = "dialogBox";
 		component.isShow = true;
 		if (typeof options ==="object") {
@@ -76,6 +85,8 @@ let dialog = {
 			}
 		}
 		document.body.appendChild(component.$el);
+		component["showDialog"] = true;
+		lock = true;
 	}
 }
 

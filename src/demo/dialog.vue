@@ -31,7 +31,7 @@
         dialog.alert("title","message");
       },
       alertHandler2(){
-        dialog.alert({title:"title" , message:"message" , confirmTxt:"confirm"});
+        dialog.alert({title:"title" , message:"message" , confirmTxt:"confirm" , animate:true});
       },
       confirmHandler(){
         dialog.confirm({title:"title" , message:"message"});

@@ -167,7 +167,7 @@ export default {
             font-size:torem(22);
             color:$white;
             &:after{
-                content:"1.0.7";
+                content:"1.1.0";
                 font-size:torem(12);
                 position: absolute;
                 right:torem(74);

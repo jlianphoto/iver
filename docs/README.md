@@ -19,6 +19,8 @@
  - **Switch**
  - **Loading**
  - **dropDown**
+ - **slideDown**
+ - **transition**
 
 ## Start
 
@@ -649,7 +651,96 @@ export default {
 
 ```
 
+## slideDown
 
+Example
+```html
+ <template>
+    <slide-down>
+   <div>
+     content...
+   </div>
+ </template>
+```
+
+```js
+
+  import {slideDown} from 'iver';
+
+  export default {
+    data() {
+      return {
+        show:false
+      }
+    },
+    components:{
+      slideDown:slideDown
+    }
+  };
+
+```
+
+
+## Transition
+
+- fade
+```html
+<transition name="iv-fade">
+  <div v-show="isShow">fade</div>
+</transition>
+```
+
+- scaleOut
+```html
+<transition name="iv-fade-scale-out">
+  <div v-show="isShow">scale-out</div>
+</transition>
+```
+
+- scaleIn
+```html
+<transition name="iv-fade-scale-in">
+  <div v-show="isShow">scale-in</div>
+</transition>
+```
+
+- slideTop
+```html
+<transition name="iv-fade-slide-top">
+  <div v-show="isShow">slide-top</div>
+</transition>
+```
+
+- slideBottom
+```html
+<transition name="iv-fade-slide-bottom">
+  <div v-show="isShow">slide-bottom</div>
+</transition>
+```
+
+- slideLeft
+```html
+<transition name="iv-fade-slide-left">
+  <div v-show="isShow">slide-left</div>
+</transition>
+```
+
+- slideRight
+```html
+<transition name="iv-fade-slide-right">
+  <div v-show="isShow">slide-right</div>
+</transition>
+```
+
+```js
+export default {
+  data() {
+      return {
+        isShow:true
+      }
+    }
+}
+```
 
 ## Plugin
 inject dialog and loading into Vue
@@ -700,7 +791,10 @@ npm run build-components
 
 ### use
 
-import common css
+请使用 requireJs , seaJs 或者 fetchJS
+
+
+import common css and vue
 
 ```html
 <!DOCTYPE html>
@@ -708,12 +802,21 @@ import common css
   <head>
     <meta charset="UTF-8">
     <title>scripts</title>
+
     <link rel="stylesheet" href="../dist/iver/index.css">
 
   </head>
 
+  <body>
+    
+  </body>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  
 </html>
 ```
+
+
 
 
 ### use amd or cmd

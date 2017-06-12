@@ -1,5 +1,5 @@
 @import "../../../scss/_common";
-.toast{
+.iv-toast{
   padding:torem(12);
   font-size: torem(14);
   color: #fff;
@@ -9,74 +9,61 @@
   position: fixed;
   top:50%;
   left:50%;
-  @include transform(translateX(-50%) translateY(-50%));
+  @include transform(translate3d(-50%,-50%,0));
   @include animation(fadeInOut 1.5s forwards);
 }
-@-webkit-keyframes fadeInOut{
-  0% {opacity: 0}
-  20% {opacity: 1}
-  70% {opacity: 1}
-  100%{opacity: 0}
-}
-@-moz-keyframes fadeInOut{
-  0% {opacity: 0}
-  20% {opacity: 1}
-  70% {opacity: 1}
-  100%{opacity: 0}
-}
-@-ms-keyframes fadeInOut{
-  0% {opacity: 0}
-  20% {opacity: 1}
-  70% {opacity: 1}
-  100%{opacity: 0}
-}
-@-o-keyframes fadeInOut{
-  0% {opacity: 0}
-  20% {opacity: 1}
-  70% {opacity: 1}
-  100%{opacity: 0}
-}
 
-.dialog{
+
+
+
+
+
+.iv-dialog{
   position: fixed;
   width: 82%;
   top: 50%;
   left: 50%;
   z-index: 9999;
-  @include transform(translateX(-50%) translateY(-50%));
+  transform: translate3d(-50%, -50%, 0);
   background-color: #FAFAFC;
   text-align: center;
   border-radius: 6px;
   overflow: hidden;
+  transition: .2s;
 }
-.dialog-header{
+.iv-dialog-header{
   padding: torem(10);
   font-size: torem(20);
 }
-.dialog-content{
+.iv-dialog-content{
   font-size: torem(16);
   color: #666;
   text-align: center;
   padding: torem(5) torem(10) torem(10) torem(10);
 }
-.dialog-footer{
+.iv-dialog-footer{
     position: relative;
     line-height: torem(40);
     margin-top: torem(10);
     border-top: 1px solid #f0f0f0;
     @include flexbox();
 }
-.dialog-footer button{
+.iv-dialog-footer button{
   width: 100%;
   height: torem(40);
   font-size: torem(16);
   background: #fff;
   @include flex(1);
 }
-.dialog-footer button.confirm{
+.iv-dialog-footer button.confirm{
   color:#f60;
 }
-.dialog-footer button.cancle{
+.iv-dialog-footer button.cancle{
   color:#9c9c9c;
   border-left: 1px solid #f0f0f0;
+}
+
+.iv-dialog-scale-out-enter{
+  opacity: 0;
+  transform: translate3d(-50%, -50%, 0) scale(1.5);
 }

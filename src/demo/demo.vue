@@ -18,6 +18,8 @@
       <router-link to="/demo/grid" tag="li" class="arrow"><span>Grid</span></router-link>
       <router-link to="/demo/button" tag="li" class="arrow"><span>Button</span></router-link>
       <router-link to="/demo/loading" tag="li" class="arrow"><span>Loading</span></router-link>
+      <router-link to="/demo/slideDown" tag="li" class="arrow"><span>SlideDown</span></router-link>
+      <router-link to="/demo/transition" tag="li" class="arrow"><span>Transition</span></router-link>
     </ul>
     <footer class="demo-index">© by J.Lian</footer>
   </div>

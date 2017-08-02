@@ -1,11 +1,11 @@
 <template>
-  <div class="vi-swiper" ref="swiper">
-    <div @touchstart="touchstart" @touchmove.stop.prevent="touchmove"  @touchend="touchend" :class="[{isTransition:isTransition} , 'vi-swiper-wrapper']">
+  <div :class="prefixCls">
+    <div @touchstart="touchstart" @touchmove.stop.prevent="touchmove"  @touchend="touchend" :class="[{isTransition:isTransition} , prefixCls+'-wrapper']">
       <a href="javascript:;" @click="forward(img.href)" v-for="img in imgs">
         <img :src="img.imgUrl">
       </a>
     </div>
-    <ul class="vi-swiper-dot">
+    <ul :class="prefixCls+'-dot'">
       <li v-for="(dot , index) in dots" :class="{active:dots[index]}"></li>
     </ul>
   </div>
@@ -19,6 +19,7 @@
     name:"swiper",
     data(){
       return {
+        prefixCls:'iv-swiper',
         isTransition:false,
         currentX:0,
         startX:0,
@@ -50,8 +51,8 @@
       }
     },
     mounted(){
-      this.width = this.$refs.swiper.offsetWidth;
-      this.el = this.$refs.swiper.querySelector('.vi-swiper-wrapper');
+      this.width = this.$el.offsetWidth;
+      this.el = this.$el.querySelector('.iv-swiper-wrapper');
 
       this.index = this.defaultIndex;
 

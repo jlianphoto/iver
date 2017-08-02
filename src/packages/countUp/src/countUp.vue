@@ -5,7 +5,6 @@
 
 <script type="text/javascript">
 
-import './countUp.scss'
 import CountUp from 'countup.js'
 
 
@@ -62,9 +61,6 @@ export default {
 
 
     
-  },
-  methods:{
-  
   }
 }
 </script>

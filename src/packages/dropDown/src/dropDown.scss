@@ -1,6 +1,8 @@
 @import "../../../scss/_common";
 
-.vi-dropDown-cover{
+$prefixCls : '.iv-dropDown';
+
+#{$prefixCls}-cover{
     position: fixed;
     top: 0;
     left: 0;
@@ -11,7 +13,7 @@
     z-index: 100;
 
 }
-.vi-dropDown-nav{
+#{$prefixCls}-nav{
     width: 100%;
     height: torem(44);
     line-height: torem(44);
@@ -64,7 +66,7 @@
     }
 }
 
-.vi-dropDown-wrapper{
+#{$prefixCls}-wrapper{
     width: 100%;
     height: torem(400);
     position: relative;
@@ -78,7 +80,7 @@
 }
 
 
-.vi-dropDown-list{
+#{$prefixCls}-list{
     background:$white;
     height: torem(400);
     display: none;

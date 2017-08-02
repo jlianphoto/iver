@@ -1,10 +1,10 @@
 <template>
-  <div class="picker">
-      <div class="picker-scroller" @touchstart.stop.prevent="touchstart" @touchmove.stop.prevent="touchmove" @touchend.stop.prevent="touchend">
-        <div class="picker-mask-top"></div>
-        <div class="picker-mask-bottom"></div>
+  <div :class="prefixCls">
+      <div :class="prefixCls+'-scroller'" @touchstart.stop.prevent="touchstart" @touchmove.stop.prevent="touchmove" @touchend.stop.prevent="touchend">
+        <div :class="prefixCls+'-mask-top'"></div>
+        <div :class="prefixCls+'-mask-bottom'"></div>
         <ul :class="[{isTransition:isTransition}]" ref="picker">
-          <li class="picker-item" v-for="item in dataArr">{{item}}</li>
+          <li :class="prefixCls+'-item'" v-for="item in dataArr">{{item}}</li>
         </ul>
       </div>
   </div>
@@ -28,6 +28,7 @@ export default {
       index:0,
       //选中的值
       selected:0,
+      prefixCls:'iv-picker'
     }
   },
   props:{

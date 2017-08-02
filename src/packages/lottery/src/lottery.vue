@@ -1,5 +1,5 @@
 <template>
-  <div class="vi-lottery">
+  <div class="iv-lottery">
       <ul>
         <li class="row">
           <div :class="['col-4' , {active : activeClass[index]}]" v-for="(prize,index) in lis1" ><img :src="prize"></div>

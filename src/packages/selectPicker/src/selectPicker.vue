@@ -1,5 +1,5 @@
 <template>
-  <div :class="['picker-wraper' , {isShow : isShow}]">
+  <div :class="[prefixCls+'-wraper' , {isShow : isShow}]">
     
     <div class="list">
       <div class="arrow lis" @click="init">
@@ -8,12 +8,12 @@
       </div>
     </div>
 
-    <div class="picker-container">
-     <div class="picker-header">
-        <span class="picker-cancle" @click="cancleHandler">取消</span>
-        <span class="picker-confirm" @click="confirmHandler">确认</span>
+    <div :class="prefixCls+'-container'">
+     <div :class="prefixCls+'-header'">
+        <span :class="prefixCls+'-cancle'" @click="cancleHandler">取消</span>
+        <span :class="prefixCls+'-confirm'" @click="confirmHandler">确认</span>
       </div>
-      <div :class="['wrapper','picker-content' , {showMask:showMask}]" >
+      <div :class="['wrapper',prefixCls+'-content' , {showMask:showMask}]" >
         <picker :nowIndex="dataIndex.nowIndex" :dataArr="options"  v-on:change="changeData" :isShow="isShow"></picker>
       </div>
     </div>
@@ -31,6 +31,7 @@
     name:"selectPicker",
     data() {
       return {
+        prefixCls:'iv-picker',
         isShow:false,
         showMask:false,
         placeholder:true,

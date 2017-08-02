@@ -1,10 +1,10 @@
 <template>
-  <div class="vi-dropDown">
-      <ul class="vi-dropDown-nav" ref="titleList">
+  <div :class="prefixCls">
+      <ul :class="prefixCls+'-nav'" ref="titleList">
         <li v-for="(title , index) in titleText" @click="changeTab(index , $event)">{{title}}</li>
       </ul>
-      <div :class="[{show:show}, 'vi-dropDown-wrapper']" ref="dropDownWrapper">
-        <div class="vi-dropDown-list" v-for="(list , index) in dropDownList">
+      <div :class="[{show:show}, prefixCls+'-wrapper']" ref="dropDownWrapper">
+        <div :class="prefixCls+'-list'" v-for="(list , index) in dropDownList">
           <ul>
             <li v-for="(item , index) in list[0]" @click="selectFirstItem(index , $event)">{{item}}</li>
           </ul>
@@ -20,7 +20,7 @@
             </ul>
           </template>
         </div>
-        <div class="vi-dropDown-cover" @click="hideWrapper"></div>
+        <div :class="prefixCls+'-cover'" @click="hideWrapper"></div>
 
       </div>
   </div>
@@ -46,6 +46,7 @@
     name:"dropDown",
     data(){
       return {
+        prefixCls : 'iv-dropDown',
         show : false,
         titleText:[],
         isInit : [],
@@ -98,7 +99,7 @@
     },
     mounted(){
       this.$options.titleList = this.$refs.titleList;
-      this.$options.listEl = this.$refs.dropDownWrapper.querySelectorAll('.vi-dropDown-list'); //
+      this.$options.listEl = this.$refs.dropDownWrapper.querySelectorAll('.iv-dropDown-list'); //
       this.$options.listEl[0].classList.add('active');
     },
     methods:{

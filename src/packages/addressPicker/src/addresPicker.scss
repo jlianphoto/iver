@@ -1,5 +1,8 @@
 @import "../../../scss/_common";
-.picker-address .list .lis {
+
+$prefixCls : '.iv-picker';
+
+#{$prefixCls}-address .list .lis {
     height: torem(50);
     line-height: torem(50);
     border-bottom:1px solid $lineGray;
@@ -7,53 +10,62 @@
     padding: 0 torem(16);
     font-size: torem(14);
     @include flexbox();
+
+    &:last-child {
+        border: 0;
+    }
+
+    .tip {
+        color: #A6A6A6;
+        font-size: torem(14)
+    }
+
+    strong {
+        @include flex(1);
+    }
+
+    a.tel {
+        color: #A6A6A6;
+        font-size: torem(16);
+    }
+
+    span {
+        height: torem(50);
+        line-height: torem(50);
+        @include flex(0.4)
+
+        &:first-child{
+            text-align: left;
+        }
+        &:last-child {
+            @include flex(1);
+            padding-right: torem(8);
+            @include ellipsis()
+        }
+    }
+
+    label {
+        width: torem(60);
+        height: torem(50);
+        line-height: torem(50);
+    }
+
+    input {
+        border: none;
+        @include flex(1);
+    }
+
+
 }
 
-.picker-address .list .lis:last-child {
-    border: 0;
-}
 
-.picker-address .list .lis .tip {
-    color: #A6A6A6;
-    font-size: torem(14)
-}
 
-.picker-address .list .lis strong {
-    @include flex(1);
-}
+#{$prefixCls}-address{
+    #{$prefixCls}{
+        @include flex(1);
+    }
 
-.picker-address .list .lis a.tel {
-    color: #A6A6A6;
-    font-size: torem(16);
-}
-
-.picker-address .list .lis span {
-    height: torem(50);
-    line-height: torem(50);
-    @include flex(0.4)
-}
-.picker-address .list .lis span:first-child{
-    text-align: left;
-}
-.picker-address .list .lis span:last-child {
-    @include flex(1);
-    padding-right: torem(8);
-    @include ellipsis()
-}
-
-.picker-address .list .lis label {
-    width: torem(60);
-    height: torem(50);
-    line-height: torem(50);
-}
-
-.picker-address .list .lis input {
-    border: none;
-    @include flex(1);
-}
-.picker-address .picker{
-    @include flex(1);
-}
-.placeholder {
-    color: #c9c9c9
+    .placeholder {
+        color: #c9c9c9
+    }
 }

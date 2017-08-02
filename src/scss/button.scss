@@ -1,6 +1,6 @@
 @import "_common";
 
-btn{
+%btn{
     display: block;
     width: 100%;
     height: torem(50);
@@ -9,7 +9,7 @@ btn{
     border-radius: 4px;
     font-size: torem(18);
 }
-btnInline{
+%btnInline{
     display: inline-block;
     height: torem(34);
     line-height: torem(34);
@@ -21,7 +21,7 @@ btnInline{
 
 /*btn*/
 .btn {
-    @extend btn;
+    @extend %btn;
     background: $orange;
     color: $white;
     &:active{
@@ -32,7 +32,7 @@ btnInline{
     }
 }
 .btn-blue{
-    @extend btn;
+    @extend %btn;
     background: $blue;
     color: $white;
     &:active{
@@ -45,7 +45,7 @@ btnInline{
 
 /*btn-outline*/
 .btn-outline{
-    @extend btn;
+    @extend %btn;
     background: none;
     border:1px solid $orange;
     color: $orange;
@@ -63,7 +63,7 @@ btnInline{
     }
 }
 .btn-outline-blue{
-    @extend btn;
+    @extend %btn;
     background: none;
     border:1px solid $blue;
     color: $blue;
@@ -79,7 +79,7 @@ btnInline{
 
 /*btn-inline*/
 .btn-inline{
-   @extend btnInline;
+   @extend %btnInline;
    color: $orange;
    border:1px solid $orange;
     &:focus{
@@ -97,7 +97,7 @@ btnInline{
 }
 
 .btn-inline-blue{
-   @extend btnInline;
+   @extend %btnInline;
    color: $blue;
    border:1px solid $blue;
     &:focus{

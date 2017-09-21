@@ -1,66 +1,66 @@
 <template>
-  <div ></div>
+    <div></div>
 </template>
 
 
 <script type="text/javascript">
-
-import CountUp from 'countup.js'
-
-
-export default {
-  name: 'countUp',
-  props:{
-    startVal:{
-      type : Number,
-      default : 0
-    },
-    endVal:{
-      type : Number,
-      default : 1000
-    },
-    // 小数位
-    decimals:{ 
-      type : Number,
-      default : 0
-    },
-    duration:{
-      type : Number,
-      default : 2
-    },
-    
-    options : {
-      type : Object,
-      default(){
-        return {}
-      }
-    }
-  },
-  mounted(){
-    this._numAnim = new CountUp(this.$el , this.startVal , this.endVal , this.decimals , this.duration , this.options);
+    import CountUp from 'countup.js'
 
 
-    var windowH = document.documentElement.clientHeight,
-        scrollTop = document.body.scrollTop,
-        offsetTop = this.$el.offsetTop;
+    export default {
+        name: 'countUp',
+        props: {
+            startVal: {
+                type: Number,
+                default: 0
+            },
+            endVal: {
+                type: Number,
+                default: 1000
+            },
+            // 小数位
+            decimals: {
+                type: Number,
+                default: 0
+            },
+            duration: {
+                type: Number,
+                default: 2
+            },
+
+            options: {
+                type: Object,
+                default() {
+                    return {}
+                }
+            }
+        },
+        mounted() {
+            this._numAnim = new CountUp(this.$el, this.startVal, this.endVal, this.decimals, this.duration, this.options);
 
 
-    if (offsetTop <= windowH+scrollTop) {
-      this._numAnim.start();
-    }else{
-      window.addEventListener('scroll', ()=>{
-        var windowH = document.documentElement.clientHeight,
-            scrollTop = document.body.scrollTop,
-            offsetTop = this.$el.offsetTop;
+            var windowH = document.documentElement.clientHeight,
+                scrollTop = document.body.scrollTop,
+                offsetTop = this.$el.offsetTop;
 
-        if (offsetTop <= windowH+scrollTop) {
-          this._numAnim.start();
+
+            if (offsetTop <= windowH + scrollTop) {
+                this._numAnim.start();
+            } else {
+                window.addEventListener('scroll', () => {
+                    var windowH = document.documentElement.clientHeight,
+                        scrollTop = document.body.scrollTop,
+                        offsetTop = this.$el.offsetTop;
+
+                    if (offsetTop <= windowH + scrollTop) {
+                        this._numAnim.start();
+                    }
+                });
+            }
+
+
+
         }
-      });
     }
 
-
-    
-  }
-}
 </script>

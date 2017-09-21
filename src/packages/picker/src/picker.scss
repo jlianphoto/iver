@@ -1,132 +1,122 @@
 @import "../../../scss/_common";
 
-$prefixCls : '.iv-picker';
+$prefixCls: '.iv-picker';
 
-%maskTop{
-  position: absolute;
-  left: 0;
-  z-index: 3;
-  width: 100%;
-  height: torem(120);
-  display: none;
+%maskTop {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: torem(120);
+    display: none;
 }
 
 
-#{$prefixCls}{
-  width: 100%;
-
-  #{$prefixCls}-scroller{
-    text-align:center;
-    position: relative;
-    z-index: 4;
-    height: torem(280);
-    overflow: hidden;
+#{$prefixCls} {
     width: 100%;
 
-    #{$prefixCls}-item{
-      line-height: torem(40);
-      display: block;
-      @include ellipsis();
+    &-scroller {
+        text-align: center;
+        position: relative;
+        z-index: 4;
+        height: torem(280);
+        overflow: hidden;
+        width: 100%;
+
+        #{$prefixCls}-item {
+            line-height: torem(40);
+            display: block;
+            @include ellipsis();
+        }
     }
-  }
 
-  #{$prefixCls}-mask-top{
-    @extend %maskTop;
-    top:0;
-    background-image:linear-gradient(to top, rgba(255,255,255,.5), rgba(255,255,255,.9));
-    background-image:-webkit-linear-gradient(bottom, rgba(255,255,255,.5), rgba(255,255,255,.9)); 
-    border-bottom: 1px solid $lineGray;
-
-  }
-
-  #{$prefixCls}-mask-bottom{
-    @extend %maskTop;
-    bottom:0;
-    background-image:linear-gradient(to bottom, rgba(255,255,255,.5), rgba(255,255,255,.9));
-    background-image:-webkit-linear-gradient(top, rgba(255,255,255,.5), rgba(255,255,255,.9)); 
-    border-top: 1px solid $lineGray;
-  }
-
-  .isTransition{
-    transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);
-    -webkit-transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);
-  }
-
-}
-
-
-
-
-
-#{$prefixCls}-wraper{
-  .v-cover{
-    display: none;
-  }
-
-  &.isShow .v-cover{
-    display: block;
-  }
-
-  &.isShow #{$prefixCls}-container{
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-  }
-}
-
-
-
-
-
-#{$prefixCls}-container{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: 1000;
-  width: 100%;
-  height: torem(320);
-  background: #fff;
-  transform: translate3d(0, 100%, 0);
-  -webkit-transform: translate3d(0, 100%, 0);
-  transition: transform .25s ease;
-  -webkit-transition: -webkit-transform .25s ease;
-
-  &.isShow #{$prefixCls}-container{
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-  }
-
-  #{$prefixCls}-header{
-    @include flexbox();
-    border-bottom:1px solid $lineGray;
-    height: torem(40);
-    line-height: torem(40);
-    color: $orange;
-
-    span{
-      @include flex(1);
-      box-sizing: border-box;
-
-      &#{$prefixCls}-cancle{
-        padding-left:torem(30);
-        text-align: left;
-      }
-
-      &#{$prefixCls}-confirm{
-        padding-right:torem(30);
-        text-align:right;
-      }
+    &-mask-top {
+        @extend %maskTop;
+        top: 0;
+        background-image: linear-gradient(to top, rgba(255, 255, 255, .5), rgba(255, 255, 255, .9));
+        background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, .9));
+        border-bottom: 1px solid $lineGray;
     }
-  }
+
+    &-mask-bottom {
+        @extend %maskTop;
+        bottom: 0;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, .9));
+        background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5), rgba(255, 255, 255, .9));
+        border-top: 1px solid $lineGray;
+    }
+
+    &-wraper {
+        .v-cover {
+            display: none;
+        }
+
+        &.isShow .v-cover {
+            display: block;
+        }
+
+        &.isShow #{$prefixCls}-container {
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+    }
 
 
-  #{$prefixCls}-content{
-    @include flexbox();
-  }
+    &-container {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        width: 100%;
+        height: torem(320);
+        background: #fff;
+        transform: translate3d(0, 100%, 0);
+        -webkit-transform: translate3d(0, 100%, 0);
+        transition: transform .25s ease;
+        -webkit-transition: -webkit-transform .25s ease;
 
-  .showMask #{$prefixCls}-mask-top , .showMask #{$prefixCls}-mask-bottom{
-    display: block;
-  }
+        &.isShow #{$prefixCls}-container {
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+
+        #{$prefixCls}-header {
+            @include flexbox();
+            border-bottom: 1px solid $lineGray;
+            height: torem(40);
+            line-height: torem(40);
+            color: $orange;
+
+            span {
+                @include flex(1);
+                box-sizing: border-box;
+
+                &#{$prefixCls}-cancle {
+                    padding-left: torem(30);
+                    text-align: left;
+                }
+
+                &#{$prefixCls}-confirm {
+                    padding-right: torem(30);
+                    text-align: right;
+                }
+            }
+        }
 
 
+        #{$prefixCls}-content {
+            @include flexbox();
+        }
+
+        .showMask #{$prefixCls}-mask-top,
+        .showMask #{$prefixCls}-mask-bottom {
+            display: block;
+        }
+    }
+
+
+    .isTransition {
+        transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);
+        -webkit-transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);
+    }
 }
-

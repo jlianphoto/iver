@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="checkbox" :disabled="disabled" class="vi-switch" v-model="currentValue">
+    <input type="checkbox" :disabled="disabled" class="iv-switch" v-model="currentValue">
   </div>
 </template>
 

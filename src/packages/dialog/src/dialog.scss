@@ -1,77 +1,76 @@
 @import "../../../scss/_common";
-.iv-toast{
-  padding:torem(12);
-  font-size: torem(14);
-  color: #fff;
-  background: rgba(0,0,0,.5);
-  border-radius: 4px;
-  text-align: center;
-  position: fixed;
-  top:50%;
-  left:50%;
-  @include transform(translate3d(-50%,-50%,0));
-  @include animation(fadeInOut 1.5s forwards);
-}
-
-
-
-$prefixCls : '.iv-dialog';
-
-
-#{$prefixCls}{
-  position: fixed;
-  width: 82%;
-  top: 50%;
-  left: 50%;
-  z-index: 9999;
-  transform: translate3d(-50%, -50%, 0);
-  background-color: #FAFAFC;
-  text-align: center;
-  border-radius: 6px;
-  overflow: hidden;
-  transition: .2s;
-  
-  #{$prefixCls}-header{
-    padding: torem(10);
-    font-size: torem(20);
-  }
-
-  #{$prefixCls}-content{
-    font-size: torem(16);
-    color: #666;
+.iv-toast {
+    padding: torem(12);
+    font-size: torem(14);
+    color: #fff;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 4px;
     text-align: center;
-    padding: torem(5) torem(10) torem(10) torem(10);
-  }
-
-  #{$prefixCls}-footer{
-      position: relative;
-      line-height: torem(40);
-      margin-top: torem(10);
-      border-top: 1px solid #f0f0f0;
-      @include flexbox();
-    
-      button{
-        width: 100%;
-        height: torem(40);
-        font-size: torem(16);
-        background: #fff;
-        @include flex(1);
-
-        &.confirm{
-          color:#f60;
-        }
-
-        &.cancle{
-          color:#9c9c9c;
-          border-left: 1px solid #f0f0f0;
-        }
-      }
-  }
-
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    @include transform(translate3d(-50%, -50%, 0));
+    @include animation(fadeInOut 1.5s forwards);
 }
 
 
-#{$prefixCls}-scale-out-enter{
-  opacity: 0;
-  transform: translate3d(-50%, -50%, 0) scale(1.5);
+
+$prefixCls: '.iv-dialog';
+
+
+#{$prefixCls} {
+    position: fixed;
+    width: 82%;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: #FAFAFC;
+    text-align: center;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: .2s;
+
+    &-header {
+        padding: torem(10);
+        font-size: torem(20);
+    }
+
+    &-content {
+        font-size: torem(16);
+        color: #666;
+        text-align: center;
+        padding: torem(5) torem(10) torem(10) torem(10);
+    }
+
+    &-footer {
+        position: relative;
+        line-height: torem(40);
+        margin-top: torem(10);
+        border-top: 1px solid #f0f0f0;
+        @include flexbox();
+
+        button {
+            width: 100%;
+            height: torem(40);
+            font-size: torem(16);
+            background: #fff;
+            @include flex(1);
+
+            &.confirm {
+                color: #f60;
+            }
+
+            &.cancle {
+                color: #9c9c9c;
+                border-left: 1px solid #f0f0f0;
+            }
+        }
+    }
+}
+
+
+#{$prefixCls}-scale-out-enter {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(1.5);
 }

@@ -9,23 +9,23 @@ $prefixCls : '.iv-swiper';
     overflow: hidden;
     position: relative;
 
-    #{$prefixCls}-wrapper{
+    &-wrapper{
         @include flexbox();
         min-height: 100%;
     }
 
-    #{$prefixCls}-wrapper a{
+    &-wrapper a{
         display: block;
         width: 100%;
         flex-shrink: 0;
         -webkit-flex-shrink: 0;
     }
 
-    #{$prefixCls}-wrapper a img{
+    &-wrapper a img{
         width: 100%;
     }
 
-    #{$prefixCls}-dot {
+    &-dot {
         position: absolute;
         bottom: torem(10);
         left: 50%;
@@ -33,7 +33,7 @@ $prefixCls : '.iv-swiper';
         @include flexbox();
     }
 
-    #{$prefixCls}-dot li{
+    &-dot li{
         @include flex(1);
         margin-right: torem(8);
         border-radius: 50%;
@@ -43,11 +43,11 @@ $prefixCls : '.iv-swiper';
         opacity: .5;
     }
 
-    #{$prefixCls}-dot li:last-child{
+    &-dot li:last-child{
         margin-right: 0;
     }
 
-    #{$prefixCls}-dot li.active{
+    &-dot li.active{
         background: $orange;
         opacity: 1;
     }

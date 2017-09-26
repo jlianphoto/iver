@@ -51,6 +51,7 @@
     }
   .demo-index-des{
     color:#bbb;
+    font-size:torem(16);
   }
   footer.demo-index{
     width: 100%;

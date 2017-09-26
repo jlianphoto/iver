@@ -84,6 +84,7 @@
 .dt-container .dt-header span{
   @include flex(1);
   box-sizing: border-box;
+  font-size: 16px;
 }
 .dt-container .dt-header span.dt-cancle{
   padding-left:torem(30);
@@ -130,6 +131,7 @@ maskTop{
 }
 .dt-container .dt-content .dt-scroller .dt-item{
   line-height: torem(40);
+  font-size : torem(18);
 }
 .dt-container .isTransition{
   transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);

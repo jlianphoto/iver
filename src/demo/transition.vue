@@ -66,6 +66,7 @@
     line-height:24px;
     height:24px;
     color:#333;
+    font-size:16px;
   }
   .row{
     padding:10px;
@@ -82,6 +83,7 @@
     background: $blue;
     color: $white;
     text-align:center;
+    font-size:torem(16);
   }
 
 </style>

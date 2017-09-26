@@ -23,6 +23,7 @@ $prefixCls : '.iv-dropDown';
         position: relative;
         z-index: 1000;
         border-bottom:1px solid $gray;
+        font-size: torem(16);
         @include flexbox();
 
         li{
@@ -110,6 +111,7 @@ $prefixCls : '.iv-dropDown';
             li{
                 height: torem(44);
                 line-height: torem(44);
+                font-size: torem(16);
                 text-align: center;
                 position: relative;
                 @include borderBottom();

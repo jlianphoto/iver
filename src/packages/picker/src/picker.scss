@@ -25,6 +25,7 @@ $prefixCls: '.iv-picker';
 
         #{$prefixCls}-item {
             line-height: torem(40);
+            font-size: torem(16);
             display: block;
             @include ellipsis();
         }
@@ -90,6 +91,7 @@ $prefixCls: '.iv-picker';
             span {
                 @include flex(1);
                 box-sizing: border-box;
+                font-size: torem(16 );
 
                 &#{$prefixCls}-cancle {
                     padding-left: torem(30);

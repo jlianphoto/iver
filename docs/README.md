@@ -42,19 +42,12 @@ import  {component} from 'iver'
 Vue.component(component.name, component);
 ```
 
+## Response
 
-## Css
+use flexible
 
-### Response
-sass
-
-```js
-$phone: 750;  //设计图尺寸
-$remBase:$phone/3200; //基准值
-@function torem($size) {
-  $remSize: $size / $remBase;
-  @return $remSize * 1rem;
-}
+```html
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
 ```
 
 

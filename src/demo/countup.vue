@@ -11,20 +11,20 @@
 
   import countUp from '../packages/countUp';
   export default {
-    data() {
-      return {
+      data() {
+          return {
       
-      };
-    },
-    created(){
+          };
+      },
+      created(){
 
-    },
-    methods:{
+      },
+      methods:{
 
-    },
-    components:{
-      countUp : countUp
-    }
+      },
+      components:{
+          countUp : countUp
+      }
   };
 </script>
 

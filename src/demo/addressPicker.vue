@@ -18,23 +18,23 @@
 
   import address from '../packages/addressPicker';
   export default {
-    data() {
-      return {
-        value:["广东省","深圳市","南山区"],
-      };
-    },
-    //页面载入执行
-    created(){
+      data() {
+          return {
+              value:['广东省','深圳市','南山区'],
+          };
+      },
+      //页面载入执行
+      created(){
 
-    },
-    methods:{
-    //get message from child component
-    getValue(msg){
-      console.log(msg);
-     }
-    },
-    components:{
-      addressPicker : address
-    }
+      },
+      methods:{
+          //get message from child component
+          getValue(msg){
+              console.log(msg);
+          }
+      },
+      components:{
+          addressPicker : address
+      }
   };
 </script>

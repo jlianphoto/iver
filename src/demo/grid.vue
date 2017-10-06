@@ -21,18 +21,18 @@
 
 <script type="text/javascript">
 export default {
-  name: 'grid',
-  computed:{
-    imgsComputed(){
-      var imgSrc = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1138263027,3345338965&fm=21&gp=0.jpg";
-      var imgs = [];
-      for(let i = 0 ; i<6 ; i++){
-        imgs.push(imgSrc);
-      }
-      return imgs
+    name: 'grid',
+    computed:{
+        imgsComputed(){
+            var imgSrc = 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1138263027,3345338965&fm=21&gp=0.jpg';
+            var imgs = [];
+            for(let i = 0 ; i<6 ; i++){
+                imgs.push(imgSrc);
+            }
+            return imgs;
+        }
     }
-  }
-}
+};
 </script>
 
 <style lang="scss">

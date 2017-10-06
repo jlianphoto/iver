@@ -1,38 +1,38 @@
-import Vue from 'vue'
-import App from './App'
+import Vue from 'vue';
+import App from './App';
 
 
 // 路由
-import router from './router/'
+import router from './router/';
 
 
-import iver from './plugin/all/'
-import loading from './packages/loading'
+import iver from './plugin/all/';
+import loading from './packages/loading';
 
-import './scss/index.scss'
+import './scss/index.scss';
 
 // 兼容ios active 效果
 document.body.addEventListener('touchstart', function () {});  
 
-Vue.use(iver)
+Vue.use(iver);
 
       
 const app = new Vue({
-  el: '#app',
-  template: '<App/>',
-  components: { App },
-  router,
-})
+    el: '#app',
+    template: '<App/>',
+    components: { App },
+    router,
+});
 
 router.beforeEach((to, from, next) => {
-  loading.show()
-  document.title = to.meta.title;
-  next();
-})
+    loading.show();
+    document.title = to.meta.title;
+    next();
+});
 
-router.afterEach((to)=>{
-	loading.hide()
-})
+router.afterEach(()=>{
+    loading.hide();
+});
 
 
-export { app, router }
+export { app, router };

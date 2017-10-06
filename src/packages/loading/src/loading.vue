@@ -19,16 +19,10 @@
 <script type="text/javascript">
   import './loading.scss';
   export default {
-    data(){
-      return {
-        message : ""
+      data(){
+          return {
+              message : ''
+          };
       }
-    },
-    props:{
-     
-    },
-    methods:{
-      
-    }
   };
 </script>

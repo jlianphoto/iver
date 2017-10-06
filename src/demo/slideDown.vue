@@ -39,17 +39,17 @@
   import slideDown from '../packages/slideDown';
 
   export default {
-    data() {
-      return {
-        show:false
-      }
-    },
-    methods:{
+      data() {
+          return {
+              show:false
+          };
+      },
+      methods:{
 
-    },
-    components:{
-      slideDown:slideDown
-    }
+      },
+      components:{
+          slideDown:slideDown
+      }
   };
 </script>
 

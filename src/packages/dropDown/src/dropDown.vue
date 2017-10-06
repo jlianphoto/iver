@@ -33,17 +33,17 @@
 
     Array.prototype.arrClear = function () {
         this.splice(0, this.length);
-    }
+    };
 
     var firstIndex = [],
         secondIndex = 0,
         thirdIndex = 0;
 
-    var selectedData = []
+    var selectedData = [];
 
 
     export default {
-        name: "dropDown",
+        name: 'dropDown',
         data() {
             return {
                 prefixCls: 'iv-dropDown',
@@ -53,7 +53,7 @@
                 dropDownList: [
 
                 ]
-            }
+            };
         },
         listEl: null,
         tabIndex: 0,
@@ -61,7 +61,7 @@
             dropDownData: {
                 type: Array,
                 default() {
-                    return []
+                    return [];
                 }
             },
             selectCallback: {
@@ -70,8 +70,8 @@
             }
         },
         watch: {
-            dropDownData(val) {
-                this.init()
+            dropDownData() {
+                this.init();
             }
         },
         created() {
@@ -102,24 +102,24 @@
                                 if (secondItem.children && k === 0) {
                                     secondItem.children.forEach(thirdItem => {
                                         this.dropDownList[i][2].push(thirdItem.name);
-                                    })
+                                    });
                                 }
-                            })
+                            });
                         }
-                    })
+                    });
                 });
             },
             changeTab(index, e) {
 
                 this.$options.listEl.forEach(item => {
                     item.classList.remove('active');
-                })
+                });
                 this.$options.listEl[index].classList.add('active');
                 this.$options.tabIndex = index;
 
-                if (e.target.classList.contains("cur")) {
+                if (e.target.classList.contains('cur')) {
                     this.show = false;
-                    e.target.classList.remove("cur");
+                    e.target.classList.remove('cur');
                 } else {
                     this.classHandler(e);
                     this.show = true;
@@ -146,13 +146,13 @@
                 } else {
 
                     // set init state
-                    this.classInit(e, "first")
+                    this.classInit(e, 'first');
 
                     this.dropDownList[i][1].arrClear();
 
                     child.children.forEach(item => {
                         this.dropDownList[i][1].push(item.name);
-                    })
+                    });
                     this.dropDownList[i][2].arrClear();
 
                 }
@@ -178,12 +178,12 @@
                 } else {
 
                     // set init state
-                    this.classInit(e, "second")
+                    this.classInit(e, 'second');
 
                     this.dropDownList[i][2].arrClear();
                     child.children[secondIndex].children.forEach(item => {
                         this.dropDownList[i][2].push(item.name);
-                    })
+                    });
 
                 }
 
@@ -210,28 +210,28 @@
             },
             hideWrapper() {
                 this.show = false;
-                this.$options.titleList.querySelectorAll("li").forEach(item => {
-                    item.classList.remove("cur");
-                })
+                this.$options.titleList.querySelectorAll('li').forEach(item => {
+                    item.classList.remove('cur');
+                });
             },
             classHandler(e) {
                 e.target.parentNode.childNodes.forEach(item => {
-                    item.classList.remove("cur");
-                })
-                e.target.classList.add("cur")
+                    item.classList.remove('cur');
+                });
+                e.target.classList.add('cur');
             },
             // init other ul's class when user click
             classInit(e, sequence) {
                 var parent = e.target.parentNode.parentNode;
-                var childs = parent.querySelectorAll("ul");
+                var childs = parent.querySelectorAll('ul');
 
-                var index = sequence === "first" ? 1 : 2;
+                var index = sequence === 'first' ? 1 : 2;
 
                 if (childs[index]) {
-                    var lis = childs[index].querySelectorAll("li");
+                    var lis = childs[index].querySelectorAll('li');
                     lis.forEach(item => {
                         item.classList.remove('cur');
-                    })
+                    });
                 }
 
 

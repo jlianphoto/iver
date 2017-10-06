@@ -34,14 +34,14 @@
 
 
     export default {
-        name: "addressPicker",
+        name: 'addressPicker',
         data() {
             return {
                 prefixCls: 'iv-picker',
                 isShow: false,
                 showMask: false,
                 placeholder: true,
-                showText: "",
+                showText: '',
                 addressCash: {},
                 provinceData: [],
                 cityData: [],
@@ -98,9 +98,9 @@
                 }
 
                 this.placeholder = false;
-                this.showText = this.value.join(" ");
+                this.showText = this.value.join(' ');
             } else {
-                this.showText = this.hasCounty ? "省 / 区 / 街道" : "省 / 区";
+                this.showText = this.hasCounty ? '省 / 区 / 街道' : '省 / 区';
                 this.setCity(0);
             }
 
@@ -123,7 +123,7 @@
 
                 if (this.hasCounty) {
                     for (let obj of this.addressCash.c[0].c) {
-                        this.countyData.push(obj.n)
+                        this.countyData.push(obj.n);
                     }
                     this.countyIndex.pickerIndex = 0;
                 }
@@ -138,7 +138,7 @@
             setCounty(index) {
                 this.countyData = [];
                 for (let obj of this.addressCash.c[index].c) {
-                    this.countyData.push(obj.n)
+                    this.countyData.push(obj.n);
                 }
                 this.countyIndex.pickerIndex = 0;
             },
@@ -163,6 +163,8 @@
                 this.provinceIndex.nowIndex = this.provinceIndex.pickerIndex;
                 this.cityIndex.nowIndex = this.cityIndex.pickerIndex;
 
+                let data = {};
+
                 if (this.hasCounty) {
                     this.countyIndex.nowIndex = this.countyIndex.pickerIndex;
                 }
@@ -170,18 +172,18 @@
                 this.addressCash = AreaData[this.provinceIndex.nowIndex];
 
                 if (this.hasCounty) {
-                    var data = {
+                    data = {
                         province: this.addressCash.n,
                         city: this.cityData[this.cityIndex.nowIndex],
-                        county: this.countyData[this.countyIndex.nowIndex] || ""
-                    }
-                    this.showText = data.province + " " + data.city + " " + data.county;
+                        county: this.countyData[this.countyIndex.nowIndex] || ''
+                    };
+                    this.showText = data.province + ' ' + data.city + ' ' + data.county;
                 } else {
-                    var data = {
+                    data = {
                         province: this.addressCash.n,
                         city: this.cityData[this.cityIndex.nowIndex]
-                    }
-                    this.showText = data.province + " " + data.city;
+                    };
+                    this.showText = data.province + ' ' + data.city;
                 }
 
                 this.placeholder = false;
@@ -202,7 +204,7 @@
             init() {
                 this.isShow = true;
                 this.$children.forEach(function (item) {
-                    item.init()
+                    item.init();
                 });
 
                 // be compatible with ISO10

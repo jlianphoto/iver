@@ -23,28 +23,28 @@
   import dialog from '../packages/dialog';
 
   export default {
-    methods:{
-      toastHandler(){
-        dialog.toast("message");
-      },
-      alertHandler(){
-        dialog.alert("title","message");
-      },
-      alertHandler2(){
-        dialog.alert({title:"title" , message:"message" , confirmTxt:"confirm" , animate:true});
-      },
-      confirmHandler(){
-        dialog.confirm({title:"title" , message:"message"});
-      },
-      confirmCallback(){
-        dialog.confirm({
-          title:"title" , 
-          message:"message" , 
-          confirmCallback : ()=>{alert("confirm")} ,
-          cancleCallback : ()=>{alert("cancle")}
-        });
+      methods:{
+          toastHandler(){
+              dialog.toast('message');
+          },
+          alertHandler(){
+              dialog.alert('title','message');
+          },
+          alertHandler2(){
+              dialog.alert({title:'title' , message:'message' , confirmTxt:'confirm' , animate:true});
+          },
+          confirmHandler(){
+              dialog.confirm({title:'title' , message:'message'});
+          },
+          confirmCallback(){
+              dialog.confirm({
+                  title:'title' , 
+                  message:'message' , 
+                  confirmCallback : ()=>{alert('confirm');} ,
+                  cancleCallback : ()=>{alert('cancle');}
+              });
+          }
       }
-    }
   };
 </script>
 

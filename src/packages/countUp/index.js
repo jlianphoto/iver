@@ -18,7 +18,7 @@
 *      return b + c * (1.77635683940025e-15 * tc * ts + 0.999999999999998 * tc + -3 * ts + 3 * t);
 *  };
 *  var options = {
-*    easingFn: easeOutCubic
+*		easingFn : easeOutCubic
 *  };
 *
 *

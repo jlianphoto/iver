@@ -13,22 +13,22 @@
 
   import selectPicker from '../packages/selectPicker';
   export default {
-    data() {
-      return {
-        options : ["select","select1","select2","select3","select4","select5","select6","select7","select8","select9","select10","select11","select12","select13","select14"]
-      };
-    },
-    created(){
+      data() {
+          return {
+              options : ['select','select1','select2','select3','select4','select5','select6','select7','select8','select9','select10','select11','select12','select13','select14']
+          };
+      },
+      created(){
       
-    },
-    methods:{
-      getValue(msg){
-        console.log(msg)
+      },
+      methods:{
+          getValue(msg){
+              console.log(msg);
+          }
+      },
+      components:{
+          selectPicker : selectPicker
       }
-    },
-    components:{
-      selectPicker : selectPicker
-    }
   };
 </script>
 

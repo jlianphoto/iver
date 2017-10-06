@@ -28,7 +28,7 @@
                 //选中的值
                 selected: 0,
                 prefixCls: 'iv-picker'
-            }
+            };
         },
         props: {
             nowIndex: {
@@ -38,7 +38,7 @@
             dataArr: {
                 type: Array,
                 default() {
-                    return []
+                    return [];
                 }
             }
         },
@@ -55,15 +55,15 @@
         },
         mounted() {
             this.picker = this.$refs.picker;
-            this.itemH = this.$refs.picker.querySelector("li").offsetHeight;
+            this.itemH = this.$refs.picker.querySelector('li').offsetHeight;
 
             //  be compatible with ios8 ， there is still no solution which i can find
-            let ver = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
-            ver = ver ? parseInt(ver[1], 10) : null;
-            if (ver && ver <= 8) {
-                this.setTransform = offset => { this.picker.style.webkitTransform = `translate(0, ${offset})`; }
+            let version = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+            version = version ? parseInt(version[1], 10) : null;
+            if (version && version <= 8) {
+                this.setTransform = offset => { this.picker.style.webkitTransform = `translate(0, ${offset})`; };
             } else {
-                this.setTransform = offset => { this.picker.style.webkitTransform = `translate3d(0, ${offset}px ,0)`; }
+                this.setTransform = offset => { this.picker.style.webkitTransform = `translate3d(0, ${offset}px ,0)`; };
             }
 
             this.init();
@@ -76,9 +76,9 @@
                 this.startTime = new Date().getTime();
             },
             touchmove(e) {
-                var e = e.changedTouches[0];
+                let event = e.changedTouches[0];
 
-                var offset = this.currentY + e.pageY - this.startY;
+                let offset = this.currentY + event.pageY - this.startY;
 
                 this.setTransform(offset);
 
@@ -86,18 +86,18 @@
             touchend(e) {
 
                 //获取li的个数
-                var length = this.picker.querySelectorAll('li').length;
+                let length = this.picker.querySelectorAll('li').length;
 
-                var e = e.changedTouches[0];
+                let event = e.changedTouches[0];
 
                 // slow
                 this.isTransition = true;
-                var time = (new Date().getTime() - this.startTime);
+                let time = (new Date().getTime() - this.startTime);
                 time = time > 200 ? 10000 : time;
 
-                var distant = e.pageY - this.startY;
+                let distant = event.pageY - this.startY;
 
-                var offset = this.currentY + distant + 290 * (distant / time);
+                let offset = this.currentY + distant + 290 * (distant / time);
 
                 offset = Math.round(offset / this.itemH) * this.itemH;
 
@@ -112,13 +112,13 @@
                 this.currentY = offset;
 
                 //be compatible with the low vision android
-                setTimeout(() => { this.setTransform(offset) }, 0)
+                setTimeout(() => { this.setTransform(offset); }, 0);
 
                 // change index after rolling
-                var index = offset / this.itemH - 3;
+                let index = offset / this.itemH - 3;
 
                 this.index = Math.abs(index);
-                setTimeout(() => { this.$emit('change', this.index) }, 500)
+                setTimeout(() => { this.$emit('change', this.index); }, 500);
 
             },
             init() {
@@ -131,6 +131,6 @@
             },
 
         }
-    }
+    };
 
 </script>

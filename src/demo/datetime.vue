@@ -24,11 +24,11 @@
   export default {
       methods:{
           getValue(msg){
-            console.log(msg)
+              console.log(msg);
           }
-        },
+      },
       components:{
-        datetime : datetime
+          datetime : datetime
       }
-  }
+  };
 </script>

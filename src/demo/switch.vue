@@ -21,26 +21,26 @@
   import vSwitch from '../packages/switch';
 
   export default {
-    data() {
-      return {
-        switchVal:"false",
-        disabled : "true",
-        value : true
-      };
-    },
-    methods:{
-      getValue(msg){
-        this.switchVal = msg
+      data() {
+          return {
+              switchVal:'false',
+              disabled : 'true',
+              value : true
+          };
+      },
+      methods:{
+          getValue(msg){
+              this.switchVal = msg;
+          }
+      },
+      components:{
+          vSwitch : vSwitch
+      },
+      watch:{
+          value(val){
+              console.log(val);
+          }
       }
-    },
-    components:{
-      vSwitch : vSwitch
-    },
-    watch:{
-      value(val){
-        console.log(val)
-      }
-    }
   };
 </script>
 

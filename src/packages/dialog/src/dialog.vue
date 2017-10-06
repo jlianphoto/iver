@@ -48,6 +48,6 @@
                 this.showDialog = false;
             }
         }
-    }
+    };
 
 </script>

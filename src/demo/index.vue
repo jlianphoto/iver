@@ -19,20 +19,20 @@
 <script type="text/javascript">
 
 export default {
-  data(){
-    return {
-        show : false,
-        nav  : [
-            {show : false},
-            {show : false},
-            {show : false}
-        ]
-    }
-  },
-  mounted(){
+    data(){
+        return {
+            show : false,
+            nav  : [
+                {show : false},
+                {show : false},
+                {show : false}
+            ]
+        };
+    },
+    mounted(){
 
-    var canvas = this.$refs.canvas,
-        imgs   = this.$refs.imgs;
+        var canvas = this.$refs.canvas,
+            imgs   = this.$refs.imgs;
         imgs.onload = ()=>{
             this.show = true;
 
@@ -41,27 +41,27 @@ export default {
                     var time = (index+1)*200;
                     setTimeout(()=>{
                         item.show = true;
-                    },time)
-                })
+                    },time);
+                });
             }, 50);
 
-        }
+        };
 
 
 
-    // canvas
-    let w = window.innerWidth,
-        h = window.innerHeight;
+        // canvas
+        let w = window.innerWidth,
+            h = window.innerHeight;
 
-    canvas.width = w;
-    canvas.height = h;
-
-
-
-    var ctx = canvas.getContext('2d');
+        canvas.width = w;
+        canvas.height = h;
 
 
-    function rand(min, max) {
+
+        var ctx = canvas.getContext('2d');
+
+
+        function rand(min, max) {
             return parseInt(Math.random() * (max - min + 1) + min);
         }
 
@@ -80,35 +80,35 @@ export default {
 
         }
         Round.prototype.draw = function() {
-                    ctx.fillStyle = 'rgba(200,200,200,0.2)';
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, true);
-                    ctx.closePath();
-                    ctx.fill();
-                }
+            ctx.fillStyle = 'rgba(200,200,200,0.2)';
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, true);
+            ctx.closePath();
+            ctx.fill();
+        };
         Round.prototype.links = function(){
-                for (var i=0;i<ballobj.length;i++) {
-                    var l = Math.sqrt((ballobj[i].x - this.x)*(ballobj[i].x - this.x)+(ballobj[i].y - this.y)*(ballobj[i].y - this.y));
-                    if(l<250){
+            for (var i=0;i<ballobj.length;i++) {
+                var l = Math.sqrt((ballobj[i].x - this.x)*(ballobj[i].x - this.x)+(ballobj[i].y - this.y)*(ballobj[i].y - this.y));
+                if(l<250){
                     ctx.beginPath();
                     ctx.moveTo(this.x,this.y);
                     ctx.lineTo(ballobj[i].x,ballobj[i].y);
                     ctx.strokeStyle = 'rgba(200,200,200,0.2)';
                     ctx.stroke();
                     ctx.closePath();
-                    }
+                }
             }
-        }
+        };
         Round.prototype.move = function() {
-                this.x += this.speedX/10;
-                if (this.x > canvas.width-this.r  || this.x-this.r < 0) {
-                    this.speedX *= -1;
-                }
-                this.y += this.speedY/10;
-                if (this.y > canvas.height-this.r  || this.y-this.r < 0) {
-                    this.speedY *= -1;
-                }
+            this.x += this.speedX/10;
+            if (this.x > canvas.width-this.r  || this.x-this.r < 0) {
+                this.speedX *= -1;
             }
+            this.y += this.speedY/10;
+            if (this.y > canvas.height-this.r  || this.y-this.r < 0) {
+                this.speedY *= -1;
+            }
+        };
         var ballobj = [];
 
         function init() {
@@ -133,8 +133,8 @@ export default {
         ballmove();
 
 
-  }
-}
+    }
+};
 </script>
 
 <style lang="scss" scope>

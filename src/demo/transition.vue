@@ -90,19 +90,19 @@
 <script type="text/javascript">
 
   export default {
-    data() {
-      return {
-        showFade:true,
-        scaleOut:true,
-        scaleIn:true,
-        slideTop:true,
-        slideBottom:true,
-        slideLeft:true,
-        slideRight:true
-      }
-    },
-    methods:{
+      data() {
+          return {
+              showFade:true,
+              scaleOut:true,
+              scaleIn:true,
+              slideTop:true,
+              slideBottom:true,
+              slideLeft:true,
+              slideRight:true
+          };
+      },
+      methods:{
 
-    }
+      }
   };
 </script>

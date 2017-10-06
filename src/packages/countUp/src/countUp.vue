@@ -4,7 +4,7 @@
 
 
 <script type="text/javascript">
-    import CountUp from 'countup.js'
+    import CountUp from 'countup.js';
 
 
     export default {
@@ -31,7 +31,7 @@
             options: {
                 type: Object,
                 default() {
-                    return {}
+                    return {};
                 }
             }
         },
@@ -61,6 +61,6 @@
 
 
         }
-    }
+    };
 
 </script>

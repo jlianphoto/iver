@@ -16,7 +16,7 @@
 ### [Document](https://jlianphoto.github.io/iver)
 
 
-## [demo](http://iver.jlianphoto.com)
+## [demo](http://p4t4cjc61.bkt.clouddn.com/iver/index.html)
 
 ![demo](https://github.com/jlianphoto/vui/blob/master/src/img/demo_code.png)
 

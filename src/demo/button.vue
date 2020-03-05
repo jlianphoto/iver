@@ -45,10 +45,10 @@
   background:$white;
 }
 .demo-button  ul{
-  padding:torem(10);
+  padding:10px;
 }
 .demo-button li{
-  margin-top:torem(10);
+  margin-top: 10px;
 }
 
 

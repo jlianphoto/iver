@@ -35,10 +35,10 @@
     }
 
     .demo-loading ul {
-        padding: torem(10);
+        padding: 10px;
     }
 
     .demo-loading li {
-        margin-top: torem(10);
+        margin-top: 10px;
     }
 </style>

@@ -7,7 +7,7 @@ $prefixCls: '.iv-picker';
     left: 0;
     z-index: 3;
     width: 100%;
-    height: torem(120);
+    height: 120px;
     display: none;
 }
 
@@ -19,13 +19,13 @@ $prefixCls: '.iv-picker';
         text-align: center;
         position: relative;
         z-index: 4;
-        height: torem(280);
+        height: 280px;
         overflow: hidden;
         width: 100%;
 
         #{$prefixCls}-item {
-            line-height: torem(40);
-            font-size: torem(16);
+            line-height: 40px;
+            font-size: 16px;
             display: block;
             @include ellipsis();
         }
@@ -69,7 +69,7 @@ $prefixCls: '.iv-picker';
         bottom: 0;
         z-index: 1000;
         width: 100%;
-        height: torem(320);
+        height: 320px;
         background: #fff;
         transform: translate3d(0, 100%, 0);
         -webkit-transform: translate3d(0, 100%, 0);
@@ -84,22 +84,22 @@ $prefixCls: '.iv-picker';
         #{$prefixCls}-header {
             @include flexbox();
             border-bottom: 1px solid $lineGray;
-            height: torem(40);
-            line-height: torem(40);
+            height: 40px;
+            line-height: 40px;
             color: $orange;
 
             span {
                 @include flex(1);
                 box-sizing: border-box;
-                font-size: torem(16 );
+                font-size: 16px;
 
                 &#{$prefixCls}-cancle {
-                    padding-left: torem(30);
+                    padding-left: 30px;
                     text-align: left;
                 }
 
                 &#{$prefixCls}-confirm {
-                    padding-right: torem(30);
+                    padding-right: 30px;
                     text-align: right;
                 }
             }

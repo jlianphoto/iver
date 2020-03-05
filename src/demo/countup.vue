@@ -31,7 +31,7 @@
 <style lang="scss">
 @import '../scss/_common';
   .demo-countup{
-    padding:torem(20) 0;
+    padding: 20px 0;
   }
   .demo-countup .test{
     height: 1000px;

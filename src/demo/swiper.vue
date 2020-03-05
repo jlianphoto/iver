@@ -21,14 +21,14 @@
           return {
               imgs : [
                   {
-                      imgUrl:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3660092960,2510943983&fm=15&gp=0.jpg' 
+                      imgUrl:'http://img3.imgtn.bdimg.com/it/u=1221034990,381247571&fm=26&gp=0.jpg' 
                   },
                   {
-                      imgUrl:'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=52317448,4275287853&fm=15&gp=0.jpg' , 
+                      imgUrl:'http://img0.imgtn.bdimg.com/it/u=3971567922,1401928396&fm=26&gp=0.jpg' , 
                       href:'/demo/demo'
                   },
                   {
-                      imgUrl:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=524793706,3113878690&fm=23&gp=0.jpg' , 
+                      imgUrl:'http://img5.imgtn.bdimg.com/it/u=1942548951,3854844576&fm=26&gp=0.jpg' , 
                       href:'/demo/demo'
                   }
               ]

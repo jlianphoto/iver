@@ -16,14 +16,14 @@ $prefixCls : '.iv-dropDown';
 
     &-nav{
         width: 100%;
-        height: torem(44);
-        line-height: torem(44);
+        height: 44px;
+        line-height: 44px;
         text-align: center;
         background: $white;
         position: relative;
         z-index: 1000;
         border-bottom:1px solid $gray;
-        font-size: torem(16);
+        font-size: 16px;
         @include flexbox();
 
         li{
@@ -54,7 +54,7 @@ $prefixCls : '.iv-dropDown';
             &:before{
                 content: '';
                 display: block;
-                height: torem(20);
+                height: 20px;
                 width: 1px;
                 background: $gray;
                 position: absolute;
@@ -70,7 +70,7 @@ $prefixCls : '.iv-dropDown';
 
     &-wrapper{
         width: 100%;
-        height: torem(400);
+        height: 400px;
         position: relative;
         z-index: 100;
         background: $white;
@@ -83,7 +83,7 @@ $prefixCls : '.iv-dropDown';
 
     &-list{
         background:$white;
-        height: torem(400);
+        height: 400px;
         display: none;
         position: relative;
         z-index: 1000;
@@ -93,7 +93,7 @@ $prefixCls : '.iv-dropDown';
 
         ul{
             position: relative;
-            height: torem(400);
+            height: 400px;
             -webkit-overflow-scrolling: touch;
             @include flex(1);
             @include transition(all 0.5s);
@@ -109,9 +109,9 @@ $prefixCls : '.iv-dropDown';
                 right: 0;
             }
             li{
-                height: torem(44);
-                line-height: torem(44);
-                font-size: torem(16);
+                height: 44px;
+                line-height: 44px;
+                font-size: 16px;
                 text-align: center;
                 position: relative;
                 @include borderBottom();

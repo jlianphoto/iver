@@ -51,6 +51,6 @@
 <style lang="scss">
   @import "../scss/_common";
   .padding-content{
-    padding:torem(20);
+    padding: 20px;
   }
 </style>

@@ -147,7 +147,7 @@ export default {
         left:0;
     }
     .wrapper{
-        padding-top:torem(80);
+        padding-top:80px;
         position: relative;
         z-index: 1;
         width: 70%;
@@ -156,38 +156,39 @@ export default {
         img{
             opacity: 0;
             width: 50%;
-            min-width:torem(140);
-            min-height:torem(140);
-            margin-bottom:torem(50);
+            min-width:140px;
+            min-height:140px;
+            margin-bottom:50px;
         }
         h1{
-            padding:torem(20) 0;
+            padding:20px 0;
             font-weight:bold;
             position: relative;
-            font-size:torem(22);
+            font-size:22px;
             color:$white;
             &:after{
                 content:"1.1.0";
-                font-size:torem(12);
+                font-size:12px;
                 position: absolute;
-                right:torem(74);
-                top:torem(10);
+                right:74px;
+                top:10px;
                 color:$orange;
 
             }
         }
         p{
-            padding-bottom:torem(60);
+            padding-bottom:60px;
             color:#addaff;
+            font-size: 18px;
         }
         nav{
             @include flexbox();
-            margin-top:torem(40);
+            margin-top:40px;
             a{
                 opacity: 0;
                 @include flex(1);
                 color:#90cdff;
-                font-size:torem(20);
+                font-size:20px;
             }
         }
     }

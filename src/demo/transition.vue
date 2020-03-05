@@ -72,9 +72,9 @@
     padding:10px;
   }
   .demo-wrapper{
-    margin-top:torem(10);
-    height:torem(150);
-    line-height:torem(150);
+    margin-top: 10px;
+    height: 150px;
+    line-height: 150px;
   }
 
   .demo-wrapper div{
@@ -83,7 +83,7 @@
     background: $blue;
     color: $white;
     text-align:center;
-    font-size:torem(16);
+    font-size: 16px;
   }
 
 </style>

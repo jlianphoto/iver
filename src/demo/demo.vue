@@ -35,30 +35,30 @@
   .demo-wrapper{
     position: relative ;
     text-align: center;
-    padding:torem(10);
-    margin-bottom:torem(10);
+    padding:10px;
+    margin-bottom: 10px;
     h1 img{
       width: 30%;
       position: relative;
-      right:torem(2);
+      right: 2px;
     }
   }
   .demo-index-title{
       font-weight:bold;
       color: #41b883;
-      margin:torem(10) 0;
-      font-size : torem(20);
+      margin: 10px 0;
+      font-size : 20px;
     }
   .demo-index-des{
     color:#bbb;
-    font-size:torem(16);
+    font-size: 16px;
   }
   footer.demo-index{
     width: 100%;
-    height:torem(40);
-    line-height:torem(40);
+    height: 40px;
+    line-height: 40px;
     text-align:center;
-    font-size:torem(14);
+    font-size: 14px;
   }
 
 </style>

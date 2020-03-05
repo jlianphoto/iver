@@ -40,9 +40,9 @@ $remBase:$phone/20;
 @mixin arrow($deg){
 	content: '';
 	display:inline-block;
-	margin-top:torem(-5);
-	width:torem(10);
-	height:torem(10);
+	margin-top:-5px;
+	width: 10px;
+	height: 10px;
 	border-right:1px solid #C7C7C7;
 	border-top:1px solid #C7C7C7;
 	@include transform(rotate($deg));

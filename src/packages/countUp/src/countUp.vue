@@ -40,7 +40,7 @@
 
 
             var windowH = document.documentElement.clientHeight,
-                scrollTop = document.body.scrollTop,
+                scrollTop = document.documentElement.scrollTop,
                 offsetTop = this.$el.offsetTop;
 
 
@@ -49,9 +49,8 @@
             } else {
                 window.addEventListener('scroll', () => {
                     var windowH = document.documentElement.clientHeight,
-                        scrollTop = document.body.scrollTop,
+                        scrollTop = document.documentElement.scrollTop,
                         offsetTop = this.$el.offsetTop;
-
                     if (offsetTop <= windowH + scrollTop) {
                         this._numAnim.start();
                     }

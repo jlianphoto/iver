@@ -4,7 +4,7 @@ $prefixCls : '.iv-swiper';
 
 #{$prefixCls}{
     width: 100%;
-    min-height: torem(140);
+    min-height: 140px;
     background:$white;
     overflow: hidden;
     position: relative;
@@ -27,7 +27,7 @@ $prefixCls : '.iv-swiper';
 
     &-dot {
         position: absolute;
-        bottom: torem(10);
+        bottom: 10px;
         left: 50%;
         transform: translate(-50%);
         @include flexbox();
@@ -35,10 +35,10 @@ $prefixCls : '.iv-swiper';
 
     &-dot li{
         @include flex(1);
-        margin-right: torem(8);
+        margin-right: 8px;
         border-radius: 50%;
-        width: torem(10);
-        height: torem(10);
+        width: 10px;
+        height: 10px;
         background: $white;
         opacity: .5;
     }

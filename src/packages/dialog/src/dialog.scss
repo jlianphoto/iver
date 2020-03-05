@@ -1,7 +1,7 @@
 @import "../../../scss/_common";
 .iv-toast {
-    padding: torem(12);
-    font-size: torem(14);
+    padding: 12px;
+    font-size: 14px;
     color: #fff;
     background: rgba(0, 0, 0, .5);
     border-radius: 4px;
@@ -32,28 +32,28 @@ $prefixCls: '.iv-dialog';
     transition: .2s;
 
     &-header {
-        padding: torem(10);
-        font-size: torem(20);
+        padding: 10px;
+        font-size: 20px;
     }
 
     &-content {
-        font-size: torem(16);
+        font-size: 16px;
         color: #666;
         text-align: center;
-        padding: torem(5) torem(10) torem(10) torem(10);
+        padding: 5px 10px 10px 10px;
     }
 
     &-footer {
         position: relative;
-        line-height: torem(40);
-        margin-top: torem(10);
+        line-height: 40px;
+        margin-top: 10px;
         border-top: 1px solid #f0f0f0;
         @include flexbox();
 
         button {
             width: 100%;
-            height: torem(40);
-            font-size: torem(16);
+            height: 40px;
+            font-size: 16px;
             background: #fff;
             @include flex(1);
 

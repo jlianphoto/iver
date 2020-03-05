@@ -7,7 +7,7 @@
 
 # IVER
 
-> ui component for V2.0
+> ui component for VUE2.0
 
 [![npm](https://img.shields.io/npm/v/iver.svg?style=flat-square)](https://www.npmjs.com/package/iver) [![NPM downloads](http://img.shields.io/npm/dm/iver.svg?style=flat-square)](https://npmjs.org/package/iver) [![liscense](https://img.shields.io/npm/l/rizu-ui.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 

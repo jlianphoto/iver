@@ -18,7 +18,7 @@
 
 ## [demo](https://jlianphoto.github.io/iver/dist/index.html)
 
-![demo](https://jlianphoto.github.io/iver/dist/static/img/logo.e5f63b7.png)
+![demo](https://jlianphoto.github.io/iver/dist/static/img/demo_code.png)
 
 ## Included
  - **Grid**

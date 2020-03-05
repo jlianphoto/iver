@@ -16,9 +16,9 @@
 ### [Document](https://jlianphoto.github.io/iver)
 
 
-## [demo](http://p4t4cjc61.bkt.clouddn.com/iver/index.html)
+## [demo](https://jlianphoto.github.io/iver/dist/index.html)
 
-![demo](https://github.com/jlianphoto/vui/blob/master/src/img/demo_code.png)
+![demo](https://jlianphoto.github.io/iver/dist/static/img/logo.e5f63b7.png)
 
 ## Included
  - **Grid**
